@@ -14,6 +14,6 @@
 - Testing: data + demo
 
 ## Quy tắc
-- Mỗi người làm branch riêng: feature/ten-minh
-- Không push vào main
-- Merge vào dev trước
+- Mỗi người làm branch riêng: feature/ten-minh ( TÌM HIỂU CÁC LỆNH ĐỂ PUSH,PULL,.. NẾU DÙNG VISUAL STUDIO CODE ) CÒN NẾU UPDATE TRỰC TIẾP LÊN ĐÂY THÌ KHỎI 
+
+
