@@ -1,501 +1,501 @@
-OrderID,Product_Type,Weight_kg,Distance_km,Vehicle_Type
-1,Nông sản,18.81,199,Xe Tải Hạng Nặng
-2,Linh kiện điện tử,31.09,275,Xe Tải Hạng Nặng
-3,Mỹ phẩm,9.25,157,Xe Tải Hạng Nhẹ
-4,Mỹ phẩm,13.12,136,Xe Tải Hạng Nặng
-5,Hàng đông lạnh,27.87,115,Xe Tải Hạng Nặng
-6,Mỹ phẩm,6.28,42,Xe Máy
-7,Mỹ phẩm,45.23,993,Xe Tải Hạng Nặng
-8,Linh kiện điện tử,16.86,128,Xe Tải Hạng Nặng
-9,Nông sản,0.94,11,Xe Máy
-10,Nông sản,44.72,803,Xe Tải Hạng Nặng
-11,Mỹ phẩm,47.53,110,Xe Tải Hạng Nặng
-12,Hàng đông lạnh,20.57,200,Xe Tải Hạng Nặng
-13,Hàng đông lạnh,43.44,815,Xe Tải Hạng Nặng
-14,Đồ gia dụng,48.2,651,Xe Tải Hạng Nặng
-15,Hàng dễ vỡ,45.51,496,Xe Tải Hạng Nặng
-16,Hàng dễ vỡ,47.47,264,Xe Tải Hạng Nặng
-17,Hàng dễ vỡ,6.07,196,Xe Tải Hạng Nhẹ
-18,Hàng đông lạnh,27.42,124,Xe Tải Hạng Nặng
-19,Linh kiện điện tử,29.61,174,Xe Tải Hạng Nặng
-20,Linh kiện điện tử,49.36,143,Xe Tải Hạng Nặng
-21,Hàng dễ vỡ,48.72,289,Xe Tải Hạng Nặng
-22,Mỹ phẩm,46.12,970,Xe Tải Hạng Nặng
-23,Mỹ phẩm,28.53,129,Xe Tải Hạng Nặng
-24,Hàng dễ vỡ,49.88,269,Xe Tải Hạng Nặng
-25,Nông sản,22.26,94,Xe Tải Hạng Nhẹ
-26,Hàng dễ vỡ,2.37,84,Xe Tải Hạng Nhẹ
-27,Mỹ phẩm,39.96,830,Xe Tải Hạng Nặng
-28,Linh kiện điện tử,12.81,20,Xe Tải Hạng Nhẹ
-29,Đồ gia dụng,5.16,197,Xe Tải Hạng Nhẹ
-30,Hàng đông lạnh,1.0,191,Xe Tải Hạng Nhẹ
-31,Linh kiện điện tử,15.09,138,Xe Tải Hạng Nặng
-32,Đồ gia dụng,20.35,188,Xe Tải Hạng Nặng
-33,Hàng dễ vỡ,4.94,107,Xe Tải Hạng Nhẹ
-34,Linh kiện điện tử,8.88,189,Xe Tải Hạng Nhẹ
-35,Hàng dễ vỡ,10.13,36,Xe Tải Hạng Nhẹ
-36,Đồ gia dụng,10.69,22,Xe Tải Hạng Nhẹ
-37,Hàng dễ vỡ,39.28,334,Xe Tải Hạng Nặng
-38,Hàng dễ vỡ,6.44,113,Xe Tải Hạng Nhẹ
-39,Hàng dễ vỡ,17.82,29,Xe Tải Hạng Nhẹ
-40,Hàng dễ vỡ,29.23,186,Xe Tải Hạng Nặng
-41,Nông sản,36.93,525,Xe Tải Hạng Nặng
-42,Đồ gia dụng,13.53,178,Xe Tải Hạng Nặng
-43,Hàng dễ vỡ,13.97,101,Xe Tải Hạng Nặng
-44,Linh kiện điện tử,3.53,86,Xe Tải Hạng Nhẹ
-45,Hàng dễ vỡ,1.14,130,Xe Tải Hạng Nhẹ
-46,Hàng dễ vỡ,14.05,194,Xe Tải Hạng Nặng
-47,Linh kiện điện tử,15.82,11,Xe Tải Hạng Nhẹ
-48,Đồ gia dụng,4.03,7,Xe Máy
-49,Linh kiện điện tử,33.86,224,Xe Tải Hạng Nặng
-50,Hàng dễ vỡ,27.75,132,Xe Tải Hạng Nặng
-51,Hàng dễ vỡ,34.34,596,Xe Tải Hạng Nặng
-52,Hàng đông lạnh,45.46,916,Xe Tải Hạng Nặng
-53,Linh kiện điện tử,33.18,927,Xe Tải Hạng Nặng
-54,Linh kiện điện tử,10.27,139,Xe Tải Hạng Nặng
-55,Nông sản,38.05,82,Xe Tải Hạng Nặng
-56,Linh kiện điện tử,2.91,138,Xe Tải Hạng Nhẹ
-57,Hàng dễ vỡ,2.51,100,Xe Tải Hạng Nhẹ
-58,Nông sản,34.61,336,Xe Tải Hạng Nặng
-59,Mỹ phẩm,36.33,182,Xe Tải Hạng Nặng
-60,Đồ gia dụng,31.02,536,Xe Tải Hạng Nặng
-61,Đồ gia dụng,17.03,93,Xe Tải Hạng Nhẹ
-62,Mỹ phẩm,46.63,835,Xe Tải Hạng Nặng
-63,Đồ gia dụng,19.93,173,Xe Tải Hạng Nặng
-64,Linh kiện điện tử,42.57,998,Xe Tải Hạng Nặng
-65,Hàng dễ vỡ,0.84,149,Xe Tải Hạng Nhẹ
-66,Đồ gia dụng,12.36,45,Xe Tải Hạng Nhẹ
-67,Mỹ phẩm,34.22,819,Xe Tải Hạng Nặng
-68,Mỹ phẩm,27.07,36,Xe Tải Hạng Nhẹ
-69,Mỹ phẩm,44.28,252,Xe Tải Hạng Nặng
-70,Nông sản,12.86,154,Xe Tải Hạng Nặng
-71,Hàng đông lạnh,48.01,853,Xe Tải Hạng Nặng
-72,Hàng dễ vỡ,11.96,52,Xe Tải Hạng Nhẹ
-73,Hàng dễ vỡ,46.75,992,Xe Tải Hạng Nặng
-74,Đồ gia dụng,33.06,839,Xe Tải Hạng Nặng
-75,Đồ gia dụng,42.35,433,Xe Tải Hạng Nặng
-76,Đồ gia dụng,39.56,555,Xe Tải Hạng Nặng
-77,Linh kiện điện tử,48.64,892,Xe Tải Hạng Nặng
-78,Hàng dễ vỡ,47.72,879,Xe Tải Hạng Nặng
-79,Mỹ phẩm,8.74,89,Xe Tải Hạng Nhẹ
-80,Hàng đông lạnh,17.26,71,Xe Tải Hạng Nhẹ
-81,Hàng dễ vỡ,32.04,578,Xe Tải Hạng Nặng
-82,Mỹ phẩm,13.02,135,Xe Tải Hạng Nặng
-83,Linh kiện điện tử,38.07,484,Xe Tải Hạng Nặng
-84,Hàng dễ vỡ,23.4,192,Xe Tải Hạng Nặng
-85,Hàng đông lạnh,4.07,156,Xe Tải Hạng Nhẹ
-86,Đồ gia dụng,22.6,191,Xe Tải Hạng Nặng
-87,Nông sản,10.81,186,Xe Tải Hạng Nặng
-88,Hàng đông lạnh,49.74,177,Xe Tải Hạng Nặng
-89,Hàng đông lạnh,13.17,35,Xe Tải Hạng Nhẹ
-90,Hàng đông lạnh,34.33,749,Xe Tải Hạng Nặng
-91,Hàng dễ vỡ,27.63,200,Xe Tải Hạng Nặng
-92,Linh kiện điện tử,15.95,62,Xe Tải Hạng Nhẹ
-93,Hàng đông lạnh,6.62,199,Xe Tải Hạng Nhẹ
-94,Nông sản,15.59,107,Xe Tải Hạng Nặng
-95,Nông sản,21.04,28,Xe Tải Hạng Nhẹ
-96,Hàng dễ vỡ,46.2,423,Xe Tải Hạng Nặng
-97,Hàng dễ vỡ,6.37,37,Xe Máy
-98,Mỹ phẩm,24.51,136,Xe Tải Hạng Nặng
-99,Hàng đông lạnh,1.94,103,Xe Tải Hạng Nhẹ
-100,Mỹ phẩm,24.66,151,Xe Tải Hạng Nặng
-101,Hàng đông lạnh,45.94,361,Xe Tải Hạng Nặng
-102,Nông sản,37.53,539,Xe Tải Hạng Nặng
-103,Mỹ phẩm,38.15,948,Xe Tải Hạng Nặng
-104,Hàng đông lạnh,43.48,305,Xe Tải Hạng Nặng
-105,Đồ gia dụng,41.72,170,Xe Tải Hạng Nặng
-106,Hàng dễ vỡ,15.84,183,Xe Tải Hạng Nặng
-107,Hàng đông lạnh,22.82,14,Xe Tải Hạng Nhẹ
-108,Hàng dễ vỡ,43.2,628,Xe Tải Hạng Nặng
-109,Hàng đông lạnh,46.36,571,Xe Tải Hạng Nặng
-110,Mỹ phẩm,48.22,133,Xe Tải Hạng Nặng
-111,Nông sản,32.57,672,Xe Tải Hạng Nặng
-112,Nông sản,9.99,167,Xe Tải Hạng Nhẹ
-113,Hàng đông lạnh,11.11,133,Xe Tải Hạng Nặng
-114,Hàng dễ vỡ,38.5,583,Xe Tải Hạng Nặng
-115,Mỹ phẩm,38.65,191,Xe Tải Hạng Nặng
-116,Mỹ phẩm,34.02,897,Xe Tải Hạng Nặng
-117,Đồ gia dụng,9.82,61,Xe Tải Hạng Nhẹ
-118,Đồ gia dụng,35.29,700,Xe Tải Hạng Nặng
-119,Mỹ phẩm,29.81,131,Xe Tải Hạng Nặng
-120,Mỹ phẩm,38.63,618,Xe Tải Hạng Nặng
-121,Hàng đông lạnh,9.19,55,Xe Tải Hạng Nhẹ
-122,Mỹ phẩm,40.51,740,Xe Tải Hạng Nặng
-123,Nông sản,5.29,140,Xe Tải Hạng Nhẹ
-124,Linh kiện điện tử,8.69,80,Xe Tải Hạng Nhẹ
-125,Linh kiện điện tử,37.89,262,Xe Tải Hạng Nặng
-126,Nông sản,4.73,197,Xe Tải Hạng Nhẹ
-127,Hàng đông lạnh,19.46,97,Xe Tải Hạng Nhẹ
-128,Linh kiện điện tử,42.56,592,Xe Tải Hạng Nặng
-129,Hàng đông lạnh,38.81,530,Xe Tải Hạng Nặng
-130,Đồ gia dụng,7.69,37,Xe Máy
-131,Nông sản,22.91,130,Xe Tải Hạng Nặng
-132,Linh kiện điện tử,4.09,2,Xe Máy
-133,Hàng đông lạnh,15.23,87,Xe Tải Hạng Nhẹ
-134,Hàng dễ vỡ,6.98,23,Xe Máy
-135,Mỹ phẩm,43.46,436,Xe Tải Hạng Nặng
-136,Nông sản,35.12,401,Xe Tải Hạng Nặng
-137,Mỹ phẩm,37.38,105,Xe Tải Hạng Nặng
-138,Hàng dễ vỡ,41.4,511,Xe Tải Hạng Nặng
-139,Hàng đông lạnh,11.18,155,Xe Tải Hạng Nặng
-140,Mỹ phẩm,38.12,990,Xe Tải Hạng Nặng
-141,Hàng đông lạnh,30.52,508,Xe Tải Hạng Nặng
-142,Linh kiện điện tử,49.19,943,Xe Tải Hạng Nặng
-143,Hàng đông lạnh,14.17,159,Xe Tải Hạng Nặng
-144,Hàng đông lạnh,41.91,392,Xe Tải Hạng Nặng
-145,Mỹ phẩm,19.08,200,Xe Tải Hạng Nặng
-146,Hàng đông lạnh,19.53,106,Xe Tải Hạng Nặng
-147,Đồ gia dụng,25.7,109,Xe Tải Hạng Nặng
-148,Mỹ phẩm,33.31,952,Xe Tải Hạng Nặng
-149,Mỹ phẩm,2.93,11,Xe Máy
-150,Linh kiện điện tử,45.05,944,Xe Tải Hạng Nặng
-151,Hàng dễ vỡ,42.02,285,Xe Tải Hạng Nặng
-152,Linh kiện điện tử,26.63,119,Xe Tải Hạng Nặng
-153,Hàng đông lạnh,30.2,571,Xe Tải Hạng Nặng
-154,Linh kiện điện tử,10.17,161,Xe Tải Hạng Nặng
-155,Hàng đông lạnh,36.27,675,Xe Tải Hạng Nặng
-156,Hàng đông lạnh,8.12,82,Xe Tải Hạng Nhẹ
-157,Hàng dễ vỡ,6.32,49,Xe Máy
-158,Đồ gia dụng,5.31,193,Xe Tải Hạng Nhẹ
-159,Mỹ phẩm,45.81,464,Xe Tải Hạng Nặng
-160,Mỹ phẩm,43.03,986,Xe Tải Hạng Nặng
-161,Nông sản,41.38,369,Xe Tải Hạng Nặng
-162,Đồ gia dụng,31.75,320,Xe Tải Hạng Nặng
-163,Đồ gia dụng,1.92,125,Xe Tải Hạng Nhẹ
-164,Linh kiện điện tử,46.34,814,Xe Tải Hạng Nặng
-165,Mỹ phẩm,43.09,313,Xe Tải Hạng Nặng
-166,Hàng dễ vỡ,26.68,52,Xe Tải Hạng Nhẹ
-167,Linh kiện điện tử,16.13,152,Xe Tải Hạng Nặng
-168,Nông sản,19.34,188,Xe Tải Hạng Nặng
-169,Nông sản,47.91,984,Xe Tải Hạng Nặng
-170,Linh kiện điện tử,37.67,727,Xe Tải Hạng Nặng
-171,Hàng dễ vỡ,38.08,947,Xe Tải Hạng Nặng
-172,Đồ gia dụng,31.69,749,Xe Tải Hạng Nặng
-173,Hàng dễ vỡ,47.96,281,Xe Tải Hạng Nặng
-174,Hàng đông lạnh,22.07,61,Xe Tải Hạng Nhẹ
-175,Hàng đông lạnh,25.33,199,Xe Tải Hạng Nặng
-176,Hàng dễ vỡ,7.32,132,Xe Tải Hạng Nhẹ
-177,Linh kiện điện tử,16.14,52,Xe Tải Hạng Nhẹ
-178,Hàng đông lạnh,1.56,111,Xe Tải Hạng Nhẹ
-179,Nông sản,30.15,853,Xe Tải Hạng Nặng
-180,Mỹ phẩm,7.42,70,Xe Tải Hạng Nhẹ
-181,Đồ gia dụng,30.52,679,Xe Tải Hạng Nặng
-182,Đồ gia dụng,28.19,46,Xe Tải Hạng Nhẹ
-183,Nông sản,18.6,70,Xe Tải Hạng Nhẹ
-184,Hàng đông lạnh,10.29,17,Xe Tải Hạng Nhẹ
-185,Đồ gia dụng,49.46,944,Xe Tải Hạng Nặng
-186,Hàng dễ vỡ,33.22,931,Xe Tải Hạng Nặng
-187,Hàng đông lạnh,20.23,136,Xe Tải Hạng Nặng
-188,Nông sản,29.21,23,Xe Tải Hạng Nhẹ
-189,Hàng dễ vỡ,28.58,58,Xe Tải Hạng Nhẹ
-190,Hàng đông lạnh,22.8,98,Xe Tải Hạng Nhẹ
-191,Hàng dễ vỡ,6.08,152,Xe Tải Hạng Nhẹ
-192,Nông sản,28.64,7,Xe Tải Hạng Nhẹ
-193,Hàng dễ vỡ,48.24,810,Xe Tải Hạng Nặng
-194,Nông sản,12.82,35,Xe Tải Hạng Nhẹ
-195,Nông sản,2.24,81,Xe Tải Hạng Nhẹ
-196,Mỹ phẩm,44.69,489,Xe Tải Hạng Nặng
-197,Nông sản,13.77,52,Xe Tải Hạng Nhẹ
-198,Hàng đông lạnh,33.64,752,Xe Tải Hạng Nặng
-199,Nông sản,23.47,196,Xe Tải Hạng Nặng
-200,Nông sản,45.8,304,Xe Tải Hạng Nặng
-201,Linh kiện điện tử,40.69,589,Xe Tải Hạng Nặng
-202,Nông sản,17.84,53,Xe Tải Hạng Nhẹ
-203,Mỹ phẩm,17.68,120,Xe Tải Hạng Nặng
-204,Mỹ phẩm,8.2,78,Xe Tải Hạng Nhẹ
-205,Đồ gia dụng,9.2,53,Xe Tải Hạng Nhẹ
-206,Linh kiện điện tử,45.1,651,Xe Tải Hạng Nặng
-207,Nông sản,27.19,169,Xe Tải Hạng Nặng
-208,Mỹ phẩm,2.63,61,Xe Tải Hạng Nhẹ
-209,Hàng dễ vỡ,5.74,46,Xe Máy
-210,Hàng dễ vỡ,33.0,439,Xe Tải Hạng Nặng
-211,Mỹ phẩm,9.86,86,Xe Tải Hạng Nhẹ
-212,Hàng dễ vỡ,48.9,598,Xe Tải Hạng Nặng
-213,Linh kiện điện tử,25.68,166,Xe Tải Hạng Nặng
-214,Hàng dễ vỡ,40.98,289,Xe Tải Hạng Nặng
-215,Đồ gia dụng,18.02,68,Xe Tải Hạng Nhẹ
-216,Hàng đông lạnh,1.48,97,Xe Tải Hạng Nhẹ
-217,Nông sản,34.0,239,Xe Tải Hạng Nặng
-218,Hàng đông lạnh,22.14,65,Xe Tải Hạng Nhẹ
-219,Đồ gia dụng,29.06,107,Xe Tải Hạng Nặng
-220,Mỹ phẩm,8.6,103,Xe Tải Hạng Nhẹ
-221,Hàng đông lạnh,37.47,166,Xe Tải Hạng Nặng
-222,Hàng đông lạnh,49.15,982,Xe Tải Hạng Nặng
-223,Mỹ phẩm,22.68,134,Xe Tải Hạng Nặng
-224,Mỹ phẩm,14.58,2,Xe Tải Hạng Nhẹ
-225,Mỹ phẩm,7.86,29,Xe Máy
-226,Đồ gia dụng,4.4,162,Xe Tải Hạng Nhẹ
-227,Nông sản,15.92,65,Xe Tải Hạng Nhẹ
-228,Linh kiện điện tử,29.67,151,Xe Tải Hạng Nặng
-229,Hàng dễ vỡ,9.1,75,Xe Tải Hạng Nhẹ
-230,Nông sản,42.56,585,Xe Tải Hạng Nặng
-231,Mỹ phẩm,35.69,330,Xe Tải Hạng Nặng
-232,Mỹ phẩm,43.57,419,Xe Tải Hạng Nặng
-233,Hàng dễ vỡ,10.0,14,Xe Máy
-234,Mỹ phẩm,23.6,155,Xe Tải Hạng Nặng
-235,Linh kiện điện tử,48.16,336,Xe Tải Hạng Nặng
-236,Linh kiện điện tử,39.79,436,Xe Tải Hạng Nặng
-237,Hàng đông lạnh,42.02,686,Xe Tải Hạng Nặng
-238,Linh kiện điện tử,29.57,95,Xe Tải Hạng Nhẹ
-239,Mỹ phẩm,3.97,64,Xe Tải Hạng Nhẹ
-240,Mỹ phẩm,16.95,93,Xe Tải Hạng Nhẹ
-241,Đồ gia dụng,35.15,665,Xe Tải Hạng Nặng
-242,Đồ gia dụng,37.29,395,Xe Tải Hạng Nặng
-243,Đồ gia dụng,20.4,143,Xe Tải Hạng Nặng
-244,Đồ gia dụng,33.61,605,Xe Tải Hạng Nặng
-245,Hàng đông lạnh,6.36,134,Xe Tải Hạng Nhẹ
-246,Hàng đông lạnh,49.73,825,Xe Tải Hạng Nặng
-247,Mỹ phẩm,27.15,126,Xe Tải Hạng Nặng
-248,Nông sản,11.01,26,Xe Tải Hạng Nhẹ
-249,Nông sản,14.53,24,Xe Tải Hạng Nhẹ
-250,Hàng dễ vỡ,47.37,915,Xe Tải Hạng Nặng
-251,Đồ gia dụng,43.58,364,Xe Tải Hạng Nặng
-252,Hàng dễ vỡ,9.19,82,Xe Tải Hạng Nhẹ
-253,Đồ gia dụng,44.27,420,Xe Tải Hạng Nặng
-254,Đồ gia dụng,46.71,149,Xe Tải Hạng Nặng
-255,Hàng đông lạnh,5.43,130,Xe Tải Hạng Nhẹ
-256,Nông sản,35.94,133,Xe Tải Hạng Nặng
-257,Hàng dễ vỡ,9.83,27,Xe Máy
-258,Hàng đông lạnh,42.12,712,Xe Tải Hạng Nặng
-259,Nông sản,29.59,80,Xe Tải Hạng Nhẹ
-260,Mỹ phẩm,15.59,142,Xe Tải Hạng Nặng
-261,Linh kiện điện tử,27.18,155,Xe Tải Hạng Nặng
-262,Linh kiện điện tử,14.03,101,Xe Tải Hạng Nặng
-263,Đồ gia dụng,29.4,63,Xe Tải Hạng Nhẹ
-264,Hàng dễ vỡ,47.17,70,Xe Tải Hạng Nặng
-265,Mỹ phẩm,47.09,189,Xe Tải Hạng Nặng
-266,Hàng dễ vỡ,10.28,24,Xe Tải Hạng Nhẹ
-267,Hàng đông lạnh,24.5,161,Xe Tải Hạng Nặng
-268,Hàng đông lạnh,34.32,876,Xe Tải Hạng Nặng
-269,Linh kiện điện tử,43.7,312,Xe Tải Hạng Nặng
-270,Mỹ phẩm,13.58,153,Xe Tải Hạng Nặng
-271,Hàng dễ vỡ,3.72,108,Xe Tải Hạng Nhẹ
-272,Mỹ phẩm,17.28,194,Xe Tải Hạng Nặng
-273,Nông sản,19.4,31,Xe Tải Hạng Nhẹ
-274,Hàng dễ vỡ,3.82,173,Xe Tải Hạng Nhẹ
-275,Mỹ phẩm,36.97,851,Xe Tải Hạng Nặng
-276,Linh kiện điện tử,7.11,147,Xe Tải Hạng Nhẹ
-277,Hàng dễ vỡ,46.22,835,Xe Tải Hạng Nặng
-278,Linh kiện điện tử,37.39,590,Xe Tải Hạng Nặng
-279,Mỹ phẩm,17.18,57,Xe Tải Hạng Nhẹ
-280,Hàng đông lạnh,37.61,306,Xe Tải Hạng Nặng
-281,Hàng đông lạnh,28.06,49,Xe Tải Hạng Nhẹ
-282,Nông sản,21.51,42,Xe Tải Hạng Nhẹ
-283,Đồ gia dụng,0.82,42,Xe Máy
-284,Hàng dễ vỡ,23.39,116,Xe Tải Hạng Nặng
-285,Nông sản,17.9,47,Xe Tải Hạng Nhẹ
-286,Đồ gia dụng,6.5,63,Xe Tải Hạng Nhẹ
-287,Mỹ phẩm,0.66,63,Xe Tải Hạng Nhẹ
-288,Đồ gia dụng,43.8,559,Xe Tải Hạng Nặng
-289,Hàng dễ vỡ,45.57,95,Xe Tải Hạng Nặng
-290,Hàng đông lạnh,13.25,6,Xe Tải Hạng Nhẹ
-291,Nông sản,28.1,80,Xe Tải Hạng Nhẹ
-292,Hàng đông lạnh,7.03,50,Xe Máy
-293,Nông sản,34.13,374,Xe Tải Hạng Nặng
-294,Hàng đông lạnh,2.87,74,Xe Tải Hạng Nhẹ
-295,Hàng dễ vỡ,33.87,181,Xe Tải Hạng Nặng
-296,Linh kiện điện tử,37.47,319,Xe Tải Hạng Nặng
-297,Linh kiện điện tử,47.04,819,Xe Tải Hạng Nặng
-298,Nông sản,22.91,71,Xe Tải Hạng Nhẹ
-299,Hàng đông lạnh,16.71,163,Xe Tải Hạng Nặng
-300,Mỹ phẩm,23.21,46,Xe Tải Hạng Nhẹ
-301,Mỹ phẩm,8.73,169,Xe Tải Hạng Nhẹ
-302,Hàng dễ vỡ,27.51,158,Xe Tải Hạng Nặng
-303,Hàng đông lạnh,2.49,35,Xe Máy
-304,Linh kiện điện tử,24.74,138,Xe Tải Hạng Nặng
-305,Linh kiện điện tử,43.94,447,Xe Tải Hạng Nặng
-306,Hàng đông lạnh,24.74,134,Xe Tải Hạng Nặng
-307,Đồ gia dụng,48.18,756,Xe Tải Hạng Nặng
-308,Hàng dễ vỡ,1.23,54,Xe Tải Hạng Nhẹ
-309,Hàng đông lạnh,24.48,44,Xe Tải Hạng Nhẹ
-310,Linh kiện điện tử,17.23,126,Xe Tải Hạng Nặng
-311,Đồ gia dụng,47.61,338,Xe Tải Hạng Nặng
-312,Hàng đông lạnh,12.98,192,Xe Tải Hạng Nặng
-313,Nông sản,26.17,172,Xe Tải Hạng Nặng
-314,Mỹ phẩm,41.68,885,Xe Tải Hạng Nặng
-315,Linh kiện điện tử,1.56,154,Xe Tải Hạng Nhẹ
-316,Đồ gia dụng,15.86,100,Xe Tải Hạng Nhẹ
-317,Hàng dễ vỡ,4.44,114,Xe Tải Hạng Nhẹ
-318,Linh kiện điện tử,29.49,131,Xe Tải Hạng Nặng
-319,Hàng dễ vỡ,19.69,130,Xe Tải Hạng Nặng
-320,Linh kiện điện tử,13.97,22,Xe Tải Hạng Nhẹ
-321,Đồ gia dụng,23.49,184,Xe Tải Hạng Nặng
-322,Đồ gia dụng,21.01,29,Xe Tải Hạng Nhẹ
-323,Hàng dễ vỡ,26.99,102,Xe Tải Hạng Nặng
-324,Linh kiện điện tử,44.56,659,Xe Tải Hạng Nặng
-325,Linh kiện điện tử,26.81,85,Xe Tải Hạng Nhẹ
-326,Đồ gia dụng,7.89,81,Xe Tải Hạng Nhẹ
-327,Nông sản,23.73,200,Xe Tải Hạng Nặng
-328,Hàng dễ vỡ,30.69,996,Xe Tải Hạng Nặng
-329,Linh kiện điện tử,11.02,25,Xe Tải Hạng Nhẹ
-330,Hàng dễ vỡ,15.72,97,Xe Tải Hạng Nhẹ
-331,Đồ gia dụng,29.67,140,Xe Tải Hạng Nặng
-332,Nông sản,36.4,877,Xe Tải Hạng Nặng
-333,Hàng dễ vỡ,3.47,56,Xe Tải Hạng Nhẹ
-334,Hàng dễ vỡ,30.1,337,Xe Tải Hạng Nặng
-335,Hàng đông lạnh,26.95,200,Xe Tải Hạng Nặng
-336,Đồ gia dụng,4.29,61,Xe Tải Hạng Nhẹ
-337,Nông sản,25.93,2,Xe Tải Hạng Nhẹ
-338,Mỹ phẩm,31.52,829,Xe Tải Hạng Nặng
-339,Đồ gia dụng,16.49,6,Xe Tải Hạng Nhẹ
-340,Linh kiện điện tử,5.59,100,Xe Tải Hạng Nhẹ
-341,Hàng đông lạnh,44.12,566,Xe Tải Hạng Nặng
-342,Hàng đông lạnh,22.69,102,Xe Tải Hạng Nặng
-343,Mỹ phẩm,45.86,615,Xe Tải Hạng Nặng
-344,Linh kiện điện tử,22.26,82,Xe Tải Hạng Nhẹ
-345,Linh kiện điện tử,29.58,8,Xe Tải Hạng Nhẹ
-346,Hàng dễ vỡ,3.54,47,Xe Máy
-347,Hàng đông lạnh,20.45,137,Xe Tải Hạng Nặng
-348,Hàng dễ vỡ,14.38,193,Xe Tải Hạng Nặng
-349,Mỹ phẩm,29.17,74,Xe Tải Hạng Nhẹ
-350,Linh kiện điện tử,45.31,819,Xe Tải Hạng Nặng
-351,Hàng đông lạnh,45.98,456,Xe Tải Hạng Nặng
-352,Hàng dễ vỡ,24.57,161,Xe Tải Hạng Nặng
-353,Linh kiện điện tử,12.43,122,Xe Tải Hạng Nặng
-354,Hàng đông lạnh,3.57,156,Xe Tải Hạng Nhẹ
-355,Đồ gia dụng,33.97,85,Xe Tải Hạng Nặng
-356,Linh kiện điện tử,48.84,820,Xe Tải Hạng Nặng
-357,Nông sản,7.79,174,Xe Tải Hạng Nhẹ
-358,Mỹ phẩm,4.49,184,Xe Tải Hạng Nhẹ
-359,Nông sản,24.79,13,Xe Tải Hạng Nhẹ
-360,Mỹ phẩm,18.28,195,Xe Tải Hạng Nặng
-361,Hàng dễ vỡ,29.55,96,Xe Tải Hạng Nhẹ
-362,Hàng dễ vỡ,30.13,267,Xe Tải Hạng Nặng
-363,Hàng đông lạnh,22.04,40,Xe Tải Hạng Nhẹ
-364,Mỹ phẩm,23.88,6,Xe Tải Hạng Nhẹ
-365,Hàng đông lạnh,33.23,525,Xe Tải Hạng Nặng
-366,Mỹ phẩm,4.21,184,Xe Tải Hạng Nhẹ
-367,Mỹ phẩm,20.15,28,Xe Tải Hạng Nhẹ
-368,Linh kiện điện tử,5.42,38,Xe Máy
-369,Hàng đông lạnh,22.41,100,Xe Tải Hạng Nhẹ
-370,Hàng đông lạnh,12.16,198,Xe Tải Hạng Nặng
-371,Mỹ phẩm,23.28,95,Xe Tải Hạng Nhẹ
-372,Mỹ phẩm,44.86,151,Xe Tải Hạng Nặng
-373,Đồ gia dụng,34.0,453,Xe Tải Hạng Nặng
-374,Hàng đông lạnh,6.66,124,Xe Tải Hạng Nhẹ
-375,Linh kiện điện tử,7.52,13,Xe Máy
-376,Hàng đông lạnh,17.92,99,Xe Tải Hạng Nhẹ
-377,Hàng đông lạnh,39.29,513,Xe Tải Hạng Nặng
-378,Hàng đông lạnh,36.48,508,Xe Tải Hạng Nặng
-379,Đồ gia dụng,33.53,761,Xe Tải Hạng Nặng
-380,Hàng dễ vỡ,2.84,197,Xe Tải Hạng Nhẹ
-381,Hàng dễ vỡ,37.3,989,Xe Tải Hạng Nặng
-382,Nông sản,22.08,191,Xe Tải Hạng Nặng
-383,Hàng đông lạnh,10.04,98,Xe Tải Hạng Nhẹ
-384,Linh kiện điện tử,2.95,122,Xe Tải Hạng Nhẹ
-385,Mỹ phẩm,5.81,189,Xe Tải Hạng Nhẹ
-386,Hàng dễ vỡ,34.7,999,Xe Tải Hạng Nặng
-387,Hàng dễ vỡ,23.22,7,Xe Tải Hạng Nhẹ
-388,Mỹ phẩm,40.91,998,Xe Tải Hạng Nặng
-389,Linh kiện điện tử,38.81,713,Xe Tải Hạng Nặng
-390,Nông sản,5.13,128,Xe Tải Hạng Nhẹ
-391,Hàng đông lạnh,2.65,170,Xe Tải Hạng Nhẹ
-392,Nông sản,48.18,166,Xe Tải Hạng Nặng
-393,Đồ gia dụng,38.62,133,Xe Tải Hạng Nặng
-394,Linh kiện điện tử,14.41,52,Xe Tải Hạng Nhẹ
-395,Đồ gia dụng,8.64,183,Xe Tải Hạng Nhẹ
-396,Mỹ phẩm,47.53,985,Xe Tải Hạng Nặng
-397,Hàng dễ vỡ,10.13,146,Xe Tải Hạng Nặng
-398,Nông sản,40.19,90,Xe Tải Hạng Nặng
-399,Hàng dễ vỡ,3.02,65,Xe Tải Hạng Nhẹ
-400,Hàng đông lạnh,16.32,33,Xe Tải Hạng Nhẹ
-401,Mỹ phẩm,16.91,194,Xe Tải Hạng Nặng
-402,Hàng đông lạnh,25.64,9,Xe Tải Hạng Nhẹ
-403,Nông sản,7.63,99,Xe Tải Hạng Nhẹ
-404,Mỹ phẩm,23.09,21,Xe Tải Hạng Nhẹ
-405,Mỹ phẩm,12.93,141,Xe Tải Hạng Nặng
-406,Linh kiện điện tử,23.64,47,Xe Tải Hạng Nhẹ
-407,Hàng đông lạnh,9.83,153,Xe Tải Hạng Nhẹ
-408,Mỹ phẩm,43.65,361,Xe Tải Hạng Nặng
-409,Đồ gia dụng,31.71,263,Xe Tải Hạng Nặng
-410,Linh kiện điện tử,34.19,471,Xe Tải Hạng Nặng
-411,Hàng đông lạnh,14.54,156,Xe Tải Hạng Nặng
-412,Nông sản,11.63,116,Xe Tải Hạng Nặng
-413,Linh kiện điện tử,33.96,939,Xe Tải Hạng Nặng
-414,Nông sản,12.98,161,Xe Tải Hạng Nặng
-415,Mỹ phẩm,20.53,91,Xe Tải Hạng Nhẹ
-416,Mỹ phẩm,28.19,22,Xe Tải Hạng Nhẹ
-417,Linh kiện điện tử,34.85,141,Xe Tải Hạng Nặng
-418,Nông sản,16.19,129,Xe Tải Hạng Nặng
-419,Đồ gia dụng,8.54,10,Xe Máy
-420,Đồ gia dụng,37.95,495,Xe Tải Hạng Nặng
-421,Hàng đông lạnh,43.06,929,Xe Tải Hạng Nặng
-422,Linh kiện điện tử,32.74,841,Xe Tải Hạng Nặng
-423,Hàng dễ vỡ,47.12,613,Xe Tải Hạng Nặng
-424,Hàng đông lạnh,43.34,791,Xe Tải Hạng Nặng
-425,Linh kiện điện tử,35.69,480,Xe Tải Hạng Nặng
-426,Hàng đông lạnh,34.71,909,Xe Tải Hạng Nặng
-427,Hàng đông lạnh,11.02,123,Xe Tải Hạng Nặng
-428,Hàng đông lạnh,49.02,65,Xe Tải Hạng Nặng
-429,Đồ gia dụng,16.74,33,Xe Tải Hạng Nhẹ
-430,Mỹ phẩm,47.15,84,Xe Tải Hạng Nặng
-431,Hàng dễ vỡ,19.21,37,Xe Tải Hạng Nhẹ
-432,Linh kiện điện tử,17.05,42,Xe Tải Hạng Nhẹ
-433,Nông sản,44.3,980,Xe Tải Hạng Nặng
-434,Hàng đông lạnh,25.26,22,Xe Tải Hạng Nhẹ
-435,Nông sản,45.08,436,Xe Tải Hạng Nặng
-436,Nông sản,13.22,105,Xe Tải Hạng Nặng
-437,Đồ gia dụng,7.95,57,Xe Tải Hạng Nhẹ
-438,Hàng đông lạnh,6.93,147,Xe Tải Hạng Nhẹ
-439,Nông sản,27.97,133,Xe Tải Hạng Nặng
-440,Hàng dễ vỡ,35.6,276,Xe Tải Hạng Nặng
-441,Linh kiện điện tử,39.08,665,Xe Tải Hạng Nặng
-442,Nông sản,36.02,742,Xe Tải Hạng Nặng
-443,Mỹ phẩm,25.6,153,Xe Tải Hạng Nặng
-444,Hàng đông lạnh,26.05,42,Xe Tải Hạng Nhẹ
-445,Nông sản,4.19,81,Xe Tải Hạng Nhẹ
-446,Hàng dễ vỡ,24.92,176,Xe Tải Hạng Nặng
-447,Linh kiện điện tử,6.47,26,Xe Máy
-448,Linh kiện điện tử,24.68,3,Xe Tải Hạng Nhẹ
-449,Hàng dễ vỡ,47.62,839,Xe Tải Hạng Nặng
-450,Hàng dễ vỡ,33.8,513,Xe Tải Hạng Nặng
-451,Mỹ phẩm,20.29,83,Xe Tải Hạng Nhẹ
-452,Nông sản,1.88,174,Xe Tải Hạng Nhẹ
-453,Đồ gia dụng,18.75,126,Xe Tải Hạng Nặng
-454,Linh kiện điện tử,19.33,123,Xe Tải Hạng Nặng
-455,Hàng đông lạnh,4.64,41,Xe Máy
-456,Hàng đông lạnh,48.22,346,Xe Tải Hạng Nặng
-457,Mỹ phẩm,42.11,957,Xe Tải Hạng Nặng
-458,Hàng đông lạnh,17.74,57,Xe Tải Hạng Nhẹ
-459,Nông sản,20.8,42,Xe Tải Hạng Nhẹ
-460,Nông sản,22.77,63,Xe Tải Hạng Nhẹ
-461,Linh kiện điện tử,37.31,338,Xe Tải Hạng Nặng
-462,Hàng đông lạnh,18.19,20,Xe Tải Hạng Nhẹ
-463,Mỹ phẩm,25.8,152,Xe Tải Hạng Nặng
-464,Đồ gia dụng,12.47,38,Xe Tải Hạng Nhẹ
-465,Hàng đông lạnh,31.07,746,Xe Tải Hạng Nặng
-466,Nông sản,35.67,60,Xe Tải Hạng Nặng
-467,Đồ gia dụng,6.44,200,Xe Tải Hạng Nhẹ
-468,Đồ gia dụng,39.25,469,Xe Tải Hạng Nặng
-469,Hàng đông lạnh,47.69,329,Xe Tải Hạng Nặng
-470,Hàng đông lạnh,13.44,52,Xe Tải Hạng Nhẹ
-471,Linh kiện điện tử,20.96,45,Xe Tải Hạng Nhẹ
-472,Hàng đông lạnh,28.63,169,Xe Tải Hạng Nặng
-473,Hàng đông lạnh,9.28,158,Xe Tải Hạng Nhẹ
-474,Nông sản,40.37,678,Xe Tải Hạng Nặng
-475,Nông sản,33.4,308,Xe Tải Hạng Nặng
-476,Hàng đông lạnh,30.63,812,Xe Tải Hạng Nặng
-477,Nông sản,22.28,93,Xe Tải Hạng Nhẹ
-478,Hàng dễ vỡ,23.7,139,Xe Tải Hạng Nặng
-479,Mỹ phẩm,22.48,41,Xe Tải Hạng Nhẹ
-480,Đồ gia dụng,12.36,150,Xe Tải Hạng Nặng
-481,Hàng dễ vỡ,39.09,184,Xe Tải Hạng Nặng
-482,Nông sản,41.85,258,Xe Tải Hạng Nặng
-483,Mỹ phẩm,48.13,664,Xe Tải Hạng Nặng
-484,Linh kiện điện tử,17.47,147,Xe Tải Hạng Nặng
-485,Linh kiện điện tử,46.97,481,Xe Tải Hạng Nặng
-486,Linh kiện điện tử,24.29,43,Xe Tải Hạng Nhẹ
-487,Hàng dễ vỡ,45.28,456,Xe Tải Hạng Nặng
-488,Linh kiện điện tử,12.1,132,Xe Tải Hạng Nặng
-489,Hàng dễ vỡ,8.08,139,Xe Tải Hạng Nhẹ
-490,Đồ gia dụng,27.62,15,Xe Tải Hạng Nhẹ
-491,Hàng dễ vỡ,33.44,566,Xe Tải Hạng Nặng
-492,Nông sản,22.85,75,Xe Tải Hạng Nhẹ
-493,Mỹ phẩm,33.71,295,Xe Tải Hạng Nặng
-494,Nông sản,23.91,127,Xe Tải Hạng Nặng
-495,Linh kiện điện tử,16.58,167,Xe Tải Hạng Nặng
-496,Mỹ phẩm,13.6,66,Xe Tải Hạng Nhẹ
-497,Linh kiện điện tử,4.11,22,Xe Máy
-498,Hàng dễ vỡ,5.8,196,Xe Tải Hạng Nhẹ
-499,Hàng đông lạnh,45.54,991,Xe Tải Hạng Nặng
-500,Linh kiện điện tử,38.98,896,Xe Tải Hạng Nặng
+order_id,customer_type,product_type,weight,distance,priority,vehicle_type,note
+ORD001,VIP,de_vo,45.08,19,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD002,doi_tac,linh_kien_dien_tu,48.39,299,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD003,VIP,de_vo,6.35,236,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD004,doi_tac,dong_lanh,20.6,632,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD005,doi_tac,linh_kien_dien_tu,23.42,478,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD006,VIP,do_gia_dung,38.22,198,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD007,thuong,nong_san,1.07,539,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD008,doi_tac,nong_san,47.13,693,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD009,doi_tac,nong_san,1.81,426,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD010,thuong,linh_kien_dien_tu,24.91,290,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD011,doi_tac,linh_kien_dien_tu,13.91,529,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD012,thuong,nong_san,32.41,822,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD013,thuong,linh_kien_dien_tu,25.69,580,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD014,VIP,do_gia_dung,31.6,3,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD015,VIP,nong_san,10.37,122,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD016,doi_tac,do_gia_dung,3.79,223,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD017,thuong,de_vo,2.87,311,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD018,doi_tac,do_gia_dung,29.96,616,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD019,thuong,do_gia_dung,24.27,909,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD020,VIP,de_vo,17.27,29,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD021,thuong,dong_lanh,39.22,814,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD022,VIP,do_gia_dung,6.41,876,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD023,VIP,do_gia_dung,14.09,230,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD024,VIP,nong_san,23.67,561,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD025,thuong,linh_kien_dien_tu,6.7,472,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD026,VIP,my_pham,49.9,110,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD027,thuong,dong_lanh,40.28,173,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD028,VIP,dong_lanh,1.26,893,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD029,VIP,linh_kien_dien_tu,49.8,758,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD030,VIP,my_pham,39.59,492,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD031,doi_tac,do_gia_dung,37.78,120,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD032,thuong,dong_lanh,24.85,457,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD033,thuong,linh_kien_dien_tu,29.49,361,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD034,doi_tac,my_pham,25.51,719,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD035,VIP,my_pham,13.02,509,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD036,doi_tac,my_pham,48.05,175,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD037,thuong,my_pham,36.52,193,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD038,VIP,de_vo,27.15,823,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD039,doi_tac,dong_lanh,48.7,326,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD040,thuong,dong_lanh,35.3,105,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD041,thuong,my_pham,9.96,353,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD042,doi_tac,linh_kien_dien_tu,4.72,66,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD043,thuong,dong_lanh,33.81,345,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD044,thuong,linh_kien_dien_tu,26.63,908,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD045,doi_tac,linh_kien_dien_tu,12.11,832,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD046,VIP,de_vo,35.68,906,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD047,doi_tac,my_pham,38.2,841,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD048,doi_tac,dong_lanh,19.69,435,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD049,doi_tac,dong_lanh,6.51,151,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD050,doi_tac,dong_lanh,6.59,352,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD051,doi_tac,do_gia_dung,26.84,102,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD052,doi_tac,my_pham,16.16,78,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD053,VIP,do_gia_dung,24.3,184,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD054,thuong,linh_kien_dien_tu,37.05,532,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD055,doi_tac,my_pham,6.44,18,thap,xe_may,Giao hàng hệ thống
+ORD056,doi_tac,my_pham,20.2,718,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD057,thuong,dong_lanh,32.06,773,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD058,VIP,do_gia_dung,0.93,247,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD059,VIP,de_vo,28.24,673,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD060,thuong,my_pham,10.63,211,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD061,thuong,do_gia_dung,10.45,584,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD062,VIP,dong_lanh,41.64,779,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD063,thuong,nong_san,12.4,551,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD064,VIP,my_pham,44.89,844,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD065,thuong,linh_kien_dien_tu,40.7,582,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD066,doi_tac,de_vo,48.04,977,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD067,thuong,nong_san,7.87,906,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD068,doi_tac,linh_kien_dien_tu,41.54,83,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD069,doi_tac,dong_lanh,1.13,64,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD070,doi_tac,linh_kien_dien_tu,38.03,418,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD071,doi_tac,linh_kien_dien_tu,33.57,596,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD072,doi_tac,dong_lanh,24.19,252,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD073,VIP,my_pham,37.34,644,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD074,doi_tac,de_vo,17.43,738,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD075,doi_tac,my_pham,20.82,98,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD076,doi_tac,dong_lanh,49.25,593,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD077,doi_tac,my_pham,12.03,528,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD078,thuong,linh_kien_dien_tu,13.09,143,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD079,thuong,do_gia_dung,30.99,192,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD080,doi_tac,dong_lanh,3.05,954,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD081,doi_tac,linh_kien_dien_tu,27.3,958,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD082,VIP,linh_kien_dien_tu,41.6,556,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD083,thuong,dong_lanh,42.12,866,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD084,VIP,my_pham,47.76,867,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD085,doi_tac,do_gia_dung,18.08,594,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD086,doi_tac,linh_kien_dien_tu,28.84,162,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD087,doi_tac,de_vo,13.45,242,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD088,VIP,do_gia_dung,3.99,266,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD089,VIP,nong_san,32.47,525,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD090,doi_tac,nong_san,44.67,164,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD091,VIP,my_pham,22.27,485,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD092,thuong,de_vo,37.92,666,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD093,VIP,linh_kien_dien_tu,20.6,98,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD094,VIP,do_gia_dung,27.17,721,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD095,doi_tac,de_vo,38.02,248,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD096,doi_tac,de_vo,0.99,853,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD097,VIP,nong_san,46.83,739,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD098,thuong,my_pham,36.92,910,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD099,VIP,my_pham,1.48,609,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD100,doi_tac,linh_kien_dien_tu,12.3,116,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD101,thuong,my_pham,26.97,734,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD102,VIP,dong_lanh,3.48,932,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD103,doi_tac,linh_kien_dien_tu,47.61,38,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD104,VIP,linh_kien_dien_tu,14.15,853,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD105,thuong,nong_san,41.31,428,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD106,thuong,linh_kien_dien_tu,17.47,322,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD107,thuong,linh_kien_dien_tu,6.76,795,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD108,doi_tac,linh_kien_dien_tu,3.97,870,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD109,thuong,nong_san,42.65,291,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD110,doi_tac,nong_san,11.95,324,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD111,thuong,do_gia_dung,49.98,246,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD112,VIP,dong_lanh,29.35,791,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD113,doi_tac,do_gia_dung,20.03,112,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD114,thuong,linh_kien_dien_tu,9.77,290,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD115,thuong,linh_kien_dien_tu,30.7,678,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD116,thuong,do_gia_dung,32.6,725,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD117,doi_tac,nong_san,17.88,743,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD118,thuong,linh_kien_dien_tu,19.65,820,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD119,VIP,my_pham,42.86,43,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD120,thuong,linh_kien_dien_tu,46.4,542,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD121,doi_tac,do_gia_dung,46.95,784,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD122,VIP,dong_lanh,49.95,922,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD123,thuong,my_pham,26.15,551,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD124,doi_tac,linh_kien_dien_tu,9.39,935,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD125,VIP,linh_kien_dien_tu,27.33,654,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD126,thuong,linh_kien_dien_tu,4.41,789,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD127,doi_tac,do_gia_dung,31.87,9,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD128,doi_tac,linh_kien_dien_tu,29.14,480,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD129,doi_tac,my_pham,4.08,580,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD130,doi_tac,nong_san,5.47,751,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD131,thuong,do_gia_dung,25.59,5,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD132,thuong,nong_san,2.58,923,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD133,doi_tac,do_gia_dung,49.4,834,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD134,thuong,my_pham,24.47,424,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD135,thuong,my_pham,24.52,32,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD136,VIP,do_gia_dung,33.48,548,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD137,VIP,my_pham,11.8,888,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD138,doi_tac,linh_kien_dien_tu,40.86,365,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD139,VIP,my_pham,13.68,902,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD140,doi_tac,dong_lanh,1.36,679,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD141,VIP,nong_san,23.34,313,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD142,doi_tac,do_gia_dung,32.78,400,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD143,thuong,do_gia_dung,28.49,473,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD144,thuong,dong_lanh,28.99,62,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD145,doi_tac,dong_lanh,37.0,860,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD146,VIP,linh_kien_dien_tu,9.79,393,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD147,doi_tac,dong_lanh,29.81,351,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD148,thuong,linh_kien_dien_tu,26.72,848,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD149,doi_tac,do_gia_dung,18.88,85,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD150,VIP,nong_san,31.73,61,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD151,thuong,de_vo,37.91,945,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD152,VIP,do_gia_dung,7.1,719,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD153,thuong,de_vo,16.76,916,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD154,doi_tac,do_gia_dung,46.61,4,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD155,doi_tac,linh_kien_dien_tu,32.48,989,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD156,thuong,de_vo,21.0,568,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD157,thuong,de_vo,47.99,162,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD158,VIP,de_vo,42.94,762,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD159,doi_tac,nong_san,36.65,916,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD160,VIP,nong_san,40.7,789,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD161,doi_tac,de_vo,7.17,599,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD162,VIP,do_gia_dung,22.65,197,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD163,doi_tac,de_vo,38.59,627,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD164,doi_tac,my_pham,25.31,276,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD165,thuong,dong_lanh,6.79,698,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD166,doi_tac,dong_lanh,14.73,782,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD167,VIP,de_vo,21.89,765,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD168,thuong,nong_san,19.38,627,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD169,doi_tac,do_gia_dung,41.07,844,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD170,VIP,dong_lanh,22.64,806,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD171,VIP,de_vo,40.17,578,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD172,VIP,de_vo,8.2,916,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD173,doi_tac,do_gia_dung,42.58,101,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD174,doi_tac,do_gia_dung,4.22,651,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD175,doi_tac,linh_kien_dien_tu,6.6,875,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD176,doi_tac,dong_lanh,30.45,22,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD177,doi_tac,dong_lanh,2.73,142,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD178,doi_tac,linh_kien_dien_tu,36.27,538,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD179,doi_tac,linh_kien_dien_tu,29.74,569,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD180,thuong,do_gia_dung,19.22,69,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD181,doi_tac,do_gia_dung,30.87,387,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD182,doi_tac,dong_lanh,35.87,21,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD183,thuong,nong_san,49.31,464,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD184,doi_tac,nong_san,12.82,585,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD185,VIP,do_gia_dung,27.07,172,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD186,thuong,linh_kien_dien_tu,1.18,912,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD187,doi_tac,dong_lanh,35.29,511,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD188,thuong,nong_san,31.16,301,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD189,VIP,dong_lanh,6.56,229,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD190,doi_tac,nong_san,28.21,75,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD191,doi_tac,my_pham,13.72,705,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD192,VIP,linh_kien_dien_tu,45.7,615,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD193,thuong,my_pham,4.21,977,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD194,VIP,nong_san,24.0,752,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD195,thuong,my_pham,1.26,433,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD196,doi_tac,nong_san,48.35,675,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD197,thuong,de_vo,21.35,426,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD198,VIP,de_vo,36.36,853,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD199,doi_tac,linh_kien_dien_tu,9.43,643,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD200,VIP,my_pham,46.71,165,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD201,doi_tac,do_gia_dung,49.34,21,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD202,doi_tac,de_vo,17.18,476,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD203,thuong,my_pham,14.73,399,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD204,VIP,nong_san,28.61,935,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD205,VIP,nong_san,36.19,894,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD206,thuong,linh_kien_dien_tu,23.99,466,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD207,doi_tac,my_pham,9.68,761,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD208,doi_tac,do_gia_dung,2.14,343,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD209,thuong,my_pham,45.43,422,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD210,thuong,de_vo,33.3,21,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD211,thuong,dong_lanh,22.3,297,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD212,thuong,linh_kien_dien_tu,16.21,636,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD213,thuong,do_gia_dung,2.82,705,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD214,VIP,de_vo,37.87,597,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD215,thuong,dong_lanh,8.43,777,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD216,thuong,dong_lanh,16.62,711,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD217,doi_tac,my_pham,42.15,109,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD218,thuong,my_pham,5.85,226,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD219,VIP,dong_lanh,14.97,956,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD220,doi_tac,de_vo,12.36,236,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD221,thuong,de_vo,42.05,190,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD222,VIP,nong_san,21.31,895,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD223,VIP,do_gia_dung,16.58,279,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD224,VIP,my_pham,18.4,316,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD225,doi_tac,de_vo,16.95,568,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD226,doi_tac,linh_kien_dien_tu,2.48,2,trung_binh,xe_may,Giao hàng hệ thống
+ORD227,VIP,nong_san,38.59,857,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD228,thuong,dong_lanh,2.67,32,thap,xe_may,Giao hàng hệ thống
+ORD229,VIP,linh_kien_dien_tu,0.82,258,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD230,doi_tac,my_pham,46.67,710,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD231,thuong,my_pham,35.0,959,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD232,thuong,do_gia_dung,35.5,426,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD233,VIP,linh_kien_dien_tu,49.99,265,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD234,doi_tac,dong_lanh,16.16,469,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD235,thuong,my_pham,4.63,184,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD236,VIP,do_gia_dung,34.93,791,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD237,VIP,dong_lanh,15.29,530,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD238,VIP,de_vo,20.12,575,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD239,thuong,nong_san,22.52,99,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD240,thuong,linh_kien_dien_tu,23.69,684,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD241,VIP,dong_lanh,0.66,688,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD242,thuong,linh_kien_dien_tu,41.37,152,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD243,doi_tac,do_gia_dung,37.42,569,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD244,VIP,do_gia_dung,38.8,984,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD245,doi_tac,nong_san,42.87,685,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD246,doi_tac,my_pham,25.99,790,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD247,doi_tac,dong_lanh,32.87,915,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD248,VIP,linh_kien_dien_tu,14.88,334,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD249,thuong,dong_lanh,27.96,321,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD250,doi_tac,de_vo,26.37,474,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD251,thuong,de_vo,9.22,374,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD252,VIP,my_pham,32.51,504,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD253,doi_tac,linh_kien_dien_tu,21.2,697,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD254,VIP,de_vo,5.1,657,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD255,doi_tac,do_gia_dung,30.17,234,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD256,VIP,dong_lanh,17.59,138,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD257,doi_tac,nong_san,47.93,568,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD258,VIP,my_pham,41.62,500,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD259,thuong,linh_kien_dien_tu,1.25,148,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD260,thuong,do_gia_dung,42.9,617,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD261,thuong,dong_lanh,23.89,889,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD262,doi_tac,linh_kien_dien_tu,33.26,745,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD263,doi_tac,nong_san,4.75,494,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD264,VIP,dong_lanh,16.64,930,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD265,doi_tac,my_pham,49.34,605,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD266,doi_tac,linh_kien_dien_tu,43.62,804,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD267,VIP,my_pham,10.79,808,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD268,VIP,linh_kien_dien_tu,43.01,531,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD269,VIP,dong_lanh,4.16,76,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD270,thuong,de_vo,14.29,67,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD271,VIP,nong_san,43.73,406,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD272,thuong,nong_san,19.96,889,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD273,VIP,dong_lanh,3.03,115,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD274,doi_tac,linh_kien_dien_tu,30.33,474,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD275,doi_tac,do_gia_dung,46.59,117,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD276,doi_tac,my_pham,17.57,5,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD277,doi_tac,my_pham,22.54,515,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD278,thuong,de_vo,28.51,979,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD279,doi_tac,nong_san,30.07,54,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD280,doi_tac,de_vo,0.73,866,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD281,VIP,my_pham,24.51,273,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD282,thuong,linh_kien_dien_tu,48.71,815,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD283,doi_tac,my_pham,25.15,244,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD284,VIP,do_gia_dung,14.65,703,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD285,thuong,nong_san,0.7,486,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD286,thuong,de_vo,35.18,115,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD287,VIP,linh_kien_dien_tu,11.45,350,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD288,VIP,do_gia_dung,10.34,992,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD289,doi_tac,dong_lanh,15.26,904,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD290,VIP,nong_san,32.63,463,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD291,thuong,dong_lanh,30.4,677,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD292,doi_tac,do_gia_dung,29.6,805,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD293,thuong,do_gia_dung,48.38,503,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD294,thuong,nong_san,22.83,164,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD295,thuong,nong_san,5.17,738,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD296,doi_tac,de_vo,19.72,14,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD297,VIP,do_gia_dung,13.19,982,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD298,VIP,do_gia_dung,16.1,683,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD299,VIP,nong_san,41.81,69,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD300,doi_tac,nong_san,24.02,663,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD301,VIP,nong_san,10.81,555,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD302,thuong,linh_kien_dien_tu,25.12,709,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD303,doi_tac,nong_san,45.49,2,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD304,thuong,linh_kien_dien_tu,32.92,409,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD305,thuong,linh_kien_dien_tu,5.57,924,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD306,thuong,my_pham,21.29,802,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD307,doi_tac,do_gia_dung,9.75,357,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD308,VIP,de_vo,21.81,509,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD309,thuong,de_vo,15.03,152,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD310,doi_tac,nong_san,27.11,95,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD311,VIP,my_pham,29.42,177,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD312,VIP,dong_lanh,9.36,743,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD313,VIP,my_pham,44.82,383,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD314,doi_tac,dong_lanh,6.64,580,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD315,doi_tac,nong_san,23.04,165,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD316,VIP,nong_san,28.75,15,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD317,thuong,do_gia_dung,19.81,624,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD318,doi_tac,dong_lanh,2.15,801,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD319,VIP,de_vo,8.4,423,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD320,doi_tac,do_gia_dung,7.71,150,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD321,thuong,my_pham,5.54,768,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD322,thuong,dong_lanh,1.89,519,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD323,doi_tac,nong_san,38.77,643,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD324,doi_tac,dong_lanh,24.79,853,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD325,thuong,dong_lanh,31.35,185,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD326,thuong,dong_lanh,29.07,47,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD327,doi_tac,nong_san,45.01,721,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD328,doi_tac,nong_san,25.33,799,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD329,doi_tac,nong_san,6.61,765,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD330,doi_tac,do_gia_dung,7.53,143,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD331,VIP,do_gia_dung,27.99,539,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD332,VIP,dong_lanh,48.68,929,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD333,VIP,my_pham,24.64,158,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD334,VIP,linh_kien_dien_tu,45.4,630,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD335,VIP,my_pham,24.5,277,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD336,thuong,linh_kien_dien_tu,36.72,445,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD337,doi_tac,de_vo,40.77,401,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD338,doi_tac,dong_lanh,30.91,77,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD339,VIP,my_pham,9.93,3,nhanh,xe_may,Giao hàng hệ thống
+ORD340,thuong,linh_kien_dien_tu,14.24,565,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD341,doi_tac,do_gia_dung,49.26,10,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD342,VIP,dong_lanh,49.44,52,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD343,VIP,dong_lanh,15.58,81,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD344,VIP,linh_kien_dien_tu,42.07,677,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD345,thuong,nong_san,41.91,301,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD346,VIP,de_vo,1.55,899,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD347,thuong,dong_lanh,38.67,856,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD348,VIP,my_pham,39.33,42,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD349,VIP,de_vo,44.18,326,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD350,VIP,linh_kien_dien_tu,32.99,303,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD351,thuong,linh_kien_dien_tu,35.78,748,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD352,doi_tac,my_pham,16.8,845,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD353,thuong,nong_san,1.95,229,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD354,thuong,linh_kien_dien_tu,37.47,369,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD355,thuong,nong_san,14.24,434,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD356,thuong,nong_san,2.51,871,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD357,VIP,do_gia_dung,10.81,209,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD358,doi_tac,nong_san,18.6,950,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD359,thuong,do_gia_dung,18.12,829,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD360,VIP,linh_kien_dien_tu,44.77,737,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD361,doi_tac,dong_lanh,6.56,572,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD362,thuong,my_pham,48.01,179,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD363,thuong,nong_san,48.38,647,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD364,doi_tac,linh_kien_dien_tu,35.58,625,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD365,doi_tac,my_pham,10.45,988,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD366,VIP,nong_san,1.2,350,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD367,thuong,dong_lanh,8.02,555,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD368,doi_tac,nong_san,3.09,890,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD369,doi_tac,nong_san,21.39,143,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD370,doi_tac,dong_lanh,20.76,67,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD371,doi_tac,my_pham,43.65,865,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD372,thuong,de_vo,2.44,526,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD373,doi_tac,my_pham,19.75,299,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD374,VIP,dong_lanh,7.45,326,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD375,doi_tac,do_gia_dung,49.97,879,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD376,doi_tac,de_vo,24.24,461,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD377,thuong,nong_san,26.77,321,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD378,thuong,my_pham,15.03,831,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD379,doi_tac,nong_san,24.27,709,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD380,thuong,de_vo,1.03,874,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD381,doi_tac,nong_san,15.21,389,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD382,VIP,nong_san,6.83,421,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD383,doi_tac,de_vo,36.55,167,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD384,doi_tac,my_pham,23.65,758,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD385,thuong,de_vo,49.55,399,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD386,thuong,do_gia_dung,19.61,933,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD387,VIP,linh_kien_dien_tu,46.3,912,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD388,doi_tac,dong_lanh,6.57,648,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD389,thuong,my_pham,4.66,155,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD390,VIP,linh_kien_dien_tu,39.47,135,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD391,VIP,my_pham,49.95,966,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD392,thuong,dong_lanh,42.03,874,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD393,thuong,linh_kien_dien_tu,2.22,847,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD394,thuong,my_pham,15.2,915,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD395,doi_tac,dong_lanh,16.49,566,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD396,doi_tac,de_vo,7.76,782,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD397,thuong,de_vo,43.03,923,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD398,VIP,linh_kien_dien_tu,49.63,649,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD399,doi_tac,my_pham,6.39,785,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD400,VIP,nong_san,31.89,515,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD401,VIP,linh_kien_dien_tu,24.16,84,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD402,doi_tac,do_gia_dung,0.83,1000,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD403,doi_tac,de_vo,29.38,386,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD404,thuong,nong_san,44.47,635,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD405,thuong,do_gia_dung,29.88,680,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD406,thuong,my_pham,39.29,963,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD407,doi_tac,de_vo,8.62,21,trung_binh,xe_may,Giao hàng hệ thống
+ORD408,thuong,do_gia_dung,28.92,307,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD409,VIP,de_vo,21.44,860,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD410,doi_tac,de_vo,39.62,366,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD411,thuong,dong_lanh,32.29,672,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD412,thuong,do_gia_dung,17.71,745,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD413,thuong,linh_kien_dien_tu,22.61,642,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD414,thuong,de_vo,12.74,286,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD415,thuong,linh_kien_dien_tu,21.68,727,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD416,thuong,nong_san,46.94,903,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD417,VIP,de_vo,24.08,619,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD418,thuong,do_gia_dung,15.66,773,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD419,VIP,dong_lanh,10.05,487,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD420,thuong,de_vo,3.1,387,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD421,thuong,do_gia_dung,25.29,120,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD422,thuong,dong_lanh,1.38,139,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD423,thuong,do_gia_dung,49.28,860,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD424,doi_tac,linh_kien_dien_tu,37.14,300,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD425,VIP,dong_lanh,17.92,808,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD426,thuong,do_gia_dung,36.54,600,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD427,doi_tac,linh_kien_dien_tu,9.49,455,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD428,doi_tac,my_pham,49.05,967,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD429,VIP,dong_lanh,34.77,731,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD430,thuong,dong_lanh,31.06,849,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD431,VIP,linh_kien_dien_tu,40.84,349,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD432,thuong,linh_kien_dien_tu,2.23,131,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD433,doi_tac,do_gia_dung,37.77,623,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD434,thuong,nong_san,46.86,948,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD435,VIP,de_vo,45.44,712,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD436,VIP,de_vo,31.34,18,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD437,thuong,de_vo,38.66,452,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD438,VIP,nong_san,41.61,195,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD439,VIP,de_vo,9.7,104,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD440,thuong,do_gia_dung,3.39,141,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD441,VIP,my_pham,37.54,697,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD442,thuong,linh_kien_dien_tu,21.07,975,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD443,VIP,my_pham,39.21,603,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD444,doi_tac,dong_lanh,47.06,63,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD445,doi_tac,linh_kien_dien_tu,19.02,467,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD446,thuong,my_pham,5.06,447,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD447,doi_tac,dong_lanh,46.97,605,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD448,doi_tac,de_vo,35.82,28,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD449,thuong,my_pham,8.25,665,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD450,VIP,my_pham,20.22,673,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD451,VIP,do_gia_dung,35.52,397,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD452,thuong,de_vo,33.11,442,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD453,VIP,do_gia_dung,13.16,337,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD454,doi_tac,dong_lanh,18.17,842,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD455,VIP,de_vo,49.97,212,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD456,doi_tac,do_gia_dung,27.78,493,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD457,VIP,my_pham,40.9,199,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD458,doi_tac,dong_lanh,47.29,29,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD459,thuong,dong_lanh,6.0,33,trung_binh,xe_may,Giao hàng hệ thống
+ORD460,VIP,de_vo,8.03,823,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD461,doi_tac,linh_kien_dien_tu,32.2,708,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD462,VIP,my_pham,31.05,450,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD463,doi_tac,my_pham,3.68,855,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD464,VIP,my_pham,15.55,456,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD465,thuong,my_pham,47.22,597,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD466,thuong,de_vo,5.63,291,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD467,thuong,my_pham,4.73,171,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD468,VIP,dong_lanh,43.74,832,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD469,thuong,do_gia_dung,35.91,489,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD470,thuong,my_pham,26.1,397,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD471,VIP,nong_san,19.15,334,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD472,thuong,dong_lanh,21.41,985,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD473,thuong,de_vo,39.76,560,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD474,VIP,my_pham,2.67,235,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD475,doi_tac,de_vo,3.03,985,thap,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD476,doi_tac,nong_san,43.88,304,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD477,thuong,linh_kien_dien_tu,48.48,212,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD478,doi_tac,do_gia_dung,10.74,381,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD479,doi_tac,linh_kien_dien_tu,25.01,854,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD480,doi_tac,my_pham,23.63,379,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD481,doi_tac,nong_san,49.63,128,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD482,thuong,linh_kien_dien_tu,31.77,86,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD483,thuong,linh_kien_dien_tu,22.68,511,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD484,doi_tac,do_gia_dung,14.9,986,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD485,thuong,dong_lanh,14.65,810,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD486,thuong,do_gia_dung,41.78,131,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD487,VIP,dong_lanh,17.37,54,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD488,thuong,de_vo,3.37,68,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD489,thuong,nong_san,48.64,22,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD490,doi_tac,linh_kien_dien_tu,1.39,657,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD491,doi_tac,de_vo,10.87,224,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD492,thuong,linh_kien_dien_tu,35.28,624,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD493,thuong,do_gia_dung,18.98,386,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD494,VIP,do_gia_dung,3.59,675,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD495,VIP,de_vo,0.68,628,nhanh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD496,doi_tac,nong_san,28.3,105,thap,xe_tai_hang_nang,Giao hàng hệ thống
+ORD497,doi_tac,linh_kien_dien_tu,6.93,251,trung_binh,xe_tai_hang_nhe,Giao hàng hệ thống
+ORD498,VIP,dong_lanh,44.2,931,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD499,VIP,linh_kien_dien_tu,40.47,696,nhanh,xe_tai_hang_nang,Giao hàng hệ thống
+ORD500,thuong,nong_san,23.06,297,trung_binh,xe_tai_hang_nang,Giao hàng hệ thống
