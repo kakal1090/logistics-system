@@ -1,53 +1,64 @@
 import pandas as pd
 import random
+import os
 
-def knn_logic_real(weight, distance):
-    # Logic phân loại sát thực tế Logistics
+def knn_logic_standard(weight, distance):
+  
     if weight > 30:
-        return "Xe Tải Hạng Nặng"
+        return "xe_tai_hang_nang"
     elif weight > 10:
-        if distance > 100:
-            return "Xe Tải Hạng Nặng"
-        return "Xe Tải Hạng Nhẹ"
-    else: # weight <= 10
-        if distance > 50:
-            return "Xe Tải Hạng Nhẹ"
-        return "Xe Máy"
+        return "xe_tai_hang_nhe" if distance <= 100 else "xe_tai_hang_nang"
+    else:
+        return "xe_may" if distance <= 50 else "xe_tai_hang_nhe"
 
-def generate_real_logistics_data():
-    cust_types = ['VIP', 'Thường', 'Đối tác']
-    # Danh sách loại hàng thực tế
-    prod_types = ['Linh kiện điện tử', 'Hàng đông lạnh', 'Hàng dễ vỡ', 'Nông sản', 'Mỹ phẩm', 'Đồ gia dụng']
+def generate_standard_logistics_data():
+    # 1. CHUẨN HÓA DANH MỤC: 
+    cust_types = ['VIP', 'thuong', 'doi_tac']
+    prod_types = ['linh_kien_dien_tu', 'dong_lanh', 'de_vo', 'nong_san', 'my_pham', 'do_gia_dung']
+    priorities = ['nhanh', 'trung_binh', 'thap']
     
     data = []
+    
+    # Tự động tạo thư mục data nếu máy bạn khác chưa có
+    if not os.path.exists('data'):
+        os.makedirs('data')
+
     for i in range(1, 501):
-        # Tạo trọng lượng ngẫu nhiên từ 0.5kg đến 50kg
+        # Tạo trọng lượng và khoảng cách ngẫu nhiên
         w = round(random.uniform(0.5, 50.0), 2)
+        d = random.randint(2, 1000)
         
-        # Tạo khoảng cách: hàng nặng thường đi xa, hàng nhẹ đi gần
-        if w > 30:
-            d = random.randint(50, 1000)
-        else:
-            d = random.randint(2, 200)
-            
-        result = knn_logic_real(w, d)
+        # Chạy thuật toán phân loại
+        v_type = knn_logic_standard(w, d)
         
+        # Chọn khách hàng ngẫu nhiên
+        customer = random.choice(cust_types)
+        
+        # 2. CHUẨN HÓA KEY & DATA: Khớp hoàn toàn với JSON và UI
         data.append({
-            'OrderID': i,
-            'Product_Type': random.choice(prod_types),
-            'Weight_kg': w,
-            'Distance_km': d,
-            'Vehicle_Type': result
+            'order_id': f"ORD{i:03d}",         # Định dạng chuẩn: ORD001, ORD002...
+            'customer_type': customer,
+            'product_type': random.choice(prod_types),
+            'weight': w,
+            'distance': d,
+            # Logic Priority: Khách VIP luôn ưu tiên Giao nhanh
+            'priority': 'nhanh' if customer == 'VIP' else random.choice(['trung_binh', 'thap']),
+            'vehicle_type': v_type,
+            'note': 'Giao hàng hệ thống'
         })
     
+    # Tạo DataFrame
     df = pd.DataFrame(data)
-    df.to_csv("data/orders_result_500.csv", index=False)
     
-    print("-" * 50)
-    print("🚀 ĐANG KHỞI TẠO 500 ĐƠN HÀNG LOGISTICS THỰC TẾ...")
-    print(df.head(15)) # In 15 dòng để kiểm tra độ đa dạng
-    print("-" * 50)
-    print(f"✅ HOÀN TẤT! Đã lưu dữ liệu tại: data/orders_result_500.csv")
+    # 3. XUẤT FILE: Dùng utf-8-sig để mở Excel không bị lỗi font
+    file_path = "data/orders_result_500.csv"
+    df.to_csv(file_path, index=False, encoding='utf-8-sig')
+    
+    print("-" * 60)
+    print("🚀 ĐÃ HOÀN TẤT CHUẨN HÓA 500 ĐƠN HÀNG")
+    print(df.head(15)) # In 15 dòng để check format cột và dữ liệu
+    print("-" * 60)
+    print(f"✅ File sạch đã sẵn sàng tại: {file_path}")
 
 if __name__ == "__main__":
-    generate_real_logistics_data()
+    generate_standard_logistics_data()
