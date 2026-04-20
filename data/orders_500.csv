@@ -1,0 +1,501 @@
+id,customer_type,product_type,weight,distance
+1,Thường,Linh kiện điện tử,28.55,857
+2,VIP,Sắt thép,9.61,1011
+3,Đối tác,Hàng ĐÔNG LẠNH,30.99,410
+4,Đối tác,Gốm sứ DỄ VỠ,5.96,1166
+5,Thường,Gốm sứ DỄ VỠ,33.86,252
+6,Đối tác,Nông sản ST25,8.34,1495
+7,Đối tác,Linh kiện điện tử,34.61,549
+8,Đối tác,Linh kiện điện tử,23.44,595
+9,Đối tác,Hàng ĐÔNG LẠNH,35.74,920
+10,VIP,Gốm sứ DỄ VỠ,37.04,1006
+11,VIP,Sắt thép,47.24,1000
+12,VIP,Nông sản ST25,22.53,506
+13,Đối tác,Linh kiện điện tử,1.8,270
+14,Thường,Mỹ phẩm,5.94,1020
+15,VIP,Nông sản ST25,30.62,978
+16,Thường,Nông sản ST25,4.19,1496
+17,VIP,Nông sản ST25,26.52,1107
+18,VIP,Nông sản ST25,42.94,1407
+19,Thường,Sắt thép,43.77,1407
+20,Đối tác,Mỹ phẩm,28.91,1036
+21,VIP,Gốm sứ DỄ VỠ,5.37,544
+22,VIP,Mỹ phẩm,5.14,1282
+23,Đối tác,Nông sản ST25,7.6,414
+24,VIP,Sắt thép,37.66,302
+25,Đối tác,Mỹ phẩm,9.64,631
+26,Đối tác,Hàng ĐÔNG LẠNH,11.73,635
+27,Thường,Linh kiện điện tử,22.38,12
+28,VIP,Hàng ĐÔNG LẠNH,44.01,1344
+29,Thường,Linh kiện điện tử,48.69,343
+30,Đối tác,Hàng ĐÔNG LẠNH,40.94,375
+31,Đối tác,Hàng ĐÔNG LẠNH,44.77,401
+32,Đối tác,Linh kiện điện tử,41.67,904
+33,VIP,Mỹ phẩm,30.73,971
+34,VIP,Sắt thép,14.8,851
+35,VIP,Sắt thép,13.18,1152
+36,Thường,Linh kiện điện tử,2.84,351
+37,Đối tác,Sắt thép,27.65,1221
+38,VIP,Nông sản ST25,0.18,882
+39,Thường,Sắt thép,40.51,1262
+40,Đối tác,Sắt thép,33.22,420
+41,Thường,Nông sản ST25,7.31,373
+42,Thường,Gốm sứ DỄ VỠ,35.17,357
+43,VIP,Nông sản ST25,20.07,446
+44,VIP,Nông sản ST25,8.86,1077
+45,Thường,Nông sản ST25,6.62,1128
+46,Đối tác,Sắt thép,3.33,836
+47,Đối tác,Mỹ phẩm,7.96,1293
+48,VIP,Mỹ phẩm,42.56,123
+49,Đối tác,Hàng ĐÔNG LẠNH,9.58,120
+50,Đối tác,Gốm sứ DỄ VỠ,32.8,31
+51,Thường,Linh kiện điện tử,25.21,1016
+52,Thường,Gốm sứ DỄ VỠ,26.29,1414
+53,VIP,Mỹ phẩm,37.43,1454
+54,Đối tác,Nông sản ST25,31.46,460
+55,VIP,Gốm sứ DỄ VỠ,12.46,596
+56,VIP,Gốm sứ DỄ VỠ,33.59,331
+57,Đối tác,Nông sản ST25,10.38,903
+58,Đối tác,Sắt thép,19.09,709
+59,Đối tác,Sắt thép,21.96,114
+60,Thường,Gốm sứ DỄ VỠ,32.66,936
+61,VIP,Nông sản ST25,20.13,863
+62,Đối tác,Gốm sứ DỄ VỠ,20.59,606
+63,VIP,Sắt thép,29.63,858
+64,Đối tác,Hàng ĐÔNG LẠNH,20.94,781
+65,Đối tác,Sắt thép,12.39,1429
+66,VIP,Gốm sứ DỄ VỠ,21.82,212
+67,Thường,Hàng ĐÔNG LẠNH,47.13,545
+68,VIP,Nông sản ST25,8.48,275
+69,Thường,Gốm sứ DỄ VỠ,5.74,918
+70,Thường,Linh kiện điện tử,15.2,373
+71,VIP,Hàng ĐÔNG LẠNH,34.94,768
+72,VIP,Hàng ĐÔNG LẠNH,29.54,108
+73,Đối tác,Linh kiện điện tử,38.47,364
+74,VIP,Mỹ phẩm,46.42,1098
+75,VIP,Linh kiện điện tử,37.13,1309
+76,VIP,Gốm sứ DỄ VỠ,38.37,576
+77,Thường,Mỹ phẩm,31.37,1111
+78,Đối tác,Nông sản ST25,18.72,1186
+79,VIP,Hàng ĐÔNG LẠNH,42.63,187
+80,VIP,Gốm sứ DỄ VỠ,14.47,1157
+81,Đối tác,Sắt thép,38.69,1001
+82,VIP,Hàng ĐÔNG LẠNH,48.42,804
+83,VIP,Mỹ phẩm,3.69,1238
+84,VIP,Hàng ĐÔNG LẠNH,25.91,408
+85,Đối tác,Linh kiện điện tử,2.04,707
+86,VIP,Sắt thép,15.06,1218
+87,VIP,Mỹ phẩm,12.46,45
+88,Đối tác,Hàng ĐÔNG LẠNH,10.65,972
+89,Đối tác,Gốm sứ DỄ VỠ,36.97,680
+90,Đối tác,Linh kiện điện tử,33.02,1174
+91,VIP,Mỹ phẩm,9.05,175
+92,Thường,Nông sản ST25,35.8,1233
+93,Thường,Hàng ĐÔNG LẠNH,44.69,392
+94,Thường,Linh kiện điện tử,38.04,962
+95,Thường,Linh kiện điện tử,39.48,169
+96,Thường,Gốm sứ DỄ VỠ,39.78,992
+97,VIP,Gốm sứ DỄ VỠ,21.21,733
+98,Thường,Gốm sứ DỄ VỠ,13.19,296
+99,VIP,Mỹ phẩm,33.35,122
+100,Đối tác,Gốm sứ DỄ VỠ,31.68,1193
+101,VIP,Gốm sứ DỄ VỠ,8.28,688
+102,VIP,Hàng ĐÔNG LẠNH,24.77,155
+103,Thường,Nông sản ST25,22.52,1234
+104,Thường,Mỹ phẩm,29.22,916
+105,VIP,Sắt thép,17.21,1307
+106,Đối tác,Mỹ phẩm,43.78,1230
+107,Thường,Nông sản ST25,42.42,1061
+108,VIP,Nông sản ST25,11.01,208
+109,Thường,Gốm sứ DỄ VỠ,37.46,420
+110,Thường,Hàng ĐÔNG LẠNH,9.99,1086
+111,Đối tác,Nông sản ST25,21.91,660
+112,Thường,Gốm sứ DỄ VỠ,13.13,890
+113,VIP,Sắt thép,21.93,1204
+114,VIP,Mỹ phẩm,33.04,728
+115,Thường,Hàng ĐÔNG LẠNH,10.51,398
+116,VIP,Linh kiện điện tử,22.44,206
+117,VIP,Sắt thép,34.64,1125
+118,Đối tác,Gốm sứ DỄ VỠ,27.55,1215
+119,Thường,Nông sản ST25,22.03,799
+120,Thường,Nông sản ST25,39.08,456
+121,Thường,Linh kiện điện tử,6.45,129
+122,Thường,Nông sản ST25,22.45,164
+123,Thường,Sắt thép,24.84,634
+124,VIP,Sắt thép,43.8,597
+125,VIP,Sắt thép,38.29,738
+126,Đối tác,Linh kiện điện tử,22.3,40
+127,VIP,Nông sản ST25,11.77,89
+128,Đối tác,Hàng ĐÔNG LẠNH,39.07,442
+129,Đối tác,Gốm sứ DỄ VỠ,16.59,368
+130,VIP,Mỹ phẩm,10.74,846
+131,VIP,Linh kiện điện tử,9.16,827
+132,Thường,Linh kiện điện tử,10.68,193
+133,Đối tác,Sắt thép,13.7,804
+134,Thường,Sắt thép,30.78,803
+135,Đối tác,Linh kiện điện tử,25.17,289
+136,Thường,Nông sản ST25,20.5,294
+137,VIP,Hàng ĐÔNG LẠNH,45.76,618
+138,Thường,Gốm sứ DỄ VỠ,49.77,1332
+139,Đối tác,Nông sản ST25,40.33,1273
+140,Đối tác,Sắt thép,30.69,500
+141,VIP,Gốm sứ DỄ VỠ,35.77,1183
+142,VIP,Sắt thép,23.8,343
+143,Thường,Hàng ĐÔNG LẠNH,36.92,158
+144,VIP,Linh kiện điện tử,45.37,48
+145,Thường,Linh kiện điện tử,10.53,173
+146,Đối tác,Sắt thép,40.02,1024
+147,Thường,Gốm sứ DỄ VỠ,46.3,680
+148,Thường,Sắt thép,6.9,1397
+149,Thường,Linh kiện điện tử,25.28,171
+150,Thường,Gốm sứ DỄ VỠ,37.52,1044
+151,Đối tác,Sắt thép,35.0,806
+152,VIP,Sắt thép,3.57,431
+153,Đối tác,Mỹ phẩm,49.41,1418
+154,Đối tác,Mỹ phẩm,7.67,204
+155,VIP,Hàng ĐÔNG LẠNH,14.73,492
+156,VIP,Mỹ phẩm,31.17,1418
+157,Thường,Gốm sứ DỄ VỠ,9.0,969
+158,Đối tác,Gốm sứ DỄ VỠ,45.96,328
+159,Đối tác,Mỹ phẩm,46.19,639
+160,Đối tác,Hàng ĐÔNG LẠNH,17.77,1303
+161,Đối tác,Linh kiện điện tử,21.68,1267
+162,Đối tác,Nông sản ST25,5.17,456
+163,Thường,Gốm sứ DỄ VỠ,14.41,225
+164,Đối tác,Linh kiện điện tử,21.12,651
+165,Thường,Mỹ phẩm,24.68,991
+166,VIP,Gốm sứ DỄ VỠ,49.8,1071
+167,VIP,Mỹ phẩm,38.35,1427
+168,Đối tác,Nông sản ST25,14.5,656
+169,VIP,Linh kiện điện tử,28.62,512
+170,Đối tác,Nông sản ST25,5.48,954
+171,Thường,Sắt thép,3.15,284
+172,Thường,Sắt thép,45.24,1436
+173,Đối tác,Linh kiện điện tử,22.92,120
+174,Đối tác,Linh kiện điện tử,35.2,167
+175,Thường,Gốm sứ DỄ VỠ,13.62,898
+176,VIP,Mỹ phẩm,0.69,1241
+177,Đối tác,Hàng ĐÔNG LẠNH,23.94,1122
+178,VIP,Gốm sứ DỄ VỠ,7.5,1285
+179,Thường,Nông sản ST25,16.17,1019
+180,VIP,Sắt thép,39.79,122
+181,Đối tác,Gốm sứ DỄ VỠ,42.91,1038
+182,Thường,Sắt thép,14.7,29
+183,Thường,Sắt thép,4.78,1324
+184,VIP,Mỹ phẩm,44.57,910
+185,VIP,Hàng ĐÔNG LẠNH,37.31,129
+186,Thường,Nông sản ST25,22.33,1329
+187,VIP,Linh kiện điện tử,23.99,333
+188,Đối tác,Sắt thép,2.76,1486
+189,VIP,Linh kiện điện tử,36.88,228
+190,VIP,Mỹ phẩm,43.19,487
+191,VIP,Gốm sứ DỄ VỠ,20.69,1386
+192,Đối tác,Nông sản ST25,42.86,139
+193,Đối tác,Sắt thép,3.76,687
+194,VIP,Linh kiện điện tử,16.99,229
+195,Đối tác,Hàng ĐÔNG LẠNH,22.04,849
+196,VIP,Mỹ phẩm,27.68,722
+197,VIP,Gốm sứ DỄ VỠ,12.89,1491
+198,Thường,Nông sản ST25,47.19,1290
+199,VIP,Hàng ĐÔNG LẠNH,25.03,1341
+200,VIP,Hàng ĐÔNG LẠNH,10.73,1247
+201,Thường,Gốm sứ DỄ VỠ,13.66,1073
+202,VIP,Sắt thép,11.35,795
+203,Thường,Hàng ĐÔNG LẠNH,17.2,339
+204,Thường,Nông sản ST25,43.68,774
+205,Đối tác,Hàng ĐÔNG LẠNH,1.89,245
+206,Thường,Hàng ĐÔNG LẠNH,37.12,1243
+207,Đối tác,Nông sản ST25,24.47,255
+208,Đối tác,Sắt thép,26.62,1300
+209,VIP,Sắt thép,29.18,69
+210,Đối tác,Nông sản ST25,40.32,916
+211,VIP,Linh kiện điện tử,34.49,843
+212,Đối tác,Hàng ĐÔNG LẠNH,29.99,201
+213,VIP,Gốm sứ DỄ VỠ,4.76,1008
+214,VIP,Hàng ĐÔNG LẠNH,26.54,1064
+215,VIP,Gốm sứ DỄ VỠ,32.29,699
+216,Thường,Mỹ phẩm,26.09,1418
+217,Thường,Mỹ phẩm,40.78,1366
+218,Thường,Mỹ phẩm,17.21,1007
+219,Thường,Gốm sứ DỄ VỠ,43.89,550
+220,Thường,Sắt thép,44.84,969
+221,Thường,Hàng ĐÔNG LẠNH,4.05,685
+222,Thường,Sắt thép,40.23,1269
+223,Thường,Nông sản ST25,10.03,720
+224,Đối tác,Sắt thép,4.02,803
+225,Đối tác,Gốm sứ DỄ VỠ,28.3,840
+226,VIP,Hàng ĐÔNG LẠNH,5.66,739
+227,Đối tác,Sắt thép,43.87,1232
+228,VIP,Nông sản ST25,19.7,500
+229,Thường,Linh kiện điện tử,41.34,404
+230,Đối tác,Sắt thép,19.44,183
+231,Đối tác,Hàng ĐÔNG LẠNH,26.3,781
+232,Thường,Gốm sứ DỄ VỠ,29.65,495
+233,VIP,Linh kiện điện tử,7.48,537
+234,Đối tác,Hàng ĐÔNG LẠNH,27.99,76
+235,Đối tác,Gốm sứ DỄ VỠ,18.1,1357
+236,Thường,Hàng ĐÔNG LẠNH,29.22,576
+237,Thường,Sắt thép,32.62,130
+238,Thường,Nông sản ST25,1.25,23
+239,Thường,Gốm sứ DỄ VỠ,17.89,177
+240,Đối tác,Nông sản ST25,42.4,1239
+241,Đối tác,Gốm sứ DỄ VỠ,2.41,1151
+242,Thường,Linh kiện điện tử,36.39,683
+243,Đối tác,Gốm sứ DỄ VỠ,2.46,576
+244,Thường,Linh kiện điện tử,37.75,362
+245,Đối tác,Linh kiện điện tử,13.62,1361
+246,VIP,Sắt thép,37.06,449
+247,VIP,Gốm sứ DỄ VỠ,47.4,823
+248,VIP,Gốm sứ DỄ VỠ,3.99,18
+249,Thường,Sắt thép,49.6,234
+250,Đối tác,Nông sản ST25,46.78,174
+251,VIP,Sắt thép,9.68,211
+252,VIP,Hàng ĐÔNG LẠNH,24.93,1403
+253,Thường,Hàng ĐÔNG LẠNH,4.51,733
+254,Đối tác,Gốm sứ DỄ VỠ,46.6,565
+255,VIP,Hàng ĐÔNG LẠNH,2.81,609
+256,Thường,Gốm sứ DỄ VỠ,1.95,417
+257,Thường,Sắt thép,13.29,1237
+258,Thường,Gốm sứ DỄ VỠ,13.6,881
+259,VIP,Hàng ĐÔNG LẠNH,35.19,1038
+260,Thường,Nông sản ST25,30.8,938
+261,Thường,Hàng ĐÔNG LẠNH,5.25,363
+262,Thường,Linh kiện điện tử,30.54,22
+263,Thường,Gốm sứ DỄ VỠ,2.84,964
+264,VIP,Linh kiện điện tử,11.54,497
+265,VIP,Nông sản ST25,28.85,223
+266,VIP,Nông sản ST25,12.41,617
+267,Thường,Gốm sứ DỄ VỠ,9.06,103
+268,Thường,Nông sản ST25,22.23,486
+269,VIP,Gốm sứ DỄ VỠ,2.27,280
+270,Đối tác,Nông sản ST25,17.81,708
+271,Đối tác,Linh kiện điện tử,46.75,406
+272,VIP,Gốm sứ DỄ VỠ,12.67,222
+273,Thường,Mỹ phẩm,46.75,329
+274,Đối tác,Linh kiện điện tử,1.4,682
+275,VIP,Gốm sứ DỄ VỠ,4.17,130
+276,Đối tác,Mỹ phẩm,41.78,616
+277,Đối tác,Sắt thép,41.11,318
+278,Thường,Nông sản ST25,5.7,159
+279,Đối tác,Nông sản ST25,33.16,83
+280,VIP,Linh kiện điện tử,17.24,1371
+281,Đối tác,Gốm sứ DỄ VỠ,39.38,584
+282,Đối tác,Mỹ phẩm,28.32,1435
+283,Đối tác,Gốm sứ DỄ VỠ,19.87,682
+284,Đối tác,Hàng ĐÔNG LẠNH,1.62,777
+285,VIP,Sắt thép,21.78,785
+286,Đối tác,Hàng ĐÔNG LẠNH,4.41,1018
+287,VIP,Gốm sứ DỄ VỠ,10.61,1070
+288,Thường,Hàng ĐÔNG LẠNH,1.26,946
+289,Thường,Hàng ĐÔNG LẠNH,28.48,873
+290,Đối tác,Nông sản ST25,6.51,1108
+291,VIP,Linh kiện điện tử,42.9,1268
+292,Đối tác,Gốm sứ DỄ VỠ,26.07,15
+293,Đối tác,Sắt thép,5.32,762
+294,Thường,Nông sản ST25,35.32,512
+295,Thường,Nông sản ST25,44.65,529
+296,VIP,Gốm sứ DỄ VỠ,36.98,1148
+297,Thường,Linh kiện điện tử,27.7,1270
+298,VIP,Hàng ĐÔNG LẠNH,46.34,1150
+299,Đối tác,Gốm sứ DỄ VỠ,12.9,379
+300,Đối tác,Linh kiện điện tử,35.64,1451
+301,Thường,Linh kiện điện tử,5.79,504
+302,Đối tác,Sắt thép,32.71,608
+303,Thường,Sắt thép,8.99,410
+304,Đối tác,Nông sản ST25,39.86,387
+305,Thường,Mỹ phẩm,39.16,607
+306,Đối tác,Mỹ phẩm,43.92,1219
+307,Thường,Mỹ phẩm,46.8,105
+308,Đối tác,Gốm sứ DỄ VỠ,44.55,124
+309,VIP,Gốm sứ DỄ VỠ,48.84,773
+310,Đối tác,Gốm sứ DỄ VỠ,32.55,394
+311,Đối tác,Gốm sứ DỄ VỠ,22.73,1386
+312,VIP,Linh kiện điện tử,49.39,1024
+313,VIP,Hàng ĐÔNG LẠNH,31.38,427
+314,VIP,Sắt thép,44.68,807
+315,Đối tác,Mỹ phẩm,11.04,849
+316,VIP,Hàng ĐÔNG LẠNH,17.43,828
+317,Đối tác,Gốm sứ DỄ VỠ,36.5,1065
+318,Thường,Nông sản ST25,21.02,699
+319,VIP,Nông sản ST25,45.03,345
+320,Đối tác,Nông sản ST25,17.94,272
+321,VIP,Sắt thép,33.07,496
+322,VIP,Hàng ĐÔNG LẠNH,26.47,858
+323,VIP,Mỹ phẩm,42.58,795
+324,VIP,Nông sản ST25,30.25,515
+325,VIP,Mỹ phẩm,9.7,727
+326,Thường,Linh kiện điện tử,33.23,1096
+327,VIP,Sắt thép,10.91,380
+328,Đối tác,Nông sản ST25,11.81,419
+329,Thường,Hàng ĐÔNG LẠNH,3.93,60
+330,Đối tác,Sắt thép,14.71,767
+331,VIP,Hàng ĐÔNG LẠNH,35.63,1146
+332,Đối tác,Linh kiện điện tử,16.24,747
+333,VIP,Linh kiện điện tử,42.27,34
+334,VIP,Mỹ phẩm,13.44,244
+335,VIP,Gốm sứ DỄ VỠ,46.0,1345
+336,VIP,Sắt thép,39.65,1173
+337,Đối tác,Sắt thép,14.51,956
+338,VIP,Linh kiện điện tử,36.36,444
+339,Thường,Mỹ phẩm,39.95,847
+340,VIP,Mỹ phẩm,42.09,1064
+341,VIP,Linh kiện điện tử,4.02,697
+342,Thường,Mỹ phẩm,0.76,287
+343,Đối tác,Hàng ĐÔNG LẠNH,40.05,268
+344,Thường,Linh kiện điện tử,7.65,540
+345,Thường,Hàng ĐÔNG LẠNH,47.36,328
+346,Thường,Sắt thép,5.37,359
+347,VIP,Sắt thép,25.52,1218
+348,Đối tác,Sắt thép,39.23,260
+349,Thường,Nông sản ST25,17.63,1129
+350,Đối tác,Mỹ phẩm,35.22,765
+351,Thường,Sắt thép,16.0,474
+352,Thường,Mỹ phẩm,21.72,1310
+353,Thường,Linh kiện điện tử,23.78,1223
+354,Thường,Mỹ phẩm,27.4,1251
+355,Đối tác,Mỹ phẩm,29.3,551
+356,Đối tác,Sắt thép,47.51,1468
+357,Đối tác,Hàng ĐÔNG LẠNH,45.44,1201
+358,VIP,Sắt thép,40.88,695
+359,Thường,Hàng ĐÔNG LẠNH,4.07,105
+360,Đối tác,Mỹ phẩm,46.88,982
+361,Đối tác,Linh kiện điện tử,31.06,546
+362,VIP,Hàng ĐÔNG LẠNH,2.25,629
+363,Thường,Mỹ phẩm,14.85,198
+364,Đối tác,Sắt thép,45.31,910
+365,Thường,Linh kiện điện tử,38.07,427
+366,Đối tác,Mỹ phẩm,20.54,1000
+367,VIP,Nông sản ST25,28.27,1190
+368,Đối tác,Gốm sứ DỄ VỠ,32.78,904
+369,VIP,Linh kiện điện tử,19.88,349
+370,Thường,Linh kiện điện tử,22.18,475
+371,Thường,Hàng ĐÔNG LẠNH,41.49,944
+372,Đối tác,Sắt thép,38.18,1221
+373,Đối tác,Nông sản ST25,43.48,414
+374,Thường,Nông sản ST25,47.05,581
+375,Đối tác,Hàng ĐÔNG LẠNH,26.86,1368
+376,Thường,Gốm sứ DỄ VỠ,17.38,1398
+377,Đối tác,Mỹ phẩm,19.76,817
+378,Đối tác,Mỹ phẩm,27.6,131
+379,Thường,Linh kiện điện tử,37.55,1260
+380,Đối tác,Mỹ phẩm,29.38,1019
+381,Đối tác,Gốm sứ DỄ VỠ,30.73,1100
+382,Đối tác,Gốm sứ DỄ VỠ,15.19,130
+383,Thường,Mỹ phẩm,11.89,1030
+384,Thường,Hàng ĐÔNG LẠNH,47.09,122
+385,Đối tác,Hàng ĐÔNG LẠNH,33.1,481
+386,Đối tác,Gốm sứ DỄ VỠ,37.87,1038
+387,Đối tác,Gốm sứ DỄ VỠ,44.85,246
+388,Đối tác,Gốm sứ DỄ VỠ,8.07,659
+389,Thường,Hàng ĐÔNG LẠNH,9.44,654
+390,VIP,Gốm sứ DỄ VỠ,16.92,632
+391,VIP,Nông sản ST25,9.77,178
+392,VIP,Nông sản ST25,10.54,374
+393,VIP,Gốm sứ DỄ VỠ,14.65,1299
+394,Đối tác,Mỹ phẩm,23.9,278
+395,VIP,Hàng ĐÔNG LẠNH,4.18,132
+396,Thường,Gốm sứ DỄ VỠ,12.05,1420
+397,Thường,Sắt thép,40.47,1015
+398,VIP,Linh kiện điện tử,32.87,765
+399,VIP,Hàng ĐÔNG LẠNH,47.62,1114
+400,Thường,Hàng ĐÔNG LẠNH,34.3,644
+401,Đối tác,Mỹ phẩm,24.18,439
+402,Đối tác,Sắt thép,6.57,998
+403,Thường,Gốm sứ DỄ VỠ,35.97,827
+404,Đối tác,Mỹ phẩm,36.34,784
+405,Đối tác,Gốm sứ DỄ VỠ,19.23,1416
+406,Thường,Sắt thép,29.65,138
+407,Thường,Hàng ĐÔNG LẠNH,16.35,341
+408,Thường,Gốm sứ DỄ VỠ,20.14,1168
+409,Đối tác,Nông sản ST25,35.24,619
+410,Đối tác,Hàng ĐÔNG LẠNH,32.35,822
+411,VIP,Nông sản ST25,19.83,800
+412,Thường,Nông sản ST25,36.91,484
+413,Đối tác,Gốm sứ DỄ VỠ,39.26,978
+414,Đối tác,Sắt thép,30.2,1088
+415,Thường,Nông sản ST25,33.07,1007
+416,VIP,Linh kiện điện tử,26.14,1211
+417,VIP,Sắt thép,45.12,1105
+418,Đối tác,Gốm sứ DỄ VỠ,10.09,713
+419,Thường,Linh kiện điện tử,10.35,1141
+420,Đối tác,Nông sản ST25,49.79,806
+421,Thường,Linh kiện điện tử,7.04,553
+422,Thường,Sắt thép,29.75,896
+423,Thường,Mỹ phẩm,29.21,1099
+424,Thường,Sắt thép,47.08,1150
+425,Đối tác,Linh kiện điện tử,1.22,1406
+426,Thường,Gốm sứ DỄ VỠ,49.61,668
+427,Thường,Linh kiện điện tử,34.72,84
+428,Thường,Gốm sứ DỄ VỠ,11.39,593
+429,Thường,Gốm sứ DỄ VỠ,37.64,1297
+430,Thường,Mỹ phẩm,2.9,892
+431,Đối tác,Nông sản ST25,6.12,1028
+432,VIP,Mỹ phẩm,1.31,1457
+433,Đối tác,Mỹ phẩm,5.92,596
+434,Thường,Hàng ĐÔNG LẠNH,19.11,62
+435,Đối tác,Sắt thép,3.21,1070
+436,VIP,Linh kiện điện tử,44.29,157
+437,VIP,Sắt thép,24.81,429
+438,Thường,Linh kiện điện tử,45.71,1450
+439,VIP,Sắt thép,45.97,854
+440,Thường,Nông sản ST25,17.08,990
+441,Đối tác,Linh kiện điện tử,11.41,767
+442,Đối tác,Gốm sứ DỄ VỠ,28.96,186
+443,Thường,Mỹ phẩm,34.7,431
+444,Đối tác,Mỹ phẩm,39.33,1183
+445,VIP,Sắt thép,25.57,600
+446,Đối tác,Mỹ phẩm,2.78,1249
+447,Đối tác,Mỹ phẩm,45.6,447
+448,Đối tác,Nông sản ST25,32.94,57
+449,Thường,Hàng ĐÔNG LẠNH,45.04,640
+450,Thường,Sắt thép,37.27,1343
+451,Thường,Gốm sứ DỄ VỠ,37.21,675
+452,VIP,Linh kiện điện tử,32.91,1028
+453,Thường,Linh kiện điện tử,46.39,139
+454,VIP,Sắt thép,6.53,958
+455,Thường,Mỹ phẩm,27.92,419
+456,Thường,Hàng ĐÔNG LẠNH,11.81,496
+457,Thường,Sắt thép,35.22,154
+458,Thường,Sắt thép,11.44,304
+459,VIP,Hàng ĐÔNG LẠNH,23.04,540
+460,Thường,Linh kiện điện tử,37.19,1441
+461,Thường,Sắt thép,9.72,544
+462,Thường,Gốm sứ DỄ VỠ,4.36,753
+463,Đối tác,Linh kiện điện tử,23.83,859
+464,Đối tác,Linh kiện điện tử,40.79,171
+465,Đối tác,Sắt thép,46.18,727
+466,VIP,Nông sản ST25,33.63,263
+467,Đối tác,Linh kiện điện tử,23.52,1455
+468,Đối tác,Mỹ phẩm,36.06,317
+469,VIP,Sắt thép,28.65,849
+470,VIP,Mỹ phẩm,15.91,1260
+471,Đối tác,Gốm sứ DỄ VỠ,16.47,788
+472,VIP,Linh kiện điện tử,4.1,756
+473,VIP,Linh kiện điện tử,46.32,719
+474,Thường,Linh kiện điện tử,48.9,593
+475,Đối tác,Sắt thép,26.77,344
+476,Đối tác,Sắt thép,28.54,81
+477,Đối tác,Sắt thép,28.56,1176
+478,Thường,Linh kiện điện tử,31.69,186
+479,Thường,Linh kiện điện tử,8.59,94
+480,VIP,Gốm sứ DỄ VỠ,4.82,418
+481,Thường,Nông sản ST25,3.5,515
+482,Đối tác,Gốm sứ DỄ VỠ,46.29,1425
+483,Thường,Gốm sứ DỄ VỠ,48.09,747
+484,Thường,Sắt thép,29.05,659
+485,Thường,Linh kiện điện tử,6.27,372
+486,Đối tác,Linh kiện điện tử,0.13,323
+487,Đối tác,Nông sản ST25,1.36,1142
+488,Thường,Mỹ phẩm,12.04,1349
+489,VIP,Linh kiện điện tử,22.64,464
+490,Thường,Nông sản ST25,30.16,698
+491,VIP,Hàng ĐÔNG LẠNH,22.84,430
+492,Thường,Gốm sứ DỄ VỠ,40.2,1148
+493,Đối tác,Sắt thép,0.33,625
+494,Đối tác,Nông sản ST25,29.76,106
+495,Đối tác,Sắt thép,31.25,309
+496,VIP,Sắt thép,11.04,171
+497,Thường,Sắt thép,11.52,533
+498,VIP,Hàng ĐÔNG LẠNH,35.37,1328
+499,Đối tác,Hàng ĐÔNG LẠNH,22.12,1027
+500,Thường,Linh kiện điện tử,14.26,1073
