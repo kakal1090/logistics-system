@@ -1,41 +1,53 @@
 import pandas as pd
 import random
 
-def knn_logic(weight, distance):
-    # Logic KNN đơn giản hóa để test nhanh
-    if weight > 30 or distance > 500:
+def knn_logic_real(weight, distance):
+    # Logic phân loại sát thực tế Logistics
+    if weight > 30:
         return "Xe Tải Hạng Nặng"
     elif weight > 10:
+        if distance > 100:
+            return "Xe Tải Hạng Nặng"
         return "Xe Tải Hạng Nhẹ"
-    else:
+    else: # weight <= 10
+        if distance > 50:
+            return "Xe Tải Hạng Nhẹ"
         return "Xe Máy"
 
-def test_500_orders_with_results():
+def generate_real_logistics_data():
     cust_types = ['VIP', 'Thường', 'Đối tác']
-    prod_types = ['Linh kiện', 'Đông lạnh', 'Dễ vỡ', 'Nông sản', 'Mỹ phẩm']
+    # Danh sách loại hàng thực tế
+    prod_types = ['Linh kiện điện tử', 'Hàng đông lạnh', 'Hàng dễ vỡ', 'Nông sản', 'Mỹ phẩm', 'Đồ gia dụng']
     
     data = []
     for i in range(1, 501):
+        # Tạo trọng lượng ngẫu nhiên từ 0.5kg đến 50kg
         w = round(random.uniform(0.5, 50.0), 2)
-        d = random.randint(5, 1000)
-        result = knn_logic(w, d) # Chạy thuật toán phân loại 
+        
+        # Tạo khoảng cách: hàng nặng thường đi xa, hàng nhẹ đi gần
+        if w > 30:
+            d = random.randint(50, 1000)
+        else:
+            d = random.randint(2, 200)
+            
+        result = knn_logic_real(w, d)
         
         data.append({
             'OrderID': i,
+            'Product_Type': random.choice(prod_types),
             'Weight_kg': w,
             'Distance_km': d,
-            'Vehicle_Type': result # Kết quả của thuật toán
+            'Vehicle_Type': result
         })
     
     df = pd.DataFrame(data)
-    df.to_csv("orders_result_500.csv", index=False)
+    df.to_csv("data/orders_result_500.csv", index=False)
     
-    print("-" * 40)
-    print("🚀 ĐANG CHẠY THUẬT TOÁN KNN TRÊN 500 ĐƠN HÀNG...")
-    print(df.head(10))
-    print("-" * 40)
-    print(f"✅ HOÀN TẤT! Đã phân loại 500 đơn hàng.")
-    print(f"📊 Kết quả đã lưu tại: orders_result_500.csv")
+    print("-" * 50)
+    print("🚀 ĐANG KHỞI TẠO 500 ĐƠN HÀNG LOGISTICS THỰC TẾ...")
+    print(df.head(15)) # In 15 dòng để kiểm tra độ đa dạng
+    print("-" * 50)
+    print(f"✅ HOÀN TẤT! Đã lưu dữ liệu tại: data/orders_result_500.csv")
 
 if __name__ == "__main__":
-    test_500_orders_with_results()
+    generate_real_logistics_data()
