@@ -18,7 +18,7 @@ def test_500_orders_with_results():
     for i in range(1, 501):
         w = round(random.uniform(0.5, 50.0), 2)
         d = random.randint(5, 1000)
-        result = knn_logic(w, d) # Chạy thuật toán phân loại ở đây
+        result = knn_logic(w, d) # Chạy thuật toán phân loại 
         
         data.append({
             'OrderID': i,
@@ -32,7 +32,7 @@ def test_500_orders_with_results():
     
     print("-" * 40)
     print("🚀 ĐANG CHẠY THUẬT TOÁN KNN TRÊN 500 ĐƠN HÀNG...")
-    print(df.head(10)) # In ra 10 dòng đầu để bạn chụp ảnh
+    print(df.head(10))
     print("-" * 40)
     print(f"✅ HOÀN TẤT! Đã phân loại 500 đơn hàng.")
     print(f"📊 Kết quả đã lưu tại: orders_result_500.csv")
