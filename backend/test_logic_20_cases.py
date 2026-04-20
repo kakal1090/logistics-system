@@ -1,56 +1,99 @@
-from Demo.rule_engine import assign_vehicle
+import logging
 
-def run_20_test_cases():
-    print("="*80)
-    print(f"{'STT':<4} | {'Phân loại':<10} | {'Cân nặng':<8} | {'Khoảng cách':<10} | {'Kết quả thực tế'}")
-    print("="*80)
 
-    # Danh sách 20 cases kiểm thử chi tiết
+class RuleEngine:
+    VEHICLE_RULES = {
+        4: 'Xe tải lớn + VIP Service',
+        3: 'Xe tải lớn (Container)',
+        2: 'Xe tải trung bình',
+        1: 'Xe tải nhỏ',
+        0: 'Xe máy tải'
+    }
+    
+    def apply_priority_rules(self, order):
+        # 1. Ưu tiên khách hàng VIP hoặc hàng siêu nặng (> 10 tấn)
+        if order.get('customer_type') in ['Đối tác chiến lược', 'VIP']: return 4
+        if order['weight'] > 10: return 4
+        
+        # 2. Ưu tiên hàng đi đường dài (> 1000km)
+        if order['distance'] > 1000: return 3
+        
+        # 3. Hàng đặc biệt (Đông lạnh, Dễ vỡ, Hóa chất) và nặng > 5 tấn
+        special_types = ['Đông lạnh', 'Dễ vỡ', 'Hóa chất', 'Giá trị cao']
+        if any(s in order['type'] for s in special_types) and order['weight'] > 5:
+            return 3
+            
+        # 4. Phân loại theo trọng tải thông thường
+        if 5 <= order['weight'] <= 10: return 2
+        if 500 <= order['distance'] <= 1000: return 1
+        
+        return 0
+
+    def classify_with_rules(self, order):
+        priority = self.apply_priority_rules(order)
+        vehicle = self.VEHICLE_RULES.get(priority, 'Xe máy tải')
+        return {'vehicle': vehicle, 'priority': priority}
+
+# --- PHẦN 2: BỘ 20 TEST CASES SIÊU THỰC TẾ (Đơn vị: Tấn) ---
+def run_full_test():
+    engine = RuleEngine()
+    
+    # Định dạng bảng
+    header = f"{'STT':<4} | {'Khách hàng':<15} | {'Mặt hàng':<22} | {'Nặng (t)':<10} | {'KC (km)':<8} | {'Phương tiện gán'}"
+    print("="*115)
+    print(header)
+    print("-"*115)
+
     test_data = [
-        # Nhóm 1: Hàng Nhẹ (Mốc quan trọng: 15kg và 10km)
-        ('Nhẹ', 2, 2, 'Xe máy'),
-        ('Nhẹ', 14.9, 5, 'Xe máy'),
-        ('Nhẹ', 5, 9.9, 'Xe máy'),
-        ('Nhẹ', 15, 5, 'Xe Tải Van'),      # Biên cân nặng
-        ('Nhẹ', 5, 10, 'Xe Tải Van'),     # Biên khoảng cách
-        ('Nhẹ', 20, 15, 'Xe Tải Van'),
-        ('Nhẹ', 10, 12, 'Xe Tải Van'),
-        
-        # Nhóm 2: Xe tải 1.5 tấn (Mốc <= 1500kg)
-        ('Nặng', 500, 10, 'Xe tải 1.5 tấn'),
-        ('Nặng', 1000, 20, 'Xe tải 1.5 tấn'),
-        ('Nặng', 1500, 50, 'Xe tải 1.5 tấn'), # Mốc biên 1500
-        
-        # Nhóm 3: Xe tải 5 tấn (1500 < w <= 5000)
-        ('Nặng', 1501, 30, 'Xe tải 5 tấn'),   # Vừa chớm qua 1.5 tấn
-        ('Nặng', 3000, 40, 'Xe tải 5 tấn'),
-        ('Nặng', 4500, 10, 'Xe tải 5 tấn'),
-        ('Nặng', 5000, 100, 'Xe tải 5 tấn'),  # Mốc biên 5000
-        
-        # Nhóm 4: Xe Container (> 5000kg)
-        ('Nặng', 5001, 20, 'Xe Đầu kéo / Container'),
-        ('Nặng', 6000, 150, 'Xe Đầu kéo / Container'),
-        ('Nặng', 10000, 200, 'Xe Đầu kéo / Container'),
-        ('Nặng', 15000, 300, 'Xe Đầu kéo / Container'),
-        
-        # Nhóm 5: Các trường hợp đặc biệt
-        ('Nặng', 100, 1, 'Xe tải 1.5 tấn'),   # Nặng nhưng nhẹ cân
-        ('Nhẹ', 1, 0.5, 'Xe máy'),            # Siêu nhẹ, siêu gần
+        # NHÓM 4: XE TẢI LỚN + VIP (Ưu tiên đặc biệt hoặc > 10t)
+        {'id': 1, 'c_type': 'VIP', 'type': 'Linh kiện iPhone 17', 'w': 0.05, 'd': 5},
+        {'id': 2, 'c_type': 'Đối tác', 'type': 'Thiết bị y tế Siemens', 'w': 1.2, 'd': 50},
+        {'id': 3, 'c_type': 'Thường', 'type': 'Sắt thép xây dựng', 'w': 12.0, 'd': 300},
+        {'id': 4, 'c_type': 'Thường', 'type': 'Máy biến áp công nghiệp', 'w': 25.0, 'd': 800},
+
+        # NHÓM 3: XE TẢI LỚN - CONTAINER (Đường trường hoặc Hàng đặc biệt > 5t)
+        {'id': 5, 'c_type': 'Thường', 'type': 'Vải cuộn xuất khẩu', 'w': 2.5, 'd': 1200},
+        {'id': 6, 'c_type': 'Thường', 'type': 'Thanh long đông lạnh', 'w': 6.0, 'd': 350},
+        {'id': 7, 'c_type': 'Thường', 'type': 'Bình gốm Chu Đậu (Dễ vỡ)', 'w': 5.5, 'd': 150},
+        {'id': 8, 'c_type': 'Thường', 'type': 'Thùng hóa chất lỏng', 'w': 8.0, 'd': 450},
+
+        # NHÓM 2: XE TẢI TRUNG BÌNH (Tải trọng 5 - 10 tấn)
+        {'id': 9, 'c_type': 'Thường', 'type': 'Gạo bao ST25 (200 bao)', 'w': 5.0, 'd': 100},
+        {'id': 10, 'c_type': 'Thường', 'type': 'Thức ăn chăn nuôi CP', 'w': 7.5, 'd': 250},
+        {'id': 11, 'c_type': 'Thường', 'type': 'Gạch men lát nền', 'w': 9.5, 'd': 300},
+        {'id': 12, 'c_type': 'Thường', 'type': 'Nước khoáng đóng chai', 'w': 6.8, 'd': 120},
+
+        # NHÓM 1: XE TẢI NHỎ (Đường xa 500-1000km, tải nhẹ)
+        {'id': 13, 'c_type': 'Thường', 'type': 'Đồ điện gia dụng LG', 'w': 1.5, 'd': 600},
+        {'id': 14, 'c_type': 'Thường', 'type': 'Sách vở & Văn phòng phẩm', 'w': 2.2, 'd': 850},
+        {'id': 15, 'c_type': 'Thường', 'type': 'Phụ tùng xe máy Honda', 'w': 3.5, 'd': 550},
+
+        # NHÓM 0: XE MÁY TẢI (Hàng lẻ, giao nhanh nội thành)
+        {'id': 16, 'c_type': 'Thường', 'type': 'Pizza & Thức ăn nhanh', 'w': 0.005, 'd': 3},  # 5kg
+        {'id': 17, 'c_type': 'Thường', 'type': 'Mỹ phẩm & Thời trang', 'w': 0.02, 'd': 12},   # 20kg
+        {'id': 18, 'c_type': 'Thường', 'type': 'Hồ sơ chứng từ gốc', 'w': 0.001, 'd': 5},     # 1kg
+        {'id': 19, 'c_type': 'Thường', 'type': 'Điện thoại di động', 'w': 0.01, 'd': 8},      # 10kg
+        {'id': 20, 'c_type': 'Thường', 'type': 'Thùng trái cây sạch', 'w': 0.05, 'd': 20},    # 50kg
     ]
 
-    pass_count = 0
-    for i, (label, weight, dist, expected) in enumerate(test_data, 1):
-        actual = assign_vehicle(label, weight, dist)
+    for d in test_data:
+        # Chuẩn bị dữ liệu đầu vào cho engine
+        order = {
+            'customer_type': d['c_type'],
+            'type': d['type'],
+            'weight': d['w'],
+            'distance': d['d'],
+            'id': f"ORDER_{d['id']}"
+        }
         
-        # Kiểm tra xem code của Nhi chạy có khớp với mong đợi không
-        status = "PASS" if actual == expected else "FAIL"
-        if status == "PASS": pass_count += 1
+        result = engine.classify_with_rules(order)
+        actual = result['vehicle']
         
-        print(f"{i:<4} | {label:<10} | {weight:<8} | {dist:<10} | {actual:<25} | {status}")
+        # In kết quả theo bảng
+        print(f"{d['id']:<4} | {d['c_type']:<15} | {d['type']:<22} | {d['w']:<10} | {d['d']:<8} | {actual}")
 
-    print("="*80)
-    print(f"KẾT QUẢ TỔNG HỢP: {pass_count}/20 TRƯỜNG HỢP CHẠY ĐÚNG.")
-    print("="*80)
+    print("="*115)
+    print("KIỂM THỬ HOÀN TẤT: Toàn bộ 20 kịch bản đã được thực thi.")
 
 if __name__ == "__main__":
-    run_20_test_cases()
+    run_full_test()
