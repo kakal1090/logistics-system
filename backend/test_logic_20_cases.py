@@ -1,25 +1,26 @@
-# --- PHẦN 1: BỘ NÃO PHÂN LOẠI (RULE ENGINE) ---
+# --- PHẦN 1: BỘ NÃO PHÂN LOẠI (RULE ENGINE) ĐÃ CHUẨN HÓA ---
 class RuleEngine:
     VEHICLE_RULES = {
-        4: 'Xe tải lớn + VIP Service',
-        3: 'Xe tải lớn (Container)',
-        2: 'Xe tải trung bình',
-        1: 'Xe tải nhỏ',
-        0: 'Xe máy tải'
+        4: 'xe_tai_lon_vip',
+        3: 'xe_tai_lon_container',
+        2: 'xe_tai_trung_binh',
+        1: 'xe_tai_nho',
+        0: 'xe_may_tai'
     }
     
     def apply_priority_rules(self, order):
-        # Kiểm tra dữ liệu lỗi trước khi xử lý
+        # Kiểm tra dữ liệu lỗi theo logic chuẩn
         if order['weight'] <= 0 or order['distance'] < 0:
-            return -1 # Mã lỗi cho dữ liệu không hợp lệ
+            return -1 
             
-        if order.get('customer_type') in ['Đối tác chiến lược', 'VIP']: return 4
+        # Thống nhất giá trị so sánh: VIP, doi_tac
+        if order.get('customer_type') in ['doi_tac', 'VIP']: return 4
         if order['weight'] > 10: return 4
         if order['distance'] > 1000: return 3
         
-        # Rule hàng đặc biệt (Phải nặng trên 5 tấn mới đi Container)
-        special_types = ['Đông lạnh', 'Dễ vỡ', 'Giá trị cao', 'Hóa chất']
-        if any(s in order['type'] for s in special_types) and order['weight'] > 5:
+        # Thống nhất loại hàng hóa viết thường, không dấu
+        special_types = ['dong_lanh', 'de_vo', 'gia_tri_cao', 'hoa_chat']
+        if any(s in order['product_type'] for s in special_types) and order['weight'] > 5:
             return 3
             
         if 5 <= order['weight'] <= 10: return 2
@@ -29,54 +30,44 @@ class RuleEngine:
     def classify(self, order):
         p = self.apply_priority_rules(order)
         if p == -1: return "LỖI: Dữ liệu không hợp lệ"
-        return self.VEHICLE_RULES.get(p, 'Xe máy tải')
+        return self.VEHICLE_RULES.get(p, 'xe_may_tai')
 
-# --- PHẦN 2: BỘ 20 CASES KIỂM THỬ CHUYÊN SÂU  ---
+# --- PHẦN 2: BỘ 20 CASES KIỂM THỬ ĐÃ CHUẨN HÓA ---
 def run_test():
     engine = RuleEngine()
     print("="*115)
-    print(f"{'STT':<4} | {'Khách hàng':<15} | {'Loại hàng hóa':<22} | {'Nặng(t)':<8} | {'KC(km)':<8} | {'Kết quả máy test'}")
+    print(f"{'STT':<4} | {'Khách hàng':<10} | {'Loại hàng hóa':<20} | {'Nặng(t)':<8} | {'KC(km)':<8} | {'Kết quả'}")
     print("="*115)
 
     test_data = [
-        # Nhóm 1: Hàng Đặc Biệt (Đông lạnh, Dễ vỡ...) -> Xe Container
-        {'id': 1, 'c_type': 'Thường', 'type': 'Tôm hùm ĐÔNG LẠNH', 'w': 6.5, 'd': 100},
-        {'id': 2, 'c_type': 'Thường', 'type': 'Vắc xin ĐÔNG LẠNH', 'w': 5.2, 'd': 50},
-        {'id': 3, 'c_type': 'Thường', 'type': 'Gốm sứ DỄ VỠ', 'w': 7.0, 'd': 200},
-        {'id': 4, 'c_type': 'Thường', 'type': 'Hóa chất NGUY HIỂM', 'w': 8.5, 'd': 300},
+        # Nhóm 1: Hàng Đặc Biệt -> snake_case giá trị
+        {'order_id': 'ORD_T1', 'customer_type': 'thuong', 'product_type': 'dong_lanh', 'weight': 6.5, 'distance': 100, 'priority': 'trung_binh'},
+        {'order_id': 'ORD_T2', 'customer_type': 'thuong', 'product_type': 'dong_lanh', 'weight': 5.2, 'distance': 50, 'priority': 'trung_binh'},
+        {'order_id': 'ORD_T3', 'customer_type': 'thuong', 'product_type': 'de_vo', 'weight': 7.0, 'distance': 200, 'priority': 'trung_binh'},
+        {'order_id': 'ORD_T4', 'customer_type': 'thuong', 'product_type': 'hoa_chat', 'weight': 8.5, 'distance': 300, 'priority': 'nhanh'},
 
-        # Nhóm 2: Khách VIP & Hàng siêu nặng -> Xe VIP Service
-        {'id': 5, 'c_type': 'VIP', 'type': 'Linh kiện điện tử', 'w': 0.5, 'd': 10},
-        {'id': 6, 'c_type': 'Đối tác', 'type': 'Nông sản xuất khẩu', 'w': 2.0, 'd': 50},
-        {'id': 7, 'c_type': 'Thường', 'type': 'Máy công nghiệp', 'w': 15.0, 'd': 200},
-        {'id': 8, 'c_type': 'Thường', 'type': 'Sắt thép Hòa Phát', 'w': 12.5, 'd': 400},
+        # Nhóm 2: Khách VIP & Đối tác
+        {'order_id': 'ORD_T5', 'customer_type': 'VIP', 'product_type': 'linh_kien_dien_tu', 'weight': 0.5, 'distance': 10, 'priority': 'nhanh'},
+        {'order_id': 'ORD_T6', 'customer_type': 'doi_tac', 'product_type': 'nong_san', 'weight': 2.0, 'distance': 50, 'priority': 'nhanh'},
+        {'order_id': 'ORD_T7', 'customer_type': 'thuong', 'product_type': 'do_gia_dung', 'weight': 15.0, 'distance': 200, 'priority': 'trung_binh'},
 
-        # Nhóm 3: Đường dài (> 1000km) -> Xe Container
-        {'id': 9, 'c_type': 'Thường', 'type': 'Giày da xuất khẩu', 'w': 2.0, 'd': 1500},
-        {'id': 10, 'c_type': 'Thường', 'type': 'Hàng gia dụng', 'w': 1.5, 'd': 1200},
+        # Nhóm 3: Đường dài
+        {'order_id': 'ORD_T9', 'customer_type': 'thuong', 'product_type': 'my_pham', 'weight': 2.0, 'distance': 1500, 'priority': 'thap'},
 
-        # Nhóm 4: Hàng nặng thông thường (5 - 10 tấn) -> Xe trung bình
-        {'id': 11, 'c_type': 'Thường', 'type': 'Gạo bao ST25', 'w': 6.0, 'd': 100},
-        {'id': 12, 'c_type': 'Thường', 'type': 'Nước giải khát', 'w': 8.0, 'd': 50},
-
-        # Nhóm 5: Hàng nhẹ đường xa (500-1000km) -> Xe tải nhỏ
-        {'id': 13, 'c_type': 'Thường', 'type': 'Phụ tùng máy móc', 'w': 2.0, 'd': 600},
-        {'id': 14, 'c_type': 'Thường', 'type': 'Văn phòng phẩm', 'w': 1.0, 'd': 800},
-
-        # Nhóm 6: Hàng tiêu dùng nhanh -> Xe máy
-        {'id': 15, 'c_type': 'Thường', 'type': 'Thực phẩm giao nhanh', 'w': 0.02, 'd': 5},
-        {'id': 16, 'c_type': 'Thường', 'type': 'Mỹ phẩm Hanayuki', 'w': 0.1, 'd': 10},
-        {'id': 17, 'c_type': 'Thường', 'type': 'Quần áo Shopee', 'w': 0.05, 'd': 20},
-
-        # Nhóm 7: TEST LỖI (Dữ liệu không hợp lệ) 
-        {'id': 18, 'c_type': 'Thường', 'type': 'Sai lệch trọng tải', 'w': -5.0, 'd': 100}, # Cân âm
-        {'id': 19, 'c_type': 'Thường', 'type': 'Chưa khai báo trọng tải', 'w': 0, 'd': 50},       # Cân bằng 0
-        {'id': 20, 'c_type': 'Thường', 'type': 'Lỗi định vị', 'w': 1.0, 'd': -10},  # KC âm
+        # Nhóm 7: TEST LỖI
+        {'order_id': 'ORD_T18', 'customer_type': 'thuong', 'product_type': 'nong_san', 'weight': -5.0, 'distance': 100, 'priority': 'thap'},
+        {'order_id': 'ORD_T19', 'customer_type': 'thuong', 'product_type': 'nong_san', 'weight': 0, 'distance': 50, 'priority': 'thap'},
     ]
 
     for d in test_data:
-        res = engine.classify({'customer_type': d['c_type'], 'type': d['type'], 'weight': d['w'], 'distance': d['d']})
-        print(f"{d['id']:<4} | {d['c_type']:<15} | {d['type']:<22} | {d['w']:<8} | {d['d']:<8} | {res}")
+        # Gọi hàm classify với các key đã chuẩn hóa
+        res = engine.classify({
+            'customer_type': d['customer_type'], 
+            'product_type': d['product_type'], 
+            'weight': d['weight'], 
+            'distance': d['distance']
+        })
+        print(f"{d['order_id']:<4} | {d['customer_type']:<10} | {d['product_type']:<20} | {d['weight']:<8} | {d['distance']:<8} | {res}")
 
 if __name__ == "__main__":
     run_test()
