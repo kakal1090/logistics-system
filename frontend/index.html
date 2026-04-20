@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống tiếp nhận và phân loại đơn hàng vận tải</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Borcelle Company</p>
+          <h1>Hệ thống tiếp nhận và phân loại đơn hàng vận tải</h1>
+          <p class="subtitle">
+            Tự động hóa quy trình tiếp nhận đơn, phân loại hàng hóa và gán
+            phương tiện vận chuyển theo thời gian thực
+          </p>
+        </div>
+        <div class="status-chip">
+          <span class="dot"></span>
+          <span>Real-time Dashboard</span>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <!-- Cột trái: Form nhập liệu -->
+        <section class="panel form-panel">
+          <div class="panel-header">
+            <h2>Tiếp nhận đơn hàng</h2>
+            <p>Nhập thông tin đơn hàng để hệ thống xử lý và phân loại</p>
+          </div>
+          <div class="import-box">
+            <h3>Import dữ liệu đơn hàng</h3>
+            <p class="import-desc">
+              Hỗ trợ tải lên file Excel, CSV hoặc JSON để tiếp nhận nhiều đơn
+              hàng cùng lúc.
+            </p>
+
+            <div class="import-actions">
+              <label for="fileUpload" class="upload-btn"
+                >Chọn file dữ liệu</label
+              >
+              <input
+                type="file"
+                id="fileUpload"
+                accept=".xlsx,.xls,.csv,.json"
+                hidden
+              />
+              <span id="fileName" class="file-name">Chưa chọn file</span>
+            </div>
+
+            <div class="import-note">
+              <p>Định dạng hỗ trợ: <strong>.xlsx, .xls, .csv, .json</strong></p>
+              <p>
+                Gợi ý dữ liệu: mã đơn, khách hàng, loại hàng, khối lượng, kích
+                thước, khoảng cách, ưu tiên.
+              </p>
+            </div>
+          </div>
+
+          <form id="orderForm" class="order-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="orderId">Mã đơn hàng</label>
+                <input type="text" id="orderId" placeholder="VD: ORD001" />
+              </div>
+
+              <div class="form-group">
+                <label for="customerName">Họ và tên khách hàng</label>
+                <input
+                  type="text"
+                  id="customerName"
+                  placeholder="Nguyễn Văn A"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" id="phone" placeholder="09xxxxxxxx" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="example@email.com"
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="address">Địa chỉ giao hàng</label>
+                <input
+                  type="text"
+                  id="address"
+                  placeholder="Số nhà, đường, quận/huyện, tỉnh/thành"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="productType">Loại hàng hóa</label>
+                <select id="productType">
+                  <option value="">Chọn loại hàng</option>
+                  <option>Tiêu chuẩn</option>
+                  <option>Dễ vỡ</option>
+                  <option>Đông lạnh</option>
+                  <option>Nguy hiểm</option>
+                  <option>Cồng kềnh</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="priority">Mức độ ưu tiên</label>
+                <select id="priority">
+                  <option value="">Chọn mức ưu tiên</option>
+                  <option>Thường</option>
+                  <option>Nhanh</option>
+                  <option>Hỏa tốc</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="weight">Khối lượng (kg)</label>
+                <input type="number" id="weight" placeholder="VD: 120" />
+              </div>
+
+              <div class="form-group">
+                <label for="distance">Khoảng cách (km)</label>
+                <input type="number" id="distance" placeholder="VD: 15" />
+              </div>
+
+              <div class="form-group">
+                <label for="length">Chiều dài (cm)</label>
+                <input type="number" id="length" placeholder="VD: 50" />
+              </div>
+
+              <div class="form-group">
+                <label for="width">Chiều rộng (cm)</label>
+                <input type="number" id="width" placeholder="VD: 40" />
+              </div>
+
+              <div class="form-group">
+                <label for="height">Chiều cao (cm)</label>
+                <input type="number" id="height" placeholder="VD: 30" />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="note">Ghi chú đặc biệt</label>
+                <textarea
+                  id="note"
+                  rows="4"
+                  placeholder="Ví dụ: hàng dễ vỡ, giao ngoài giờ, cần liên hệ trước..."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary">Làm mới</button>
+              <button type="submit" class="btn btn-primary">
+                Gửi đơn & phân loại
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Cột phải: Kết quả + tổng quan -->
+        <section class="side-column">
+          <section class="panel result-panel">
+            <div class="panel-header">
+              <h2>Kết quả xử lý</h2>
+              <p>Thông tin trả về sau khi hệ thống chạy KNN và Rule-Based</p>
+            </div>
+
+            <div class="result-box">
+              <div class="result-item">
+                <span class="result-label">Trạng thái</span>
+                <strong id="processStatus">Chờ xử lý</strong>
+              </div>
+
+              <div class="result-item">
+                <span class="result-label">Nhãn phân loại</span>
+                <strong id="predictedLabel">--</strong>
+              </div>
+
+              <div class="result-item">
+                <span class="result-label">Phương tiện đề xuất</span>
+                <strong id="assignedVehicle">--</strong>
+              </div>
+
+              <div class="result-item">
+                <span class="result-label">Thời gian xử lý</span>
+                <strong id="processedTime">--</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel summary-panel">
+            <div class="panel-header">
+              <h2>Tổng quan vận hành</h2>
+              <p>Theo dõi số liệu đơn hàng theo thời gian thực</p>
+            </div>
+
+            <div class="summary-cards">
+              <div class="summary-card">
+                <span class="summary-title">Tổng đơn</span>
+                <strong id="totalOrders">0</strong>
+              </div>
+
+              <div class="summary-card">
+                <span class="summary-title">Đơn nhẹ</span>
+                <strong id="lightOrders">0</strong>
+              </div>
+
+              <div class="summary-card">
+                <span class="summary-title">Đơn nặng</span>
+                <strong id="heavyOrders">0</strong>
+              </div>
+
+              <div class="summary-card">
+                <span class="summary-title">Đang theo dõi</span>
+                <strong id="trackingOrders">0</strong>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <!-- Dashboard dưới -->
+      <section class="panel table-panel">
+        <div class="panel-header">
+          <h2>Danh sách đơn hàng đã xử lý</h2>
+          <p>Dữ liệu được cập nhật tự động từ hệ thống realtime</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>Loại hàng</th>
+                <th>Khối lượng</th>
+                <th>Khoảng cách</th>
+                <th>Nhãn KNN</th>
+                <th>Phương tiện</th>
+                <th>Ưu tiên</th>
+                <th>Thời gian</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td>ORD001</td>
+                <td>Nguyễn Văn A</td>
+                <td>Dễ vỡ</td>
+                <td>12.5 kg</td>
+                <td>8 km</td>
+                <td><span class="badge badge-light">Nhẹ</span></td>
+                <td>Xe máy</td>
+                <td>Nhanh</td>
+                <td>0.02s</td>
+              </tr>
+              <tr>
+                <td>ORD002</td>
+                <td>Trần Thị B</td>
+                <td>Cồng kềnh</td>
+                <td>450 kg</td>
+                <td>120 km</td>
+                <td><span class="badge badge-heavy">Nặng</span></td>
+                <td>Xe tải 1.5 tấn</td>
+                <td>Thường</td>
+                <td>0.03s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
