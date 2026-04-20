@@ -1,0 +1,22 @@
+[
+  { "id": 1, "customer_type": "VIP", "product_type": "Linh kiện điện tử", "weight": 0.5, "distance": 10, "note": "Case chuẩn: VIP đi xe máy nhanh" },
+  { "id": 2, "customer_type": "Thường", "product_type": "Hàng ĐÔNG LẠNH", "weight": 6.5, "distance": 100, "note": "Rule đặc biệt: Hàng đông lạnh phải đi Container" },
+  { "id": 3, "customer_type": "Đối tác", "product_type": "Máy công nghiệp", "weight": 15.0, "distance": 500, "note": "Hàng siêu nặng đi xe tải lớn" },
+  { "id": 4, "customer_type": "Thường", "product_type": "Gốm sứ DỄ VỠ", "weight": 2.0, "distance": 45, "note": "Rule đặc biệt: Hàng dễ vỡ đi xe tải van bảo vệ" },
+  { "id": 5, "customer_type": "VIP", "product_type": "Nông sản ST25", "weight": 8.0, "distance": 1200, "note": "Đường dài + nặng đi Container" },
+  { "id": 6, "customer_type": "Thường", "product_type": "Quần áo Shopee", "weight": 0.1, "distance": 5, "note": "Hàng nhẹ đường gần đi xe máy" },
+  { "id": 7, "customer_type": "Đối tác", "product_type": "Linh kiện iPhone", "weight": 1.2, "distance": 300, "note": "Hàng giá trị cao" },
+  { "id": 8, "customer_type": "Thường", "product_type": "Hải sản ĐÔNG LẠNH", "weight": 2.5, "distance": 200, "note": "Đông lạnh nhẹ vẫn phải đi Container" },
+  { "id": 9, "customer_type": "VIP", "product_type": "Mỹ phẩm", "weight": 0.3, "distance": 20, "note": "Khách VIP ưu tiên xe máy điện" },
+  { "id": 10, "customer_type": "Thường", "product_type": "Sắt thép", "weight": 18.0, "distance": 800, "note": "Quá tải trọng xe tải trung" },
+  { "id": 11, "customer_type": "Thường", "product_type": "Hàng tiêu dùng", "weight": 4.5, "distance": 50, "note": "Hàng trung bình đi xe tải nhỏ" },
+  { "id": 12, "customer_type": "Đối tác", "product_type": "Trái cây xuất khẩu", "weight": 7.0, "distance": 600, "note": "Hàng nông sản lớn" },
+  { "id": 13, "customer_type": "Thường", "product_type": "Vải vóc", "weight": 3.0, "distance": 150, "note": "Kiểm tra phân loại tải trọng" },
+  { "id": 14, "customer_type": "VIP", "product_type": "Hàng ĐÔNG LẠNH", "weight": 10.0, "distance": 50, "note": "VIP + Đông lạnh" },
+  { "id": 15, "customer_type": "Thường", "product_type": "Sách vở", "weight": 0.05, "distance": 2, "note": "Siêu nhẹ" },
+  { "id": 16, "customer_type": "Thường", "product_type": "Nội thất gỗ", "weight": 9.5, "distance": 100, "note": "Gần chạm mức Container" },
+  { "id": 17, "customer_type": "Đối tác", "product_type": "Dụng cụ y tế", "weight": 1.5, "distance": 400, "note": "Hàng cần vận chuyển cẩn thận" },
+  { "id": 18, "customer_type": "Thường", "product_type": "Chưa khai báo", "weight": 0, "distance": 50, "note": "Negative Case: Thiếu trọng tải" },
+  { "id": 19, "customer_type": "Thường", "product_type": "Lỗi dữ liệu", "weight": -5, "distance": 10, "note": "Negative Case: Trọng tải âm" },
+  { "id": 20, "customer_type": "Thường", "product_type": "Hàng DỄ VỠ", "weight": 12.0, "distance": 1000, "note": "Dễ vỡ khối lượng lớn" }
+]
