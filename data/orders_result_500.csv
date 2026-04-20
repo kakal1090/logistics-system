@@ -1,501 +1,501 @@
-OrderID,Weight_kg,Distance_km,Vehicle_Type
-1,7.67,616,Xe Tải Hạng Nặng
-2,7.17,645,Xe Tải Hạng Nặng
-3,5.8,475,Xe Máy
-4,11.33,16,Xe Tải Hạng Nhẹ
-5,3.98,997,Xe Tải Hạng Nặng
-6,5.47,286,Xe Máy
-7,44.51,601,Xe Tải Hạng Nặng
-8,31.28,385,Xe Tải Hạng Nặng
-9,25.29,118,Xe Tải Hạng Nhẹ
-10,0.64,927,Xe Tải Hạng Nặng
-11,24.8,452,Xe Tải Hạng Nhẹ
-12,15.13,336,Xe Tải Hạng Nhẹ
-13,17.24,389,Xe Tải Hạng Nhẹ
-14,37.07,300,Xe Tải Hạng Nặng
-15,22.57,902,Xe Tải Hạng Nặng
-16,33.36,892,Xe Tải Hạng Nặng
-17,47.84,803,Xe Tải Hạng Nặng
-18,6.56,692,Xe Tải Hạng Nặng
-19,47.8,880,Xe Tải Hạng Nặng
-20,46.8,578,Xe Tải Hạng Nặng
-21,41.33,929,Xe Tải Hạng Nặng
-22,22.64,248,Xe Tải Hạng Nhẹ
-23,14.39,226,Xe Tải Hạng Nhẹ
-24,23.06,239,Xe Tải Hạng Nhẹ
-25,32.12,915,Xe Tải Hạng Nặng
-26,12.91,686,Xe Tải Hạng Nặng
-27,25.1,55,Xe Tải Hạng Nhẹ
-28,33.56,530,Xe Tải Hạng Nặng
-29,9.44,479,Xe Máy
-30,1.12,887,Xe Tải Hạng Nặng
-31,20.95,123,Xe Tải Hạng Nhẹ
-32,28.93,827,Xe Tải Hạng Nặng
-33,21.79,614,Xe Tải Hạng Nặng
-34,6.28,683,Xe Tải Hạng Nặng
-35,7.61,762,Xe Tải Hạng Nặng
-36,49.0,964,Xe Tải Hạng Nặng
-37,6.98,768,Xe Tải Hạng Nặng
-38,20.08,83,Xe Tải Hạng Nhẹ
-39,23.6,132,Xe Tải Hạng Nhẹ
-40,2.8,512,Xe Tải Hạng Nặng
-41,12.3,806,Xe Tải Hạng Nặng
-42,45.11,206,Xe Tải Hạng Nặng
-43,13.04,429,Xe Tải Hạng Nhẹ
-44,14.19,600,Xe Tải Hạng Nặng
-45,22.91,964,Xe Tải Hạng Nặng
-46,18.89,981,Xe Tải Hạng Nặng
-47,2.0,232,Xe Máy
-48,4.16,224,Xe Máy
-49,29.43,337,Xe Tải Hạng Nhẹ
-50,14.48,902,Xe Tải Hạng Nặng
-51,30.44,806,Xe Tải Hạng Nặng
-52,35.29,565,Xe Tải Hạng Nặng
-53,35.46,868,Xe Tải Hạng Nặng
-54,2.25,802,Xe Tải Hạng Nặng
-55,23.13,860,Xe Tải Hạng Nặng
-56,33.95,494,Xe Tải Hạng Nặng
-57,13.48,917,Xe Tải Hạng Nặng
-58,12.04,884,Xe Tải Hạng Nặng
-59,14.69,54,Xe Tải Hạng Nhẹ
-60,22.74,983,Xe Tải Hạng Nặng
-61,6.12,980,Xe Tải Hạng Nặng
-62,16.67,609,Xe Tải Hạng Nặng
-63,13.89,165,Xe Tải Hạng Nhẹ
-64,2.26,621,Xe Tải Hạng Nặng
-65,35.58,795,Xe Tải Hạng Nặng
-66,36.36,719,Xe Tải Hạng Nặng
-67,46.31,97,Xe Tải Hạng Nặng
-68,46.43,673,Xe Tải Hạng Nặng
-69,17.66,320,Xe Tải Hạng Nhẹ
-70,23.95,299,Xe Tải Hạng Nhẹ
-71,37.06,704,Xe Tải Hạng Nặng
-72,42.98,839,Xe Tải Hạng Nặng
-73,39.37,407,Xe Tải Hạng Nặng
-74,24.93,712,Xe Tải Hạng Nặng
-75,41.86,360,Xe Tải Hạng Nặng
-76,3.1,676,Xe Tải Hạng Nặng
-77,43.44,410,Xe Tải Hạng Nặng
-78,27.26,290,Xe Tải Hạng Nhẹ
-79,45.28,878,Xe Tải Hạng Nặng
-80,31.79,972,Xe Tải Hạng Nặng
-81,28.94,967,Xe Tải Hạng Nặng
-82,12.89,724,Xe Tải Hạng Nặng
-83,29.45,611,Xe Tải Hạng Nặng
-84,7.61,973,Xe Tải Hạng Nặng
-85,25.36,218,Xe Tải Hạng Nhẹ
-86,39.5,753,Xe Tải Hạng Nặng
-87,24.96,111,Xe Tải Hạng Nhẹ
-88,30.53,522,Xe Tải Hạng Nặng
-89,5.16,268,Xe Máy
-90,29.3,328,Xe Tải Hạng Nhẹ
-91,28.11,105,Xe Tải Hạng Nhẹ
-92,22.73,602,Xe Tải Hạng Nặng
-93,27.65,878,Xe Tải Hạng Nặng
-94,21.21,660,Xe Tải Hạng Nặng
-95,1.06,908,Xe Tải Hạng Nặng
-96,38.09,198,Xe Tải Hạng Nặng
-97,37.41,407,Xe Tải Hạng Nặng
-98,14.06,372,Xe Tải Hạng Nhẹ
-99,33.15,219,Xe Tải Hạng Nặng
-100,25.37,568,Xe Tải Hạng Nặng
-101,14.41,905,Xe Tải Hạng Nặng
-102,28.35,285,Xe Tải Hạng Nhẹ
-103,38.97,949,Xe Tải Hạng Nặng
-104,0.82,493,Xe Máy
-105,1.63,629,Xe Tải Hạng Nặng
-106,13.84,732,Xe Tải Hạng Nặng
-107,16.25,819,Xe Tải Hạng Nặng
-108,23.92,445,Xe Tải Hạng Nhẹ
-109,1.83,861,Xe Tải Hạng Nặng
-110,21.42,109,Xe Tải Hạng Nhẹ
-111,20.47,566,Xe Tải Hạng Nặng
-112,41.57,159,Xe Tải Hạng Nặng
-113,48.29,957,Xe Tải Hạng Nặng
-114,32.3,506,Xe Tải Hạng Nặng
-115,5.37,511,Xe Tải Hạng Nặng
-116,40.65,925,Xe Tải Hạng Nặng
-117,36.91,416,Xe Tải Hạng Nặng
-118,11.36,319,Xe Tải Hạng Nhẹ
-119,26.47,166,Xe Tải Hạng Nhẹ
-120,0.97,173,Xe Máy
-121,40.63,985,Xe Tải Hạng Nặng
-122,25.87,863,Xe Tải Hạng Nặng
-123,13.66,349,Xe Tải Hạng Nhẹ
-124,25.25,850,Xe Tải Hạng Nặng
-125,8.88,669,Xe Tải Hạng Nặng
-126,36.78,677,Xe Tải Hạng Nặng
-127,29.7,68,Xe Tải Hạng Nhẹ
-128,36.05,332,Xe Tải Hạng Nặng
-129,15.91,784,Xe Tải Hạng Nặng
-130,33.74,113,Xe Tải Hạng Nặng
-131,20.38,884,Xe Tải Hạng Nặng
-132,42.76,646,Xe Tải Hạng Nặng
-133,2.89,670,Xe Tải Hạng Nặng
-134,42.77,243,Xe Tải Hạng Nặng
-135,14.02,583,Xe Tải Hạng Nặng
-136,26.73,129,Xe Tải Hạng Nhẹ
-137,30.21,727,Xe Tải Hạng Nặng
-138,36.84,245,Xe Tải Hạng Nặng
-139,21.69,766,Xe Tải Hạng Nặng
-140,17.2,90,Xe Tải Hạng Nhẹ
-141,11.3,447,Xe Tải Hạng Nhẹ
-142,28.66,940,Xe Tải Hạng Nặng
-143,13.92,608,Xe Tải Hạng Nặng
-144,14.34,535,Xe Tải Hạng Nặng
-145,0.65,27,Xe Máy
-146,47.99,519,Xe Tải Hạng Nặng
-147,18.65,937,Xe Tải Hạng Nặng
-148,49.51,588,Xe Tải Hạng Nặng
-149,36.37,931,Xe Tải Hạng Nặng
-150,19.11,582,Xe Tải Hạng Nặng
-151,17.9,743,Xe Tải Hạng Nặng
-152,37.33,404,Xe Tải Hạng Nặng
-153,10.54,129,Xe Tải Hạng Nhẹ
-154,23.18,365,Xe Tải Hạng Nhẹ
-155,0.57,467,Xe Máy
-156,49.46,510,Xe Tải Hạng Nặng
-157,4.6,316,Xe Máy
-158,48.02,149,Xe Tải Hạng Nặng
-159,45.41,869,Xe Tải Hạng Nặng
-160,23.61,218,Xe Tải Hạng Nhẹ
-161,24.3,49,Xe Tải Hạng Nhẹ
-162,15.74,438,Xe Tải Hạng Nhẹ
-163,49.82,142,Xe Tải Hạng Nặng
-164,31.63,95,Xe Tải Hạng Nặng
-165,38.25,551,Xe Tải Hạng Nặng
-166,28.75,185,Xe Tải Hạng Nhẹ
-167,21.79,873,Xe Tải Hạng Nặng
-168,38.84,757,Xe Tải Hạng Nặng
-169,31.36,118,Xe Tải Hạng Nặng
-170,18.07,595,Xe Tải Hạng Nặng
-171,7.69,440,Xe Máy
-172,31.82,645,Xe Tải Hạng Nặng
-173,30.92,373,Xe Tải Hạng Nặng
-174,41.45,370,Xe Tải Hạng Nặng
-175,6.18,788,Xe Tải Hạng Nặng
-176,7.98,927,Xe Tải Hạng Nặng
-177,29.09,356,Xe Tải Hạng Nhẹ
-178,45.39,767,Xe Tải Hạng Nặng
-179,25.49,579,Xe Tải Hạng Nặng
-180,43.71,783,Xe Tải Hạng Nặng
-181,19.24,219,Xe Tải Hạng Nhẹ
-182,33.66,128,Xe Tải Hạng Nặng
-183,40.77,450,Xe Tải Hạng Nặng
-184,32.85,206,Xe Tải Hạng Nặng
-185,9.12,471,Xe Máy
-186,23.36,631,Xe Tải Hạng Nặng
-187,49.39,258,Xe Tải Hạng Nặng
-188,0.98,949,Xe Tải Hạng Nặng
-189,46.01,657,Xe Tải Hạng Nặng
-190,15.36,156,Xe Tải Hạng Nhẹ
-191,22.38,49,Xe Tải Hạng Nhẹ
-192,41.24,249,Xe Tải Hạng Nặng
-193,14.03,619,Xe Tải Hạng Nặng
-194,1.79,169,Xe Máy
-195,24.47,898,Xe Tải Hạng Nặng
-196,24.3,359,Xe Tải Hạng Nhẹ
-197,11.87,661,Xe Tải Hạng Nặng
-198,16.55,249,Xe Tải Hạng Nhẹ
-199,30.17,378,Xe Tải Hạng Nặng
-200,24.63,29,Xe Tải Hạng Nhẹ
-201,18.48,314,Xe Tải Hạng Nhẹ
-202,34.02,370,Xe Tải Hạng Nặng
-203,10.53,52,Xe Tải Hạng Nhẹ
-204,13.19,803,Xe Tải Hạng Nặng
-205,43.63,162,Xe Tải Hạng Nặng
-206,15.61,810,Xe Tải Hạng Nặng
-207,29.03,467,Xe Tải Hạng Nhẹ
-208,9.13,5,Xe Máy
-209,35.97,592,Xe Tải Hạng Nặng
-210,26.22,521,Xe Tải Hạng Nặng
-211,10.13,578,Xe Tải Hạng Nặng
-212,15.12,533,Xe Tải Hạng Nặng
-213,2.42,373,Xe Máy
-214,14.93,603,Xe Tải Hạng Nặng
-215,48.37,245,Xe Tải Hạng Nặng
-216,42.25,62,Xe Tải Hạng Nặng
-217,47.88,81,Xe Tải Hạng Nặng
-218,44.72,482,Xe Tải Hạng Nặng
-219,24.89,607,Xe Tải Hạng Nặng
-220,18.95,364,Xe Tải Hạng Nhẹ
-221,20.14,138,Xe Tải Hạng Nhẹ
-222,2.79,622,Xe Tải Hạng Nặng
-223,43.54,205,Xe Tải Hạng Nặng
-224,20.27,682,Xe Tải Hạng Nặng
-225,33.81,541,Xe Tải Hạng Nặng
-226,15.19,878,Xe Tải Hạng Nặng
-227,23.79,422,Xe Tải Hạng Nhẹ
-228,27.81,17,Xe Tải Hạng Nhẹ
-229,35.66,140,Xe Tải Hạng Nặng
-230,15.03,790,Xe Tải Hạng Nặng
-231,27.49,117,Xe Tải Hạng Nhẹ
-232,34.66,81,Xe Tải Hạng Nặng
-233,21.76,832,Xe Tải Hạng Nặng
-234,30.59,366,Xe Tải Hạng Nặng
-235,5.24,316,Xe Máy
-236,20.67,24,Xe Tải Hạng Nhẹ
-237,27.09,16,Xe Tải Hạng Nhẹ
-238,3.3,500,Xe Máy
-239,49.97,770,Xe Tải Hạng Nặng
-240,42.41,599,Xe Tải Hạng Nặng
-241,7.98,255,Xe Máy
-242,47.15,719,Xe Tải Hạng Nặng
-243,22.18,898,Xe Tải Hạng Nặng
-244,19.33,527,Xe Tải Hạng Nặng
-245,3.51,639,Xe Tải Hạng Nặng
-246,16.29,824,Xe Tải Hạng Nặng
-247,44.43,450,Xe Tải Hạng Nặng
-248,22.13,901,Xe Tải Hạng Nặng
-249,35.33,201,Xe Tải Hạng Nặng
-250,2.07,469,Xe Máy
-251,7.41,440,Xe Máy
-252,17.82,731,Xe Tải Hạng Nặng
-253,19.38,633,Xe Tải Hạng Nặng
-254,18.72,790,Xe Tải Hạng Nặng
-255,30.6,803,Xe Tải Hạng Nặng
-256,22.12,911,Xe Tải Hạng Nặng
-257,28.14,638,Xe Tải Hạng Nặng
-258,26.91,61,Xe Tải Hạng Nhẹ
-259,9.89,536,Xe Tải Hạng Nặng
-260,33.43,694,Xe Tải Hạng Nặng
-261,44.15,326,Xe Tải Hạng Nặng
-262,37.88,474,Xe Tải Hạng Nặng
-263,7.31,425,Xe Máy
-264,7.58,750,Xe Tải Hạng Nặng
-265,46.93,612,Xe Tải Hạng Nặng
-266,46.06,770,Xe Tải Hạng Nặng
-267,39.44,78,Xe Tải Hạng Nặng
-268,1.7,71,Xe Máy
-269,42.4,538,Xe Tải Hạng Nặng
-270,43.43,266,Xe Tải Hạng Nặng
-271,25.56,450,Xe Tải Hạng Nhẹ
-272,15.11,859,Xe Tải Hạng Nặng
-273,21.94,737,Xe Tải Hạng Nặng
-274,6.77,875,Xe Tải Hạng Nặng
-275,20.33,365,Xe Tải Hạng Nhẹ
-276,15.06,436,Xe Tải Hạng Nhẹ
-277,22.9,503,Xe Tải Hạng Nặng
-278,34.86,328,Xe Tải Hạng Nặng
-279,18.54,267,Xe Tải Hạng Nhẹ
-280,5.65,364,Xe Máy
-281,38.65,228,Xe Tải Hạng Nặng
-282,22.81,756,Xe Tải Hạng Nặng
-283,43.12,480,Xe Tải Hạng Nặng
-284,0.75,698,Xe Tải Hạng Nặng
-285,37.6,584,Xe Tải Hạng Nặng
-286,30.84,810,Xe Tải Hạng Nặng
-287,32.32,943,Xe Tải Hạng Nặng
-288,18.77,76,Xe Tải Hạng Nhẹ
-289,12.13,344,Xe Tải Hạng Nhẹ
-290,15.88,267,Xe Tải Hạng Nhẹ
-291,18.82,73,Xe Tải Hạng Nhẹ
-292,6.48,645,Xe Tải Hạng Nặng
-293,20.99,460,Xe Tải Hạng Nhẹ
-294,32.38,461,Xe Tải Hạng Nặng
-295,5.93,755,Xe Tải Hạng Nặng
-296,43.31,8,Xe Tải Hạng Nặng
-297,15.21,781,Xe Tải Hạng Nặng
-298,42.52,578,Xe Tải Hạng Nặng
-299,2.06,929,Xe Tải Hạng Nặng
-300,48.44,520,Xe Tải Hạng Nặng
-301,45.77,113,Xe Tải Hạng Nặng
-302,17.97,695,Xe Tải Hạng Nặng
-303,39.94,862,Xe Tải Hạng Nặng
-304,41.94,529,Xe Tải Hạng Nặng
-305,7.45,711,Xe Tải Hạng Nặng
-306,22.4,226,Xe Tải Hạng Nhẹ
-307,43.55,281,Xe Tải Hạng Nặng
-308,35.1,534,Xe Tải Hạng Nặng
-309,49.74,146,Xe Tải Hạng Nặng
-310,41.2,139,Xe Tải Hạng Nặng
-311,20.1,77,Xe Tải Hạng Nhẹ
-312,36.74,123,Xe Tải Hạng Nặng
-313,12.67,509,Xe Tải Hạng Nặng
-314,31.89,985,Xe Tải Hạng Nặng
-315,2.92,365,Xe Máy
-316,8.84,439,Xe Máy
-317,27.48,572,Xe Tải Hạng Nặng
-318,14.22,133,Xe Tải Hạng Nhẹ
-319,34.47,294,Xe Tải Hạng Nặng
-320,14.16,13,Xe Tải Hạng Nhẹ
-321,10.95,716,Xe Tải Hạng Nặng
-322,34.67,231,Xe Tải Hạng Nặng
-323,34.81,702,Xe Tải Hạng Nặng
-324,27.25,1000,Xe Tải Hạng Nặng
-325,27.18,343,Xe Tải Hạng Nhẹ
-326,45.2,883,Xe Tải Hạng Nặng
-327,1.4,889,Xe Tải Hạng Nặng
-328,37.59,99,Xe Tải Hạng Nặng
-329,8.36,370,Xe Máy
-330,35.86,592,Xe Tải Hạng Nặng
-331,28.94,658,Xe Tải Hạng Nặng
-332,16.78,275,Xe Tải Hạng Nhẹ
-333,0.56,197,Xe Máy
-334,24.93,934,Xe Tải Hạng Nặng
-335,7.94,552,Xe Tải Hạng Nặng
-336,19.09,514,Xe Tải Hạng Nặng
-337,31.73,213,Xe Tải Hạng Nặng
-338,5.93,184,Xe Máy
-339,10.76,965,Xe Tải Hạng Nặng
-340,30.9,796,Xe Tải Hạng Nặng
-341,48.74,845,Xe Tải Hạng Nặng
-342,13.13,318,Xe Tải Hạng Nhẹ
-343,36.95,189,Xe Tải Hạng Nặng
-344,33.08,118,Xe Tải Hạng Nặng
-345,10.74,724,Xe Tải Hạng Nặng
-346,35.76,857,Xe Tải Hạng Nặng
-347,33.96,430,Xe Tải Hạng Nặng
-348,15.08,480,Xe Tải Hạng Nhẹ
-349,35.91,578,Xe Tải Hạng Nặng
-350,49.14,572,Xe Tải Hạng Nặng
-351,19.17,384,Xe Tải Hạng Nhẹ
-352,21.59,191,Xe Tải Hạng Nhẹ
-353,4.85,980,Xe Tải Hạng Nặng
-354,26.7,293,Xe Tải Hạng Nhẹ
-355,36.67,31,Xe Tải Hạng Nặng
-356,50.0,111,Xe Tải Hạng Nặng
-357,28.83,408,Xe Tải Hạng Nhẹ
-358,18.25,936,Xe Tải Hạng Nặng
-359,49.18,490,Xe Tải Hạng Nặng
-360,24.06,647,Xe Tải Hạng Nặng
-361,6.13,936,Xe Tải Hạng Nặng
-362,26.41,464,Xe Tải Hạng Nhẹ
-363,11.58,293,Xe Tải Hạng Nhẹ
-364,13.92,569,Xe Tải Hạng Nặng
-365,29.8,488,Xe Tải Hạng Nhẹ
-366,30.14,634,Xe Tải Hạng Nặng
-367,49.02,732,Xe Tải Hạng Nặng
-368,36.8,375,Xe Tải Hạng Nặng
-369,15.35,146,Xe Tải Hạng Nhẹ
-370,9.48,642,Xe Tải Hạng Nặng
-371,15.25,490,Xe Tải Hạng Nhẹ
-372,12.1,174,Xe Tải Hạng Nhẹ
-373,41.9,145,Xe Tải Hạng Nặng
-374,45.89,192,Xe Tải Hạng Nặng
-375,30.12,520,Xe Tải Hạng Nặng
-376,37.66,887,Xe Tải Hạng Nặng
-377,9.11,126,Xe Máy
-378,34.88,573,Xe Tải Hạng Nặng
-379,11.13,640,Xe Tải Hạng Nặng
-380,30.36,799,Xe Tải Hạng Nặng
-381,3.9,684,Xe Tải Hạng Nặng
-382,23.26,580,Xe Tải Hạng Nặng
-383,21.04,795,Xe Tải Hạng Nặng
-384,16.43,235,Xe Tải Hạng Nhẹ
-385,26.09,325,Xe Tải Hạng Nhẹ
-386,39.74,900,Xe Tải Hạng Nặng
-387,3.72,486,Xe Máy
-388,48.24,560,Xe Tải Hạng Nặng
-389,4.61,377,Xe Máy
-390,29.25,414,Xe Tải Hạng Nhẹ
-391,23.14,303,Xe Tải Hạng Nhẹ
-392,48.96,598,Xe Tải Hạng Nặng
-393,29.5,952,Xe Tải Hạng Nặng
-394,25.21,491,Xe Tải Hạng Nhẹ
-395,32.77,577,Xe Tải Hạng Nặng
-396,6.91,911,Xe Tải Hạng Nặng
-397,29.15,563,Xe Tải Hạng Nặng
-398,35.74,81,Xe Tải Hạng Nặng
-399,17.58,989,Xe Tải Hạng Nặng
-400,41.16,41,Xe Tải Hạng Nặng
-401,8.78,805,Xe Tải Hạng Nặng
-402,26.35,298,Xe Tải Hạng Nhẹ
-403,2.31,333,Xe Máy
-404,31.93,706,Xe Tải Hạng Nặng
-405,11.27,241,Xe Tải Hạng Nhẹ
-406,4.27,192,Xe Máy
-407,32.04,300,Xe Tải Hạng Nặng
-408,37.62,632,Xe Tải Hạng Nặng
-409,33.35,568,Xe Tải Hạng Nặng
-410,22.84,398,Xe Tải Hạng Nhẹ
-411,49.21,24,Xe Tải Hạng Nặng
-412,41.55,772,Xe Tải Hạng Nặng
-413,17.41,957,Xe Tải Hạng Nặng
-414,11.96,653,Xe Tải Hạng Nặng
-415,40.22,522,Xe Tải Hạng Nặng
-416,1.65,708,Xe Tải Hạng Nặng
-417,16.27,122,Xe Tải Hạng Nhẹ
-418,42.95,168,Xe Tải Hạng Nặng
-419,5.4,107,Xe Máy
-420,9.09,453,Xe Máy
-421,18.79,279,Xe Tải Hạng Nhẹ
-422,2.83,413,Xe Máy
-423,2.33,143,Xe Máy
-424,34.97,721,Xe Tải Hạng Nặng
-425,16.54,28,Xe Tải Hạng Nhẹ
-426,40.57,102,Xe Tải Hạng Nặng
-427,30.58,551,Xe Tải Hạng Nặng
-428,9.95,579,Xe Tải Hạng Nặng
-429,33.86,12,Xe Tải Hạng Nặng
-430,41.38,395,Xe Tải Hạng Nặng
-431,28.7,613,Xe Tải Hạng Nặng
-432,25.02,167,Xe Tải Hạng Nhẹ
-433,0.91,827,Xe Tải Hạng Nặng
-434,22.98,841,Xe Tải Hạng Nặng
-435,23.53,280,Xe Tải Hạng Nhẹ
-436,49.05,354,Xe Tải Hạng Nặng
-437,40.79,340,Xe Tải Hạng Nặng
-438,14.63,702,Xe Tải Hạng Nặng
-439,3.54,672,Xe Tải Hạng Nặng
-440,44.1,399,Xe Tải Hạng Nặng
-441,32.42,554,Xe Tải Hạng Nặng
-442,4.35,487,Xe Máy
-443,2.89,707,Xe Tải Hạng Nặng
-444,2.45,225,Xe Máy
-445,42.53,49,Xe Tải Hạng Nặng
-446,7.08,421,Xe Máy
-447,38.51,512,Xe Tải Hạng Nặng
-448,45.41,613,Xe Tải Hạng Nặng
-449,20.08,71,Xe Tải Hạng Nhẹ
-450,41.76,240,Xe Tải Hạng Nặng
-451,11.74,179,Xe Tải Hạng Nhẹ
-452,5.83,525,Xe Tải Hạng Nặng
-453,24.85,764,Xe Tải Hạng Nặng
-454,35.76,711,Xe Tải Hạng Nặng
-455,30.04,96,Xe Tải Hạng Nặng
-456,32.65,148,Xe Tải Hạng Nặng
-457,32.4,843,Xe Tải Hạng Nặng
-458,33.52,835,Xe Tải Hạng Nặng
-459,39.0,585,Xe Tải Hạng Nặng
-460,25.81,225,Xe Tải Hạng Nhẹ
-461,48.57,824,Xe Tải Hạng Nặng
-462,11.32,479,Xe Tải Hạng Nhẹ
-463,28.48,856,Xe Tải Hạng Nặng
-464,21.07,364,Xe Tải Hạng Nhẹ
-465,34.71,223,Xe Tải Hạng Nặng
-466,29.26,158,Xe Tải Hạng Nhẹ
-467,43.46,772,Xe Tải Hạng Nặng
-468,44.66,232,Xe Tải Hạng Nặng
-469,49.98,114,Xe Tải Hạng Nặng
-470,25.96,691,Xe Tải Hạng Nặng
-471,23.21,110,Xe Tải Hạng Nhẹ
-472,42.18,722,Xe Tải Hạng Nặng
-473,10.29,172,Xe Tải Hạng Nhẹ
-474,44.44,924,Xe Tải Hạng Nặng
-475,23.66,281,Xe Tải Hạng Nhẹ
-476,38.07,241,Xe Tải Hạng Nặng
-477,1.28,234,Xe Máy
-478,22.97,67,Xe Tải Hạng Nhẹ
-479,20.91,354,Xe Tải Hạng Nhẹ
-480,12.97,41,Xe Tải Hạng Nhẹ
-481,46.76,728,Xe Tải Hạng Nặng
-482,3.46,883,Xe Tải Hạng Nặng
-483,35.93,121,Xe Tải Hạng Nặng
-484,16.55,773,Xe Tải Hạng Nặng
-485,1.51,448,Xe Máy
-486,2.41,41,Xe Máy
-487,29.83,850,Xe Tải Hạng Nặng
-488,38.11,521,Xe Tải Hạng Nặng
-489,1.61,458,Xe Máy
-490,47.82,995,Xe Tải Hạng Nặng
-491,11.62,586,Xe Tải Hạng Nặng
-492,6.26,866,Xe Tải Hạng Nặng
-493,48.89,773,Xe Tải Hạng Nặng
-494,4.87,110,Xe Máy
-495,37.52,220,Xe Tải Hạng Nặng
-496,34.23,684,Xe Tải Hạng Nặng
-497,15.41,467,Xe Tải Hạng Nhẹ
-498,46.13,942,Xe Tải Hạng Nặng
-499,11.44,460,Xe Tải Hạng Nhẹ
-500,41.59,887,Xe Tải Hạng Nặng
+OrderID,Product_Type,Weight_kg,Distance_km,Vehicle_Type
+1,Nông sản,18.81,199,Xe Tải Hạng Nặng
+2,Linh kiện điện tử,31.09,275,Xe Tải Hạng Nặng
+3,Mỹ phẩm,9.25,157,Xe Tải Hạng Nhẹ
+4,Mỹ phẩm,13.12,136,Xe Tải Hạng Nặng
+5,Hàng đông lạnh,27.87,115,Xe Tải Hạng Nặng
+6,Mỹ phẩm,6.28,42,Xe Máy
+7,Mỹ phẩm,45.23,993,Xe Tải Hạng Nặng
+8,Linh kiện điện tử,16.86,128,Xe Tải Hạng Nặng
+9,Nông sản,0.94,11,Xe Máy
+10,Nông sản,44.72,803,Xe Tải Hạng Nặng
+11,Mỹ phẩm,47.53,110,Xe Tải Hạng Nặng
+12,Hàng đông lạnh,20.57,200,Xe Tải Hạng Nặng
+13,Hàng đông lạnh,43.44,815,Xe Tải Hạng Nặng
+14,Đồ gia dụng,48.2,651,Xe Tải Hạng Nặng
+15,Hàng dễ vỡ,45.51,496,Xe Tải Hạng Nặng
+16,Hàng dễ vỡ,47.47,264,Xe Tải Hạng Nặng
+17,Hàng dễ vỡ,6.07,196,Xe Tải Hạng Nhẹ
+18,Hàng đông lạnh,27.42,124,Xe Tải Hạng Nặng
+19,Linh kiện điện tử,29.61,174,Xe Tải Hạng Nặng
+20,Linh kiện điện tử,49.36,143,Xe Tải Hạng Nặng
+21,Hàng dễ vỡ,48.72,289,Xe Tải Hạng Nặng
+22,Mỹ phẩm,46.12,970,Xe Tải Hạng Nặng
+23,Mỹ phẩm,28.53,129,Xe Tải Hạng Nặng
+24,Hàng dễ vỡ,49.88,269,Xe Tải Hạng Nặng
+25,Nông sản,22.26,94,Xe Tải Hạng Nhẹ
+26,Hàng dễ vỡ,2.37,84,Xe Tải Hạng Nhẹ
+27,Mỹ phẩm,39.96,830,Xe Tải Hạng Nặng
+28,Linh kiện điện tử,12.81,20,Xe Tải Hạng Nhẹ
+29,Đồ gia dụng,5.16,197,Xe Tải Hạng Nhẹ
+30,Hàng đông lạnh,1.0,191,Xe Tải Hạng Nhẹ
+31,Linh kiện điện tử,15.09,138,Xe Tải Hạng Nặng
+32,Đồ gia dụng,20.35,188,Xe Tải Hạng Nặng
+33,Hàng dễ vỡ,4.94,107,Xe Tải Hạng Nhẹ
+34,Linh kiện điện tử,8.88,189,Xe Tải Hạng Nhẹ
+35,Hàng dễ vỡ,10.13,36,Xe Tải Hạng Nhẹ
+36,Đồ gia dụng,10.69,22,Xe Tải Hạng Nhẹ
+37,Hàng dễ vỡ,39.28,334,Xe Tải Hạng Nặng
+38,Hàng dễ vỡ,6.44,113,Xe Tải Hạng Nhẹ
+39,Hàng dễ vỡ,17.82,29,Xe Tải Hạng Nhẹ
+40,Hàng dễ vỡ,29.23,186,Xe Tải Hạng Nặng
+41,Nông sản,36.93,525,Xe Tải Hạng Nặng
+42,Đồ gia dụng,13.53,178,Xe Tải Hạng Nặng
+43,Hàng dễ vỡ,13.97,101,Xe Tải Hạng Nặng
+44,Linh kiện điện tử,3.53,86,Xe Tải Hạng Nhẹ
+45,Hàng dễ vỡ,1.14,130,Xe Tải Hạng Nhẹ
+46,Hàng dễ vỡ,14.05,194,Xe Tải Hạng Nặng
+47,Linh kiện điện tử,15.82,11,Xe Tải Hạng Nhẹ
+48,Đồ gia dụng,4.03,7,Xe Máy
+49,Linh kiện điện tử,33.86,224,Xe Tải Hạng Nặng
+50,Hàng dễ vỡ,27.75,132,Xe Tải Hạng Nặng
+51,Hàng dễ vỡ,34.34,596,Xe Tải Hạng Nặng
+52,Hàng đông lạnh,45.46,916,Xe Tải Hạng Nặng
+53,Linh kiện điện tử,33.18,927,Xe Tải Hạng Nặng
+54,Linh kiện điện tử,10.27,139,Xe Tải Hạng Nặng
+55,Nông sản,38.05,82,Xe Tải Hạng Nặng
+56,Linh kiện điện tử,2.91,138,Xe Tải Hạng Nhẹ
+57,Hàng dễ vỡ,2.51,100,Xe Tải Hạng Nhẹ
+58,Nông sản,34.61,336,Xe Tải Hạng Nặng
+59,Mỹ phẩm,36.33,182,Xe Tải Hạng Nặng
+60,Đồ gia dụng,31.02,536,Xe Tải Hạng Nặng
+61,Đồ gia dụng,17.03,93,Xe Tải Hạng Nhẹ
+62,Mỹ phẩm,46.63,835,Xe Tải Hạng Nặng
+63,Đồ gia dụng,19.93,173,Xe Tải Hạng Nặng
+64,Linh kiện điện tử,42.57,998,Xe Tải Hạng Nặng
+65,Hàng dễ vỡ,0.84,149,Xe Tải Hạng Nhẹ
+66,Đồ gia dụng,12.36,45,Xe Tải Hạng Nhẹ
+67,Mỹ phẩm,34.22,819,Xe Tải Hạng Nặng
+68,Mỹ phẩm,27.07,36,Xe Tải Hạng Nhẹ
+69,Mỹ phẩm,44.28,252,Xe Tải Hạng Nặng
+70,Nông sản,12.86,154,Xe Tải Hạng Nặng
+71,Hàng đông lạnh,48.01,853,Xe Tải Hạng Nặng
+72,Hàng dễ vỡ,11.96,52,Xe Tải Hạng Nhẹ
+73,Hàng dễ vỡ,46.75,992,Xe Tải Hạng Nặng
+74,Đồ gia dụng,33.06,839,Xe Tải Hạng Nặng
+75,Đồ gia dụng,42.35,433,Xe Tải Hạng Nặng
+76,Đồ gia dụng,39.56,555,Xe Tải Hạng Nặng
+77,Linh kiện điện tử,48.64,892,Xe Tải Hạng Nặng
+78,Hàng dễ vỡ,47.72,879,Xe Tải Hạng Nặng
+79,Mỹ phẩm,8.74,89,Xe Tải Hạng Nhẹ
+80,Hàng đông lạnh,17.26,71,Xe Tải Hạng Nhẹ
+81,Hàng dễ vỡ,32.04,578,Xe Tải Hạng Nặng
+82,Mỹ phẩm,13.02,135,Xe Tải Hạng Nặng
+83,Linh kiện điện tử,38.07,484,Xe Tải Hạng Nặng
+84,Hàng dễ vỡ,23.4,192,Xe Tải Hạng Nặng
+85,Hàng đông lạnh,4.07,156,Xe Tải Hạng Nhẹ
+86,Đồ gia dụng,22.6,191,Xe Tải Hạng Nặng
+87,Nông sản,10.81,186,Xe Tải Hạng Nặng
+88,Hàng đông lạnh,49.74,177,Xe Tải Hạng Nặng
+89,Hàng đông lạnh,13.17,35,Xe Tải Hạng Nhẹ
+90,Hàng đông lạnh,34.33,749,Xe Tải Hạng Nặng
+91,Hàng dễ vỡ,27.63,200,Xe Tải Hạng Nặng
+92,Linh kiện điện tử,15.95,62,Xe Tải Hạng Nhẹ
+93,Hàng đông lạnh,6.62,199,Xe Tải Hạng Nhẹ
+94,Nông sản,15.59,107,Xe Tải Hạng Nặng
+95,Nông sản,21.04,28,Xe Tải Hạng Nhẹ
+96,Hàng dễ vỡ,46.2,423,Xe Tải Hạng Nặng
+97,Hàng dễ vỡ,6.37,37,Xe Máy
+98,Mỹ phẩm,24.51,136,Xe Tải Hạng Nặng
+99,Hàng đông lạnh,1.94,103,Xe Tải Hạng Nhẹ
+100,Mỹ phẩm,24.66,151,Xe Tải Hạng Nặng
+101,Hàng đông lạnh,45.94,361,Xe Tải Hạng Nặng
+102,Nông sản,37.53,539,Xe Tải Hạng Nặng
+103,Mỹ phẩm,38.15,948,Xe Tải Hạng Nặng
+104,Hàng đông lạnh,43.48,305,Xe Tải Hạng Nặng
+105,Đồ gia dụng,41.72,170,Xe Tải Hạng Nặng
+106,Hàng dễ vỡ,15.84,183,Xe Tải Hạng Nặng
+107,Hàng đông lạnh,22.82,14,Xe Tải Hạng Nhẹ
+108,Hàng dễ vỡ,43.2,628,Xe Tải Hạng Nặng
+109,Hàng đông lạnh,46.36,571,Xe Tải Hạng Nặng
+110,Mỹ phẩm,48.22,133,Xe Tải Hạng Nặng
+111,Nông sản,32.57,672,Xe Tải Hạng Nặng
+112,Nông sản,9.99,167,Xe Tải Hạng Nhẹ
+113,Hàng đông lạnh,11.11,133,Xe Tải Hạng Nặng
+114,Hàng dễ vỡ,38.5,583,Xe Tải Hạng Nặng
+115,Mỹ phẩm,38.65,191,Xe Tải Hạng Nặng
+116,Mỹ phẩm,34.02,897,Xe Tải Hạng Nặng
+117,Đồ gia dụng,9.82,61,Xe Tải Hạng Nhẹ
+118,Đồ gia dụng,35.29,700,Xe Tải Hạng Nặng
+119,Mỹ phẩm,29.81,131,Xe Tải Hạng Nặng
+120,Mỹ phẩm,38.63,618,Xe Tải Hạng Nặng
+121,Hàng đông lạnh,9.19,55,Xe Tải Hạng Nhẹ
+122,Mỹ phẩm,40.51,740,Xe Tải Hạng Nặng
+123,Nông sản,5.29,140,Xe Tải Hạng Nhẹ
+124,Linh kiện điện tử,8.69,80,Xe Tải Hạng Nhẹ
+125,Linh kiện điện tử,37.89,262,Xe Tải Hạng Nặng
+126,Nông sản,4.73,197,Xe Tải Hạng Nhẹ
+127,Hàng đông lạnh,19.46,97,Xe Tải Hạng Nhẹ
+128,Linh kiện điện tử,42.56,592,Xe Tải Hạng Nặng
+129,Hàng đông lạnh,38.81,530,Xe Tải Hạng Nặng
+130,Đồ gia dụng,7.69,37,Xe Máy
+131,Nông sản,22.91,130,Xe Tải Hạng Nặng
+132,Linh kiện điện tử,4.09,2,Xe Máy
+133,Hàng đông lạnh,15.23,87,Xe Tải Hạng Nhẹ
+134,Hàng dễ vỡ,6.98,23,Xe Máy
+135,Mỹ phẩm,43.46,436,Xe Tải Hạng Nặng
+136,Nông sản,35.12,401,Xe Tải Hạng Nặng
+137,Mỹ phẩm,37.38,105,Xe Tải Hạng Nặng
+138,Hàng dễ vỡ,41.4,511,Xe Tải Hạng Nặng
+139,Hàng đông lạnh,11.18,155,Xe Tải Hạng Nặng
+140,Mỹ phẩm,38.12,990,Xe Tải Hạng Nặng
+141,Hàng đông lạnh,30.52,508,Xe Tải Hạng Nặng
+142,Linh kiện điện tử,49.19,943,Xe Tải Hạng Nặng
+143,Hàng đông lạnh,14.17,159,Xe Tải Hạng Nặng
+144,Hàng đông lạnh,41.91,392,Xe Tải Hạng Nặng
+145,Mỹ phẩm,19.08,200,Xe Tải Hạng Nặng
+146,Hàng đông lạnh,19.53,106,Xe Tải Hạng Nặng
+147,Đồ gia dụng,25.7,109,Xe Tải Hạng Nặng
+148,Mỹ phẩm,33.31,952,Xe Tải Hạng Nặng
+149,Mỹ phẩm,2.93,11,Xe Máy
+150,Linh kiện điện tử,45.05,944,Xe Tải Hạng Nặng
+151,Hàng dễ vỡ,42.02,285,Xe Tải Hạng Nặng
+152,Linh kiện điện tử,26.63,119,Xe Tải Hạng Nặng
+153,Hàng đông lạnh,30.2,571,Xe Tải Hạng Nặng
+154,Linh kiện điện tử,10.17,161,Xe Tải Hạng Nặng
+155,Hàng đông lạnh,36.27,675,Xe Tải Hạng Nặng
+156,Hàng đông lạnh,8.12,82,Xe Tải Hạng Nhẹ
+157,Hàng dễ vỡ,6.32,49,Xe Máy
+158,Đồ gia dụng,5.31,193,Xe Tải Hạng Nhẹ
+159,Mỹ phẩm,45.81,464,Xe Tải Hạng Nặng
+160,Mỹ phẩm,43.03,986,Xe Tải Hạng Nặng
+161,Nông sản,41.38,369,Xe Tải Hạng Nặng
+162,Đồ gia dụng,31.75,320,Xe Tải Hạng Nặng
+163,Đồ gia dụng,1.92,125,Xe Tải Hạng Nhẹ
+164,Linh kiện điện tử,46.34,814,Xe Tải Hạng Nặng
+165,Mỹ phẩm,43.09,313,Xe Tải Hạng Nặng
+166,Hàng dễ vỡ,26.68,52,Xe Tải Hạng Nhẹ
+167,Linh kiện điện tử,16.13,152,Xe Tải Hạng Nặng
+168,Nông sản,19.34,188,Xe Tải Hạng Nặng
+169,Nông sản,47.91,984,Xe Tải Hạng Nặng
+170,Linh kiện điện tử,37.67,727,Xe Tải Hạng Nặng
+171,Hàng dễ vỡ,38.08,947,Xe Tải Hạng Nặng
+172,Đồ gia dụng,31.69,749,Xe Tải Hạng Nặng
+173,Hàng dễ vỡ,47.96,281,Xe Tải Hạng Nặng
+174,Hàng đông lạnh,22.07,61,Xe Tải Hạng Nhẹ
+175,Hàng đông lạnh,25.33,199,Xe Tải Hạng Nặng
+176,Hàng dễ vỡ,7.32,132,Xe Tải Hạng Nhẹ
+177,Linh kiện điện tử,16.14,52,Xe Tải Hạng Nhẹ
+178,Hàng đông lạnh,1.56,111,Xe Tải Hạng Nhẹ
+179,Nông sản,30.15,853,Xe Tải Hạng Nặng
+180,Mỹ phẩm,7.42,70,Xe Tải Hạng Nhẹ
+181,Đồ gia dụng,30.52,679,Xe Tải Hạng Nặng
+182,Đồ gia dụng,28.19,46,Xe Tải Hạng Nhẹ
+183,Nông sản,18.6,70,Xe Tải Hạng Nhẹ
+184,Hàng đông lạnh,10.29,17,Xe Tải Hạng Nhẹ
+185,Đồ gia dụng,49.46,944,Xe Tải Hạng Nặng
+186,Hàng dễ vỡ,33.22,931,Xe Tải Hạng Nặng
+187,Hàng đông lạnh,20.23,136,Xe Tải Hạng Nặng
+188,Nông sản,29.21,23,Xe Tải Hạng Nhẹ
+189,Hàng dễ vỡ,28.58,58,Xe Tải Hạng Nhẹ
+190,Hàng đông lạnh,22.8,98,Xe Tải Hạng Nhẹ
+191,Hàng dễ vỡ,6.08,152,Xe Tải Hạng Nhẹ
+192,Nông sản,28.64,7,Xe Tải Hạng Nhẹ
+193,Hàng dễ vỡ,48.24,810,Xe Tải Hạng Nặng
+194,Nông sản,12.82,35,Xe Tải Hạng Nhẹ
+195,Nông sản,2.24,81,Xe Tải Hạng Nhẹ
+196,Mỹ phẩm,44.69,489,Xe Tải Hạng Nặng
+197,Nông sản,13.77,52,Xe Tải Hạng Nhẹ
+198,Hàng đông lạnh,33.64,752,Xe Tải Hạng Nặng
+199,Nông sản,23.47,196,Xe Tải Hạng Nặng
+200,Nông sản,45.8,304,Xe Tải Hạng Nặng
+201,Linh kiện điện tử,40.69,589,Xe Tải Hạng Nặng
+202,Nông sản,17.84,53,Xe Tải Hạng Nhẹ
+203,Mỹ phẩm,17.68,120,Xe Tải Hạng Nặng
+204,Mỹ phẩm,8.2,78,Xe Tải Hạng Nhẹ
+205,Đồ gia dụng,9.2,53,Xe Tải Hạng Nhẹ
+206,Linh kiện điện tử,45.1,651,Xe Tải Hạng Nặng
+207,Nông sản,27.19,169,Xe Tải Hạng Nặng
+208,Mỹ phẩm,2.63,61,Xe Tải Hạng Nhẹ
+209,Hàng dễ vỡ,5.74,46,Xe Máy
+210,Hàng dễ vỡ,33.0,439,Xe Tải Hạng Nặng
+211,Mỹ phẩm,9.86,86,Xe Tải Hạng Nhẹ
+212,Hàng dễ vỡ,48.9,598,Xe Tải Hạng Nặng
+213,Linh kiện điện tử,25.68,166,Xe Tải Hạng Nặng
+214,Hàng dễ vỡ,40.98,289,Xe Tải Hạng Nặng
+215,Đồ gia dụng,18.02,68,Xe Tải Hạng Nhẹ
+216,Hàng đông lạnh,1.48,97,Xe Tải Hạng Nhẹ
+217,Nông sản,34.0,239,Xe Tải Hạng Nặng
+218,Hàng đông lạnh,22.14,65,Xe Tải Hạng Nhẹ
+219,Đồ gia dụng,29.06,107,Xe Tải Hạng Nặng
+220,Mỹ phẩm,8.6,103,Xe Tải Hạng Nhẹ
+221,Hàng đông lạnh,37.47,166,Xe Tải Hạng Nặng
+222,Hàng đông lạnh,49.15,982,Xe Tải Hạng Nặng
+223,Mỹ phẩm,22.68,134,Xe Tải Hạng Nặng
+224,Mỹ phẩm,14.58,2,Xe Tải Hạng Nhẹ
+225,Mỹ phẩm,7.86,29,Xe Máy
+226,Đồ gia dụng,4.4,162,Xe Tải Hạng Nhẹ
+227,Nông sản,15.92,65,Xe Tải Hạng Nhẹ
+228,Linh kiện điện tử,29.67,151,Xe Tải Hạng Nặng
+229,Hàng dễ vỡ,9.1,75,Xe Tải Hạng Nhẹ
+230,Nông sản,42.56,585,Xe Tải Hạng Nặng
+231,Mỹ phẩm,35.69,330,Xe Tải Hạng Nặng
+232,Mỹ phẩm,43.57,419,Xe Tải Hạng Nặng
+233,Hàng dễ vỡ,10.0,14,Xe Máy
+234,Mỹ phẩm,23.6,155,Xe Tải Hạng Nặng
+235,Linh kiện điện tử,48.16,336,Xe Tải Hạng Nặng
+236,Linh kiện điện tử,39.79,436,Xe Tải Hạng Nặng
+237,Hàng đông lạnh,42.02,686,Xe Tải Hạng Nặng
+238,Linh kiện điện tử,29.57,95,Xe Tải Hạng Nhẹ
+239,Mỹ phẩm,3.97,64,Xe Tải Hạng Nhẹ
+240,Mỹ phẩm,16.95,93,Xe Tải Hạng Nhẹ
+241,Đồ gia dụng,35.15,665,Xe Tải Hạng Nặng
+242,Đồ gia dụng,37.29,395,Xe Tải Hạng Nặng
+243,Đồ gia dụng,20.4,143,Xe Tải Hạng Nặng
+244,Đồ gia dụng,33.61,605,Xe Tải Hạng Nặng
+245,Hàng đông lạnh,6.36,134,Xe Tải Hạng Nhẹ
+246,Hàng đông lạnh,49.73,825,Xe Tải Hạng Nặng
+247,Mỹ phẩm,27.15,126,Xe Tải Hạng Nặng
+248,Nông sản,11.01,26,Xe Tải Hạng Nhẹ
+249,Nông sản,14.53,24,Xe Tải Hạng Nhẹ
+250,Hàng dễ vỡ,47.37,915,Xe Tải Hạng Nặng
+251,Đồ gia dụng,43.58,364,Xe Tải Hạng Nặng
+252,Hàng dễ vỡ,9.19,82,Xe Tải Hạng Nhẹ
+253,Đồ gia dụng,44.27,420,Xe Tải Hạng Nặng
+254,Đồ gia dụng,46.71,149,Xe Tải Hạng Nặng
+255,Hàng đông lạnh,5.43,130,Xe Tải Hạng Nhẹ
+256,Nông sản,35.94,133,Xe Tải Hạng Nặng
+257,Hàng dễ vỡ,9.83,27,Xe Máy
+258,Hàng đông lạnh,42.12,712,Xe Tải Hạng Nặng
+259,Nông sản,29.59,80,Xe Tải Hạng Nhẹ
+260,Mỹ phẩm,15.59,142,Xe Tải Hạng Nặng
+261,Linh kiện điện tử,27.18,155,Xe Tải Hạng Nặng
+262,Linh kiện điện tử,14.03,101,Xe Tải Hạng Nặng
+263,Đồ gia dụng,29.4,63,Xe Tải Hạng Nhẹ
+264,Hàng dễ vỡ,47.17,70,Xe Tải Hạng Nặng
+265,Mỹ phẩm,47.09,189,Xe Tải Hạng Nặng
+266,Hàng dễ vỡ,10.28,24,Xe Tải Hạng Nhẹ
+267,Hàng đông lạnh,24.5,161,Xe Tải Hạng Nặng
+268,Hàng đông lạnh,34.32,876,Xe Tải Hạng Nặng
+269,Linh kiện điện tử,43.7,312,Xe Tải Hạng Nặng
+270,Mỹ phẩm,13.58,153,Xe Tải Hạng Nặng
+271,Hàng dễ vỡ,3.72,108,Xe Tải Hạng Nhẹ
+272,Mỹ phẩm,17.28,194,Xe Tải Hạng Nặng
+273,Nông sản,19.4,31,Xe Tải Hạng Nhẹ
+274,Hàng dễ vỡ,3.82,173,Xe Tải Hạng Nhẹ
+275,Mỹ phẩm,36.97,851,Xe Tải Hạng Nặng
+276,Linh kiện điện tử,7.11,147,Xe Tải Hạng Nhẹ
+277,Hàng dễ vỡ,46.22,835,Xe Tải Hạng Nặng
+278,Linh kiện điện tử,37.39,590,Xe Tải Hạng Nặng
+279,Mỹ phẩm,17.18,57,Xe Tải Hạng Nhẹ
+280,Hàng đông lạnh,37.61,306,Xe Tải Hạng Nặng
+281,Hàng đông lạnh,28.06,49,Xe Tải Hạng Nhẹ
+282,Nông sản,21.51,42,Xe Tải Hạng Nhẹ
+283,Đồ gia dụng,0.82,42,Xe Máy
+284,Hàng dễ vỡ,23.39,116,Xe Tải Hạng Nặng
+285,Nông sản,17.9,47,Xe Tải Hạng Nhẹ
+286,Đồ gia dụng,6.5,63,Xe Tải Hạng Nhẹ
+287,Mỹ phẩm,0.66,63,Xe Tải Hạng Nhẹ
+288,Đồ gia dụng,43.8,559,Xe Tải Hạng Nặng
+289,Hàng dễ vỡ,45.57,95,Xe Tải Hạng Nặng
+290,Hàng đông lạnh,13.25,6,Xe Tải Hạng Nhẹ
+291,Nông sản,28.1,80,Xe Tải Hạng Nhẹ
+292,Hàng đông lạnh,7.03,50,Xe Máy
+293,Nông sản,34.13,374,Xe Tải Hạng Nặng
+294,Hàng đông lạnh,2.87,74,Xe Tải Hạng Nhẹ
+295,Hàng dễ vỡ,33.87,181,Xe Tải Hạng Nặng
+296,Linh kiện điện tử,37.47,319,Xe Tải Hạng Nặng
+297,Linh kiện điện tử,47.04,819,Xe Tải Hạng Nặng
+298,Nông sản,22.91,71,Xe Tải Hạng Nhẹ
+299,Hàng đông lạnh,16.71,163,Xe Tải Hạng Nặng
+300,Mỹ phẩm,23.21,46,Xe Tải Hạng Nhẹ
+301,Mỹ phẩm,8.73,169,Xe Tải Hạng Nhẹ
+302,Hàng dễ vỡ,27.51,158,Xe Tải Hạng Nặng
+303,Hàng đông lạnh,2.49,35,Xe Máy
+304,Linh kiện điện tử,24.74,138,Xe Tải Hạng Nặng
+305,Linh kiện điện tử,43.94,447,Xe Tải Hạng Nặng
+306,Hàng đông lạnh,24.74,134,Xe Tải Hạng Nặng
+307,Đồ gia dụng,48.18,756,Xe Tải Hạng Nặng
+308,Hàng dễ vỡ,1.23,54,Xe Tải Hạng Nhẹ
+309,Hàng đông lạnh,24.48,44,Xe Tải Hạng Nhẹ
+310,Linh kiện điện tử,17.23,126,Xe Tải Hạng Nặng
+311,Đồ gia dụng,47.61,338,Xe Tải Hạng Nặng
+312,Hàng đông lạnh,12.98,192,Xe Tải Hạng Nặng
+313,Nông sản,26.17,172,Xe Tải Hạng Nặng
+314,Mỹ phẩm,41.68,885,Xe Tải Hạng Nặng
+315,Linh kiện điện tử,1.56,154,Xe Tải Hạng Nhẹ
+316,Đồ gia dụng,15.86,100,Xe Tải Hạng Nhẹ
+317,Hàng dễ vỡ,4.44,114,Xe Tải Hạng Nhẹ
+318,Linh kiện điện tử,29.49,131,Xe Tải Hạng Nặng
+319,Hàng dễ vỡ,19.69,130,Xe Tải Hạng Nặng
+320,Linh kiện điện tử,13.97,22,Xe Tải Hạng Nhẹ
+321,Đồ gia dụng,23.49,184,Xe Tải Hạng Nặng
+322,Đồ gia dụng,21.01,29,Xe Tải Hạng Nhẹ
+323,Hàng dễ vỡ,26.99,102,Xe Tải Hạng Nặng
+324,Linh kiện điện tử,44.56,659,Xe Tải Hạng Nặng
+325,Linh kiện điện tử,26.81,85,Xe Tải Hạng Nhẹ
+326,Đồ gia dụng,7.89,81,Xe Tải Hạng Nhẹ
+327,Nông sản,23.73,200,Xe Tải Hạng Nặng
+328,Hàng dễ vỡ,30.69,996,Xe Tải Hạng Nặng
+329,Linh kiện điện tử,11.02,25,Xe Tải Hạng Nhẹ
+330,Hàng dễ vỡ,15.72,97,Xe Tải Hạng Nhẹ
+331,Đồ gia dụng,29.67,140,Xe Tải Hạng Nặng
+332,Nông sản,36.4,877,Xe Tải Hạng Nặng
+333,Hàng dễ vỡ,3.47,56,Xe Tải Hạng Nhẹ
+334,Hàng dễ vỡ,30.1,337,Xe Tải Hạng Nặng
+335,Hàng đông lạnh,26.95,200,Xe Tải Hạng Nặng
+336,Đồ gia dụng,4.29,61,Xe Tải Hạng Nhẹ
+337,Nông sản,25.93,2,Xe Tải Hạng Nhẹ
+338,Mỹ phẩm,31.52,829,Xe Tải Hạng Nặng
+339,Đồ gia dụng,16.49,6,Xe Tải Hạng Nhẹ
+340,Linh kiện điện tử,5.59,100,Xe Tải Hạng Nhẹ
+341,Hàng đông lạnh,44.12,566,Xe Tải Hạng Nặng
+342,Hàng đông lạnh,22.69,102,Xe Tải Hạng Nặng
+343,Mỹ phẩm,45.86,615,Xe Tải Hạng Nặng
+344,Linh kiện điện tử,22.26,82,Xe Tải Hạng Nhẹ
+345,Linh kiện điện tử,29.58,8,Xe Tải Hạng Nhẹ
+346,Hàng dễ vỡ,3.54,47,Xe Máy
+347,Hàng đông lạnh,20.45,137,Xe Tải Hạng Nặng
+348,Hàng dễ vỡ,14.38,193,Xe Tải Hạng Nặng
+349,Mỹ phẩm,29.17,74,Xe Tải Hạng Nhẹ
+350,Linh kiện điện tử,45.31,819,Xe Tải Hạng Nặng
+351,Hàng đông lạnh,45.98,456,Xe Tải Hạng Nặng
+352,Hàng dễ vỡ,24.57,161,Xe Tải Hạng Nặng
+353,Linh kiện điện tử,12.43,122,Xe Tải Hạng Nặng
+354,Hàng đông lạnh,3.57,156,Xe Tải Hạng Nhẹ
+355,Đồ gia dụng,33.97,85,Xe Tải Hạng Nặng
+356,Linh kiện điện tử,48.84,820,Xe Tải Hạng Nặng
+357,Nông sản,7.79,174,Xe Tải Hạng Nhẹ
+358,Mỹ phẩm,4.49,184,Xe Tải Hạng Nhẹ
+359,Nông sản,24.79,13,Xe Tải Hạng Nhẹ
+360,Mỹ phẩm,18.28,195,Xe Tải Hạng Nặng
+361,Hàng dễ vỡ,29.55,96,Xe Tải Hạng Nhẹ
+362,Hàng dễ vỡ,30.13,267,Xe Tải Hạng Nặng
+363,Hàng đông lạnh,22.04,40,Xe Tải Hạng Nhẹ
+364,Mỹ phẩm,23.88,6,Xe Tải Hạng Nhẹ
+365,Hàng đông lạnh,33.23,525,Xe Tải Hạng Nặng
+366,Mỹ phẩm,4.21,184,Xe Tải Hạng Nhẹ
+367,Mỹ phẩm,20.15,28,Xe Tải Hạng Nhẹ
+368,Linh kiện điện tử,5.42,38,Xe Máy
+369,Hàng đông lạnh,22.41,100,Xe Tải Hạng Nhẹ
+370,Hàng đông lạnh,12.16,198,Xe Tải Hạng Nặng
+371,Mỹ phẩm,23.28,95,Xe Tải Hạng Nhẹ
+372,Mỹ phẩm,44.86,151,Xe Tải Hạng Nặng
+373,Đồ gia dụng,34.0,453,Xe Tải Hạng Nặng
+374,Hàng đông lạnh,6.66,124,Xe Tải Hạng Nhẹ
+375,Linh kiện điện tử,7.52,13,Xe Máy
+376,Hàng đông lạnh,17.92,99,Xe Tải Hạng Nhẹ
+377,Hàng đông lạnh,39.29,513,Xe Tải Hạng Nặng
+378,Hàng đông lạnh,36.48,508,Xe Tải Hạng Nặng
+379,Đồ gia dụng,33.53,761,Xe Tải Hạng Nặng
+380,Hàng dễ vỡ,2.84,197,Xe Tải Hạng Nhẹ
+381,Hàng dễ vỡ,37.3,989,Xe Tải Hạng Nặng
+382,Nông sản,22.08,191,Xe Tải Hạng Nặng
+383,Hàng đông lạnh,10.04,98,Xe Tải Hạng Nhẹ
+384,Linh kiện điện tử,2.95,122,Xe Tải Hạng Nhẹ
+385,Mỹ phẩm,5.81,189,Xe Tải Hạng Nhẹ
+386,Hàng dễ vỡ,34.7,999,Xe Tải Hạng Nặng
+387,Hàng dễ vỡ,23.22,7,Xe Tải Hạng Nhẹ
+388,Mỹ phẩm,40.91,998,Xe Tải Hạng Nặng
+389,Linh kiện điện tử,38.81,713,Xe Tải Hạng Nặng
+390,Nông sản,5.13,128,Xe Tải Hạng Nhẹ
+391,Hàng đông lạnh,2.65,170,Xe Tải Hạng Nhẹ
+392,Nông sản,48.18,166,Xe Tải Hạng Nặng
+393,Đồ gia dụng,38.62,133,Xe Tải Hạng Nặng
+394,Linh kiện điện tử,14.41,52,Xe Tải Hạng Nhẹ
+395,Đồ gia dụng,8.64,183,Xe Tải Hạng Nhẹ
+396,Mỹ phẩm,47.53,985,Xe Tải Hạng Nặng
+397,Hàng dễ vỡ,10.13,146,Xe Tải Hạng Nặng
+398,Nông sản,40.19,90,Xe Tải Hạng Nặng
+399,Hàng dễ vỡ,3.02,65,Xe Tải Hạng Nhẹ
+400,Hàng đông lạnh,16.32,33,Xe Tải Hạng Nhẹ
+401,Mỹ phẩm,16.91,194,Xe Tải Hạng Nặng
+402,Hàng đông lạnh,25.64,9,Xe Tải Hạng Nhẹ
+403,Nông sản,7.63,99,Xe Tải Hạng Nhẹ
+404,Mỹ phẩm,23.09,21,Xe Tải Hạng Nhẹ
+405,Mỹ phẩm,12.93,141,Xe Tải Hạng Nặng
+406,Linh kiện điện tử,23.64,47,Xe Tải Hạng Nhẹ
+407,Hàng đông lạnh,9.83,153,Xe Tải Hạng Nhẹ
+408,Mỹ phẩm,43.65,361,Xe Tải Hạng Nặng
+409,Đồ gia dụng,31.71,263,Xe Tải Hạng Nặng
+410,Linh kiện điện tử,34.19,471,Xe Tải Hạng Nặng
+411,Hàng đông lạnh,14.54,156,Xe Tải Hạng Nặng
+412,Nông sản,11.63,116,Xe Tải Hạng Nặng
+413,Linh kiện điện tử,33.96,939,Xe Tải Hạng Nặng
+414,Nông sản,12.98,161,Xe Tải Hạng Nặng
+415,Mỹ phẩm,20.53,91,Xe Tải Hạng Nhẹ
+416,Mỹ phẩm,28.19,22,Xe Tải Hạng Nhẹ
+417,Linh kiện điện tử,34.85,141,Xe Tải Hạng Nặng
+418,Nông sản,16.19,129,Xe Tải Hạng Nặng
+419,Đồ gia dụng,8.54,10,Xe Máy
+420,Đồ gia dụng,37.95,495,Xe Tải Hạng Nặng
+421,Hàng đông lạnh,43.06,929,Xe Tải Hạng Nặng
+422,Linh kiện điện tử,32.74,841,Xe Tải Hạng Nặng
+423,Hàng dễ vỡ,47.12,613,Xe Tải Hạng Nặng
+424,Hàng đông lạnh,43.34,791,Xe Tải Hạng Nặng
+425,Linh kiện điện tử,35.69,480,Xe Tải Hạng Nặng
+426,Hàng đông lạnh,34.71,909,Xe Tải Hạng Nặng
+427,Hàng đông lạnh,11.02,123,Xe Tải Hạng Nặng
+428,Hàng đông lạnh,49.02,65,Xe Tải Hạng Nặng
+429,Đồ gia dụng,16.74,33,Xe Tải Hạng Nhẹ
+430,Mỹ phẩm,47.15,84,Xe Tải Hạng Nặng
+431,Hàng dễ vỡ,19.21,37,Xe Tải Hạng Nhẹ
+432,Linh kiện điện tử,17.05,42,Xe Tải Hạng Nhẹ
+433,Nông sản,44.3,980,Xe Tải Hạng Nặng
+434,Hàng đông lạnh,25.26,22,Xe Tải Hạng Nhẹ
+435,Nông sản,45.08,436,Xe Tải Hạng Nặng
+436,Nông sản,13.22,105,Xe Tải Hạng Nặng
+437,Đồ gia dụng,7.95,57,Xe Tải Hạng Nhẹ
+438,Hàng đông lạnh,6.93,147,Xe Tải Hạng Nhẹ
+439,Nông sản,27.97,133,Xe Tải Hạng Nặng
+440,Hàng dễ vỡ,35.6,276,Xe Tải Hạng Nặng
+441,Linh kiện điện tử,39.08,665,Xe Tải Hạng Nặng
+442,Nông sản,36.02,742,Xe Tải Hạng Nặng
+443,Mỹ phẩm,25.6,153,Xe Tải Hạng Nặng
+444,Hàng đông lạnh,26.05,42,Xe Tải Hạng Nhẹ
+445,Nông sản,4.19,81,Xe Tải Hạng Nhẹ
+446,Hàng dễ vỡ,24.92,176,Xe Tải Hạng Nặng
+447,Linh kiện điện tử,6.47,26,Xe Máy
+448,Linh kiện điện tử,24.68,3,Xe Tải Hạng Nhẹ
+449,Hàng dễ vỡ,47.62,839,Xe Tải Hạng Nặng
+450,Hàng dễ vỡ,33.8,513,Xe Tải Hạng Nặng
+451,Mỹ phẩm,20.29,83,Xe Tải Hạng Nhẹ
+452,Nông sản,1.88,174,Xe Tải Hạng Nhẹ
+453,Đồ gia dụng,18.75,126,Xe Tải Hạng Nặng
+454,Linh kiện điện tử,19.33,123,Xe Tải Hạng Nặng
+455,Hàng đông lạnh,4.64,41,Xe Máy
+456,Hàng đông lạnh,48.22,346,Xe Tải Hạng Nặng
+457,Mỹ phẩm,42.11,957,Xe Tải Hạng Nặng
+458,Hàng đông lạnh,17.74,57,Xe Tải Hạng Nhẹ
+459,Nông sản,20.8,42,Xe Tải Hạng Nhẹ
+460,Nông sản,22.77,63,Xe Tải Hạng Nhẹ
+461,Linh kiện điện tử,37.31,338,Xe Tải Hạng Nặng
+462,Hàng đông lạnh,18.19,20,Xe Tải Hạng Nhẹ
+463,Mỹ phẩm,25.8,152,Xe Tải Hạng Nặng
+464,Đồ gia dụng,12.47,38,Xe Tải Hạng Nhẹ
+465,Hàng đông lạnh,31.07,746,Xe Tải Hạng Nặng
+466,Nông sản,35.67,60,Xe Tải Hạng Nặng
+467,Đồ gia dụng,6.44,200,Xe Tải Hạng Nhẹ
+468,Đồ gia dụng,39.25,469,Xe Tải Hạng Nặng
+469,Hàng đông lạnh,47.69,329,Xe Tải Hạng Nặng
+470,Hàng đông lạnh,13.44,52,Xe Tải Hạng Nhẹ
+471,Linh kiện điện tử,20.96,45,Xe Tải Hạng Nhẹ
+472,Hàng đông lạnh,28.63,169,Xe Tải Hạng Nặng
+473,Hàng đông lạnh,9.28,158,Xe Tải Hạng Nhẹ
+474,Nông sản,40.37,678,Xe Tải Hạng Nặng
+475,Nông sản,33.4,308,Xe Tải Hạng Nặng
+476,Hàng đông lạnh,30.63,812,Xe Tải Hạng Nặng
+477,Nông sản,22.28,93,Xe Tải Hạng Nhẹ
+478,Hàng dễ vỡ,23.7,139,Xe Tải Hạng Nặng
+479,Mỹ phẩm,22.48,41,Xe Tải Hạng Nhẹ
+480,Đồ gia dụng,12.36,150,Xe Tải Hạng Nặng
+481,Hàng dễ vỡ,39.09,184,Xe Tải Hạng Nặng
+482,Nông sản,41.85,258,Xe Tải Hạng Nặng
+483,Mỹ phẩm,48.13,664,Xe Tải Hạng Nặng
+484,Linh kiện điện tử,17.47,147,Xe Tải Hạng Nặng
+485,Linh kiện điện tử,46.97,481,Xe Tải Hạng Nặng
+486,Linh kiện điện tử,24.29,43,Xe Tải Hạng Nhẹ
+487,Hàng dễ vỡ,45.28,456,Xe Tải Hạng Nặng
+488,Linh kiện điện tử,12.1,132,Xe Tải Hạng Nặng
+489,Hàng dễ vỡ,8.08,139,Xe Tải Hạng Nhẹ
+490,Đồ gia dụng,27.62,15,Xe Tải Hạng Nhẹ
+491,Hàng dễ vỡ,33.44,566,Xe Tải Hạng Nặng
+492,Nông sản,22.85,75,Xe Tải Hạng Nhẹ
+493,Mỹ phẩm,33.71,295,Xe Tải Hạng Nặng
+494,Nông sản,23.91,127,Xe Tải Hạng Nặng
+495,Linh kiện điện tử,16.58,167,Xe Tải Hạng Nặng
+496,Mỹ phẩm,13.6,66,Xe Tải Hạng Nhẹ
+497,Linh kiện điện tử,4.11,22,Xe Máy
+498,Hàng dễ vỡ,5.8,196,Xe Tải Hạng Nhẹ
+499,Hàng đông lạnh,45.54,991,Xe Tải Hạng Nặng
+500,Linh kiện điện tử,38.98,896,Xe Tải Hạng Nặng
