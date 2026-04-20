@@ -1,4 +1,4 @@
-OrderID,Weight_kg,Distance_km,Vehicle_Type
+OrderID,Weight_t,Distance_km,Vehicle_Type
 1,7.67,616,Xe Tải Hạng Nặng
 2,7.17,645,Xe Tải Hạng Nặng
 3,5.8,475,Xe Máy
