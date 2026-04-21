@@ -8,34 +8,38 @@ class RuleEngine:
         0: 'xe_may_tai'
     }
     
-    def apply_priority_rules(self, order):
-        # Kiểm tra dữ liệu đầu vào có hợp lệ không
-        if order['weight'] <= 0 or order['distance'] < 0:
-            return -1 # Trả về mã lỗi
-            
-        if order.get('customer_type') in ['doi_tac', 'VIP']: return 4
-        if order['weight'] > 10: return 4
-        if order['distance'] > 1000: return 3
-        
-        special_types = ['dong_lanh', 'de_vo', 'gia_tri_cao', 'hoa_chat']
-        if any(s in order['product_type'] for s in special_types) and order['weight'] > 5:
-            return 3
-            
-        if 5 <= order['weight'] <= 10: return 2
-        if 500 <= order['distance'] <= 1000: return 1
-        return 0
-
     def classify(self, order):
-        p = self.apply_priority_rules(order)
-        if p == -1: return "LỖI: Dữ liệu không hợp lệ"
+        # BẮT LỖI CHI TIẾT THEO TỪNG TRƯỜNG HỢP (Chỉ điểm lỗi)
+        if order['weight'] < 0:
+            return "LỖI: Trọng tải âm (-)"
+        if order['weight'] == 0:
+            return "LỖI: Trọng tải bằng 0"
+        if order['distance'] < 0:
+            return "LỖI: Khoảng cách âm (-)"
+            
+        # LOGIC PHÂN LOẠI
+        p = 0
+        if order.get('customer_type') in ['doi_tac', 'VIP'] or order['weight'] > 10:
+            p = 4
+        elif order['distance'] > 1000:
+            p = 3
+        else:
+            specials = ['dong_lanh', 'de_vo', 'gia_tri_cao', 'hoa_chat']
+            if any(s in order['product_type'] for s in specials) and order['weight'] > 5:
+                p = 3
+            elif 5 <= order['weight'] <= 10:
+                p = 2
+            elif 500 <= order['distance'] <= 1000:
+                p = 1
+        
         return self.VEHICLE_RULES.get(p, 'xe_may_tai')
 
-# --- PHẦN 2: BỘ 20 CASES KIỂM THỬ ĐÃ CHUẨN HÓA ---
+# --- PHẦN 2: FULL 20 CASES KIỂM THỬ ---
 def run_test():
     engine = RuleEngine()
-    print("="*130)
-    print(f"{'ID':<8} | {'Khách':<10} | {'Loại hàng':<20} | {'Nặng':<6} | {'KC':<6} | {'Ưu tiên':<10} | {'Kết quả'}")
-    print("="*130)
+    print("="*135)
+    print(f"{'ID':<8} | {'Khách':<10} | {'Loại hàng':<18} | {'Nặng':<6} | {'KC':<6} | {'Ưu tiên':<10} | {'Kết quả máy test'}")
+    print("="*135)
 
     test_data = [
         # Nhóm 1: Hàng Đặc Biệt
@@ -54,7 +58,7 @@ def run_test():
         {'order_id': 'ORD009', 'customer_type': 'thuong', 'product_type': 'my_pham', 'weight': 2.0, 'distance': 1500, 'priority': 'thap'},
         {'order_id': 'ORD010', 'customer_type': 'thuong', 'product_type': 'do_gia_dung', 'weight': 1.5, 'distance': 1200, 'priority': 'thap'},
 
-        # Nhóm 4: Hàng nặng
+        # Nhóm 4: Hàng nặng (5-10 tấn)
         {'order_id': 'ORD011', 'customer_type': 'thuong', 'product_type': 'nong_san', 'weight': 6.0, 'distance': 100, 'priority': 'trung_binh'},
         {'order_id': 'ORD012', 'customer_type': 'thuong', 'product_type': 'nong_san', 'weight': 8.0, 'distance': 50, 'priority': 'trung_binh'},
 
@@ -67,20 +71,15 @@ def run_test():
         {'order_id': 'ORD016', 'customer_type': 'thuong', 'product_type': 'my_pham', 'weight': 0.1, 'distance': 10, 'priority': 'nhanh'},
         {'order_id': 'ORD017', 'customer_type': 'thuong', 'product_type': 'my_pham', 'weight': 0.05, 'distance': 20, 'priority': 'nhanh'},
 
-        # --- NHÓM 7: KIỂM TRA LỖI (DỮ LIỆU SAI) ---
-        {'order_id': 'ORD018', 'customer_type': 'error', 'product_type': 'loi_trong_tai_am', 'weight': -5.0, 'distance': 100, 'priority': 'invalid'},
-        {'order_id': 'ORD019', 'customer_type': 'error', 'product_type': 'chua_nhap_trong_tai', 'weight': 0, 'distance': 50, 'priority': 'invalid'},
-        {'order_id': 'ORD020', 'customer_type': 'error', 'product_type': 'loi_dinh_vi_kc_am', 'weight': 1.0, 'distance': -10, 'priority': 'invalid'},
+        # Nhóm 7: KIỂM TRA LỖI (Dữ liệu sai)
+        {'order_id': 'ORD018', 'customer_type': 'error', 'product_type': 'nong_san', 'weight': -5.0, 'distance': 100, 'priority': 'invalid'},
+        {'order_id': 'ORD019', 'customer_type': 'error', 'product_type': 'nong_san', 'weight': 0, 'distance': 50, 'priority': 'invalid'},
+        {'order_id': 'ORD020', 'customer_type': 'error', 'product_type': 'nong_san', 'weight': 1.0, 'distance': -10, 'priority': 'invalid'},
     ]
 
     for d in test_data:
-        res = engine.classify({
-            'customer_type': d['customer_type'], 
-            'product_type': d['product_type'], 
-            'weight': d['weight'], 
-            'distance': d['distance']
-        })
-        print(f"{d['order_id']:<8} | {d['customer_type']:<10} | {d['product_type']:<20} | {d['weight']:<6} | {d['distance']:<6} | {d['priority']:<10} | {res}")
+        res = engine.classify(d)
+        print(f"{d['order_id']:<8} | {d['customer_type']:<10} | {d['product_type']:<18} | {d['weight']:<6} | {d['distance']:<6} | {d['priority']:<10} | {res}")
 
 if __name__ == "__main__":
     run_test()
