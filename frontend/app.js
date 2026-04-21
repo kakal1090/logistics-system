@@ -1,4 +1,8 @@
 const socket = io("http://localhost:5000");
+socket.on("connect", () => {
+  console.log("Đã kết nối socket server");
+  socket.emit("get_history", { limit: 20 });
+});
 
 const orderForm = document.getElementById("orderForm");
 const fileUpload = document.getElementById("fileUpload");
