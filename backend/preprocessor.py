@@ -62,14 +62,16 @@ def encode_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     df = df.copy()
 
-    # chuẩn hóa priority theo dữ liệu nhóm đang dùng
     priority_map = {
         "thuong": 0,
         "thường": 0,
         "normal": 0,
+        "thap": 0,
 
         "nhanh": 1,
         "fast": 1,
+        "trung_binh": 1,
+        "trung bình": 1,
 
         "hoa_toc": 2,
         "hỏa tốc": 2,
@@ -80,24 +82,35 @@ def encode_data(df: pd.DataFrame) -> pd.DataFrame:
     if "priority" in df.columns:
         df["priority_encoded"] = df["priority"].map(priority_map)
 
-    # chuẩn hóa product_type
     product_type_map = {
         "tieu_chuan": 0,
         "tiêu chuẩn": 0,
+
         "nong_san": 1,
         "nông sản": 1,
+
         "linh_kien_dien_tu": 2,
         "linh kiện điện tử": 2,
+
         "my_pham": 3,
         "mỹ phẩm": 3,
+
         "dong_lanh": 4,
         "đông lạnh": 4,
         "hang dong lanh": 4,
+
         "de_vo": 5,
         "dễ vỡ": 5,
         "hang de vo": 5,
+
         "cong_kenh": 6,
-        "cồng kềnh": 6
+        "cồng kềnh": 6,
+
+        "nguy_hiem": 7,
+        "nguy hiểm": 7,
+
+        "hang_tieu_dung": 8,
+        "do_gia_dung": 8
     }
 
     if "product_type" in df.columns:
