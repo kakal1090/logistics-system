@@ -1,18 +1,10 @@
-"""
-socket_server.py
-Người 3 – Realtime / kết nối hệ thống
-Nhiệm vụ:
-  - Khởi chạy Flask + Socket.IO server
-  - Nhận đơn hàng từ frontend qua socket event
-  - Gọi sang main.py để xử lý KNN + Rule-Based
-  - Phát kết quả realtime về dashboard (không cần reload trang)
-"""
+
 
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 import datetime
-import json
+import time
 import sys
 import os
 
@@ -26,15 +18,19 @@ except ImportError:
     MAIN_AVAILABLE = False
     print("[WARNING] main.py chưa sẵn sàng – server vẫn chạy ở chế độ mock.")
 
+# ── Giá trị hợp lệ – đồng bộ với Người 1, 2, 5 ───────────────────────────────
+VALID_PRIORITIES = {"thuong", "nhanh", "hoa_toc"}
+VALID_PRODUCT_TYPES = {"tieu_chuan", "de_vo", "dong_lanh", "nguy_hiem", "cong_kenh"}
+
 # ── Khởi tạo app ──────────────────────────────────────────────────────────────
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "logistics_secret_2025"
 
-CORS(app, resources={r"/*": {"origins": "*"}})          # cho phép frontend local
+CORS(app, resources={r"/*": {"origins": "*"}})
 socketio = SocketIO(
     app,
     cors_allowed_origins="*",
-    async_mode="threading",                              # tương thích mọi môi trường
+    async_mode="threading",
     ping_timeout=60,
     ping_interval=25,
 )
@@ -65,9 +61,13 @@ def api_receive_order():
     if not data:
         return jsonify({"error": "Dữ liệu JSON không hợp lệ"}), 400
 
+    err = _validate(data)
+    if err:
+        return jsonify({"error": err}), 400
+
     result = _handle_order(data)
-    # Sau khi xử lý, broadcast kết quả cho tất cả client đang kết nối
     socketio.emit("prediction_result", result)
+    socketio.emit("dashboard_update", result)
     return jsonify(result), 200
 
 
@@ -77,12 +77,12 @@ def api_receive_order():
 
 @socketio.on("connect")
 def on_connect():
-    """Client vừa kết nối – gửi lại toàn bộ lịch sử gần đây."""
+    """Client vừa kết nối – gửi lại lịch sử 20 đơn gần nhất."""
     print(f"[+] Client kết nối: {request.sid}")
     emit("connection_ack", {
-        "message"   : "Kết nối thành công đến Logistics Realtime Server",
+        "message"    : "Kết nối thành công đến Logistics Realtime Server",
         "server_time": _now(),
-        "history"   : processed_orders[-20:],    # 20 đơn gần nhất
+        "history"    : processed_orders[-20:],
     })
 
 
@@ -94,41 +94,40 @@ def on_disconnect():
 @socketio.on("submit_order")
 def on_submit_order(data):
     """
-    Frontend gửi đơn hàng lên.
-    Payload mẫu:
-    {
-        "order_id" : "ORD001",
-        "weight"   : 12.5,       # kg
-        "length"   : 30,         # cm
-        "width"    : 20,         # cm
-        "height"   : 15,         # cm
-        "type"     : "Dễ vỡ",
-        "priority" : "Nhanh",
-        "distance" : 8           # km (tùy chọn – dùng cho rule-based)
-    }
+    Người 5 gửi đơn hàng lên theo đúng format CONTRACT ở đầu file.
+    Flow: validate → ack → xử lý → gửi kết quả về người gửi → broadcast dashboard.
     """
     print(f"[>] Nhận đơn từ {request.sid}: {data}")
 
-    # Xác nhận đã nhận ngay lập tức (UX tốt hơn)
+    # 1. Validate trước – báo lỗi ngay nếu sai field
+    err = _validate(data)
+    if err:
+        emit("order_error", {
+            "order_id": data.get("order_id", "UNKNOWN"),
+            "error"   : err,
+        })
+        return
+
+    # 2. Xác nhận đã nhận (UX: spinner trên UI)
     emit("order_received", {
-        "order_id"  : data.get("order_id", "UNKNOWN"),
+        "order_id"   : data.get("order_id", "UNKNOWN"),
         "received_at": _now(),
-        "status"    : "processing",
+        "status"     : "processing",
     })
 
-    # Xử lý KNN + Rule-Based
+    # 3. Xử lý KNN + Rule-Based
     result = _handle_order(data)
 
-    # Gửi kết quả về đúng client gửi lên
+    # 4. Trả kết quả về đúng client gửi lên
     emit("prediction_result", result)
 
-    # Đồng thời broadcast cho tất cả client (dashboard theo dõi chung)
+    # 5. Broadcast cho tất cả client còn lại (bảng dashboard chung)
     socketio.emit("dashboard_update", result, include_self=False)
 
 
 @socketio.on("get_history")
 def on_get_history(data):
-    """Client yêu cầu lấy lịch sử xử lý."""
+    """Người 5 yêu cầu lấy lịch sử. Gửi kèm limit nếu muốn."""
     limit = int(data.get("limit", 20)) if isinstance(data, dict) else 20
     emit("history_response", {
         "orders": processed_orders[-limit:],
@@ -138,22 +137,60 @@ def on_get_history(data):
 
 @socketio.on("clear_history")
 def on_clear_history():
-    """Xóa lịch sử trong RAM (dùng khi demo/test)."""
+    """Xóa lịch sử RAM – dùng khi reset demo."""
     processed_orders.clear()
+    # Báo cho người gọi
     emit("history_cleared", {"message": "Đã xóa lịch sử", "time": _now()})
-    socketio.emit("dashboard_update", {"type": "clear"})
+    # Báo cho tất cả dashboard reset bảng
+    socketio.emit("dashboard_update", {"action": "clear_history"})
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # HÀM NỘI BỘ
 # ══════════════════════════════════════════════════════════════════════════════
 
+def _validate(data: dict) -> str | None:
+    """
+    Kiểm tra các field bắt buộc và giá trị hợp lệ.
+    Trả về chuỗi lỗi nếu có vấn đề, None nếu hợp lệ.
+    """
+    required = ["order_id", "customer_name", "phone", "address",
+                "product_type", "weight", "length", "width",
+                "height", "distance", "priority"]
+    for field in required:
+        if field not in data or data[field] in (None, ""):
+            return f"Thiếu hoặc rỗng field bắt buộc: '{field}'"
+
+    pt = str(data["product_type"]).strip().lower()
+    if pt not in VALID_PRODUCT_TYPES:
+        return (f"product_type '{pt}' không hợp lệ. "
+                f"Chỉ chấp nhận: {sorted(VALID_PRODUCT_TYPES)}")
+
+    pr = str(data["priority"]).strip().lower()
+    if pr not in VALID_PRIORITIES:
+        return (f"priority '{pr}' không hợp lệ. "
+                f"Chỉ chấp nhận: {sorted(VALID_PRIORITIES)}")
+
+    for num_field in ["weight", "length", "width", "height", "distance"]:
+        try:
+            float(data[num_field])
+        except (ValueError, TypeError):
+            return f"Field '{num_field}' phải là số."
+
+    return None
+
+
 def _handle_order(data: dict) -> dict:
     """
     Gọi main.process_order() nếu Người 2 đã merge,
-    ngược lại dùng mock để server vẫn chạy được độc lập.
+    ngược lại dùng mock để server vẫn chạy độc lập.
+    Trả về dict đầy đủ để Người 5 đổ thẳng vào bảng dashboard.
     """
     order_id = data.get("order_id", f"ORD{len(processed_orders)+1:04}")
+    weight   = float(data.get("weight", 0))
+    distance = float(data.get("distance", 0))
+
+    t_start = time.perf_counter()
 
     if MAIN_AVAILABLE:
         try:
@@ -161,22 +198,29 @@ def _handle_order(data: dict) -> dict:
         except Exception as e:
             label, vehicle = "Lỗi", str(e)
     else:
-        # ── MOCK: dùng khi main.py chưa sẵn sàng ────────────────────────────
-        weight   = float(data.get("weight", 0))
-        distance = float(data.get("distance", 0))
         label, vehicle = _mock_classify(weight, distance)
 
+    elapsed = time.perf_counter() - t_start
+
     result = {
+        # ── Thông tin đơn hàng (để dashboard render trực tiếp) ──
         "order_id"        : order_id,
-        "label"           : label,          # "Nặng" | "Nhẹ"
-        "assigned_vehicle": vehicle,        # "Xe máy", "Xe tải 1.5 tấn", …
-        "input_features"  : data,
+        "customer_name"   : data.get("customer_name", ""),
+        "product_type"    : str(data.get("product_type", "")).strip().lower(),
+        "weight"          : weight,
+        "distance"        : distance,
+        "priority"        : str(data.get("priority", "")).strip().lower(),
+        # ── Kết quả xử lý ───────────────────────────────────────
+        "label"           : label,              # "Nặng" | "Nhẹ"
+        "assigned_vehicle": vehicle,
+        "process_status"  : "done",
         "processed_at"    : _now(),
+        "processing_time" : f"{elapsed:.3f}s",
         "source"          : "main.py" if MAIN_AVAILABLE else "mock",
     }
 
     processed_orders.append(result)
-    print(f"[✓] {order_id} → {label} / {vehicle}")
+    print(f"[✓] {order_id} → {label} / {vehicle} ({result['processing_time']})")
     return result
 
 
@@ -186,7 +230,7 @@ def _mock_classify(weight: float, distance: float) -> tuple[str, str]:
     Cùng logic với rule_engine.py của Người 2.
     """
     if weight < 200:
-        label = "Nhẹ"
+        label   = "Nhẹ"
         vehicle = "Xe máy" if (weight < 15 and distance < 10) else "Xe Tải Van"
     else:
         label = "Nặng"
