@@ -1,87 +1,83 @@
-from typing import Dict, Any, List
+from typing import Dict, Any
 import logging
 
 logger = logging.getLogger(__name__)
 
 class RuleEngine:
-    """Rule-based Engine cho phân loại và gán phương tiện"""
-    
-    PRIORITY_RULES = {
-        4: ['Đối tác chiến lược', 'VIP'],  # VIP
-        3: ['distance > 1000km', 'weight > 10t & special'],  # Khẩn cấp
-        2: ['weight 5-10t'],  # Ưu tiên 2
-        1: ['distance 500-1000km'],  # Ưu tiên 1
-        0: ['default']  # Thường
-    }
+    """Rule-based Engine """
     
     VEHICLE_RULES = {
         4: 'Xe tải lớn + VIP Service',
         3: 'Xe tải lớn (Container)',
         2: 'Xe tải trung bình',
         1: 'Xe tải nhỏ',
-        0: 'Xe máy tải'
+        0: 'Xe máy'
     }
     
     def __init__(self):
         pass
     
     def apply_priority_rules(self, order: Dict[str, Any]) -> int:
-        """Áp dụng rule phân loại priority"""
+        """Áp dụng rules → trả về priority number"""
         
-        # Rule 1: Khách VIP/Đối tác chiến lược → Priority 4
-        if order.get('customer_type') in ['Đối tác chiến lược', 'VIP']:
-            logger.info(f"🚀 Rule VIP: {order['id']} → Priority 4")
+        # Rule 1: Priority input = "Nhanh" → VIP (Priority 4)
+        if order.get('priority') == 'Nhanh':
+            logger.info(f"🚀 Rule 1: {order['id']} - Priority 'Nhanh' → 4")
             return 4
         
-        # Rule 2: Trọng lượng > 10 tấn → Priority 4
+        # Rule 2: Product_type = "De vo" + weight > 5t → Khẩn cấp (3)
+        if order['product_type'] == 'De vo' and order['weight'] > 5:
+            logger.info(f"📦 Rule 2: {order['id']} - 'De vo' + heavy → 3")
+            return 3
+        
+        # Rule 3: Weight > 10t → VIP (4)
         if order['weight'] > 10:
-            logger.info(f"⚖️ Rule Heavy: {order['id']} ({order['weight']}t) → Priority 4")
+            logger.info(f"⚖️ Rule 3: {order['id']} - {order['weight']}t > 10t → 4")
             return 4
         
-        # Rule 3: Khoảng cách > 1000km → Priority 3
+        # Rule 4: Distance > 1000km → Khẩn cấp (3)
         if order['distance'] > 1000:
-            logger.info(f"🗺️ Rule Long Distance: {order['id']} ({order['distance']}km) → Priority 3")
+            logger.info(f"🗺️ Rule 4: {order['id']} - {order['distance']}km > 1000km → 3")
             return 3
         
-        # Rule 4: Hàng đặc biệt + weight > 5t → Priority 3
-        special_types = ['Hàng dễ vỡ', 'Hàng đông lạnh', 'Hàng giá trị cao']
-        if order['type'] in special_types and order['weight'] > 5:
-            logger.info(f"📦 Rule Special: {order['id']} → Priority 3")
-            return 3
-        
-        # Rule 5: Weight 5-10t → Priority 2
+        # Rule 5: Weight 5-10t → Ưu tiên 2
         if 5 <= order['weight'] <= 10:
-            logger.info(f"⚖️ Rule Medium: {order['id']} → Priority 2")
+            logger.info(f"⚖️ Rule 5: {order['id']} - Medium weight → 2")
             return 2
         
-        # Rule 6: Distance 500-1000km → Priority 1
-        if 500 <= order['distance'] <= 1000:
-            logger.info(f"🗺️ Rule Medium Distance: {order['id']} → Priority 1")
+        # Rule 6: Volume lớn (> 0.05m³) → Ưu tiên 1
+        volume = (order['length'] * order['width'] * order['height']) / 1000000
+        if volume > 0.05:
+            logger.info(f"📦 Rule 6: {order['id']} - Volume {volume:.2f}m³ → 1")
             return 1
         
-        # Default: Priority 0 (Thường)
-        logger.info(f"➡️ Default Rule: {order['id']} → Priority 0")
+        # Default: Thường (0)
+        logger.info(f"➡️ Default: {order['id']} → 0")
         return 0
     
     def assign_vehicle(self, priority: int) -> str:
-        """Gán phương tiện theo priority"""
+        """Gán xe theo priority"""
         vehicle = self.VEHICLE_RULES.get(priority, 'Xe tải nhỏ')
-        logger.info(f"🚛 Assigned: Priority {priority} → {vehicle}")
+        logger.info(f"🚛 Vehicle: Priority {priority} → {vehicle}")
         return vehicle
-    
-    def classify_with_rules(self, order: Dict[str, Any]) -> Dict[str, Any]:
-        """Phân loại hoàn chỉnh bằng rules"""
-        priority = self.apply_priority_rules(order)
-        vehicle = self.assign_vehicle(priority)
-        
-        return {
-            'priority': priority,
-            'priority_name': self.get_priority_name(priority),
-            'vehicle': vehicle,
-            'method': 'Rule-based'
-        }
     
     @staticmethod
     def get_priority_name(priority: int) -> str:
+        """Tên priority (giữ lại cho logging)"""
         names = {0: 'Thường', 1: 'Ưu tiên 1', 2: 'Ưu tiên 2', 3: 'Khẩn cấp', 4: 'VIP'}
         return names.get(priority, 'Unknown')
+
+# Test nhanh
+if __name__ == "__main__":
+    engine = RuleEngine()
+    test_order = {
+        "order_id": "ORD001",
+        "product_type": "De vo",
+        "weight": 12.5,
+        "length": 50, "width": 40, "height": 30,
+        "distance": 8,
+        "priority": "Nhanh"
+    }
+    priority = engine.apply_priority_rules(test_order)
+    vehicle = engine.assign_vehicle(priority)
+    print(f"Priority: {priority}, Vehicle: {vehicle}")
