@@ -254,3 +254,12 @@ socket.on("disconnect", () => {
     processStatus.textContent = "Mất kết nối server";
   }
 });
+socket.on("order_error", (data) => {
+  console.error("Lỗi gửi đơn:", data);
+
+  if (processStatus) {
+    processStatus.textContent = data.error || "Lỗi dữ liệu";
+  }
+
+  alert(data.error || "Dữ liệu không hợp lệ");
+});
