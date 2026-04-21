@@ -20,7 +20,10 @@ except ImportError:
 
 # ── Giá trị hợp lệ – đồng bộ với Người 1, 2, 5 ───────────────────────────────
 VALID_PRIORITIES = {"thuong", "nhanh", "hoa_toc"}
-VALID_PRODUCT_TYPES = {"tieu_chuan", "de_vo", "dong_lanh", "nguy_hiem", "cong_kenh"}
+VALID_PRODUCT_TYPES = {
+    "tieu_chuan", "de_vo", "dong_lanh", "nguy_hiem", "cong_kenh",
+    "nong_san", "linh_kien_dien_tu", "my_pham", "hang_tieu_dung"
+}
 
 # ── Khởi tạo app ──────────────────────────────────────────────────────────────
 app = Flask(__name__)
