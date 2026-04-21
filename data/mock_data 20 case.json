@@ -6,16 +6,16 @@
     "weight": 0.5,
     "distance": 10,
     "priority": "nhanh",
-    "note": "Hàng giá trị cao, cần giao gấp"
+    "note": "Giao gấp giá trị cao"
   },
   {
     "order_id": "ORD002",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "dong_lanh",
     "weight": 5.2,
     "distance": 25,
     "priority": "trung_binh",
-    "note": "Thực phẩm đông lạnh, chú ý nhiệt độ"
+    "note": "Chuẩn nhiệt độ đông lạnh"
   },
   {
     "order_id": "ORD003",
@@ -24,16 +24,16 @@
     "weight": 2.0,
     "distance": 5,
     "priority": "nhanh",
-    "note": "Đồ gốm sứ mỹ nghệ"
+    "note": "Đồ gốm mỹ nghệ"
   },
   {
     "order_id": "ORD004",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "nong_san",
     "weight": 50.0,
     "distance": 120,
     "priority": "thap",
-    "note": "Giao về kho phân phối tỉnh"
+    "note": "Kho phân phối tỉnh"
   },
   {
     "order_id": "ORD005",
@@ -42,11 +42,11 @@
     "weight": 1.2,
     "distance": 8,
     "priority": "nhanh",
-    "note": "Mỹ phẩm cao cấp, tránh nắng"
+    "note": "Hàng mỹ phẩm cao cấp"
   },
   {
     "order_id": "ORD006",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "dong_lanh",
     "weight": 10.5,
     "distance": 30,
@@ -55,7 +55,7 @@
   },
   {
     "order_id": "ORD007",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "nong_san",
     "weight": 100.0,
     "distance": 200,
@@ -73,7 +73,7 @@
   },
   {
     "order_id": "ORD009",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "de_vo",
     "weight": 3.5,
     "distance": 12,
@@ -82,12 +82,12 @@
   },
   {
     "order_id": "ORD010",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "my_pham",
     "weight": 0.3,
     "distance": 3,
     "priority": "nhanh",
-    "note": "Đơn nội thành giao hỏa tốc"
+    "note": "Hỏa tốc nội thành"
   },
   {
     "order_id": "ORD011",
@@ -100,7 +100,7 @@
   },
   {
     "order_id": "ORD012",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "nong_san",
     "weight": 15.0,
     "distance": 50,
@@ -114,11 +114,11 @@
     "weight": 0.2,
     "distance": 7,
     "priority": "nhanh",
-    "note": "Điện thoại thông minh"
+    "note": "Smart phone đời mới"
   },
   {
     "order_id": "ORD014",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "de_vo",
     "weight": 0.9,
     "distance": 22,
@@ -127,12 +127,12 @@
   },
   {
     "order_id": "ORD015",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "my_pham",
     "weight": 5.0,
     "distance": 40,
     "priority": "trung_binh",
-    "note": "Sản phẩm chăm sóc da"
+    "note": "Sản phẩm skincare"
   },
   {
     "order_id": "ORD016",
@@ -145,14 +145,14 @@
   },
   {
     "order_id": "ORD017",
-    "customer_type": "Standard",
+    "customer_type": "thuong",
     "product_type": "nong_san",
     "weight": 20.0,
     "distance": 60,
     "priority": "thap",
     "note": "Gạo hữu cơ"
   },
- {
+  {
     "order_id": "ORD018",
     "customer_type": "error",
     "product_type": "nong_san",
