@@ -19,7 +19,7 @@ def generate_standard_logistics_data():
     
     data = []
     
-    # Tự động tạo thư mục data nếu máy bạn khác chưa có
+   
     if not os.path.exists('data'):
         os.makedirs('data')
 
@@ -34,7 +34,7 @@ def generate_standard_logistics_data():
         # Chọn khách hàng ngẫu nhiên
         customer = random.choice(cust_types)
         
-        # 2. CHUẨN HÓA KEY & DATA: Khớp hoàn toàn với JSON và UI
+        # 2. CHUẨN HÓA KEY & DATA
         data.append({
             'order_id': f"ORD{i:03d}",         # Định dạng chuẩn: ORD001, ORD002...
             'customer_type': customer,
