@@ -192,6 +192,22 @@ def process(df: pd.DataFrame):
     df = clean_data(df)
     df = encode_data(df)
     df = add_volume_feature(df)
+
+    # bỏ các dòng còn NaN sau khi encode / tạo feature
+    required_after_encode = [
+        "weight",
+        "length",
+        "width",
+        "height",
+        "distance",
+        "volume",
+        "priority_encoded",
+        "product_type_encoded"
+    ]
+    existing_required = [c for c in required_after_encode if c in df.columns]
+    if existing_required:
+        df = df.dropna(subset=existing_required)
+
     df = scale_data(df)
     X, y = prepare_data(df)
     return X, y, df
