@@ -152,31 +152,31 @@
     "priority": "thap",
     "note": "Gạo hữu cơ"
   },
-  {
+ {
     "order_id": "ORD018",
-    "customer_type": "VIP",
-    "product_type": "linh_kien_dien_tu",
-    "weight": 4.5,
-    "distance": 35,
-    "priority": "trung_binh",
-    "note": "Thiết bị modem mạng"
+    "customer_type": "error",
+    "product_type": "nong_san",
+    "weight": -5.0,
+    "distance": 100,
+    "priority": "invalid",
+    "note": "Lỗi: Trọng tải âm"
   },
   {
     "order_id": "ORD019",
-    "customer_type": "Standard",
-    "product_type": "de_vo",
-    "weight": 0.5,
-    "distance": 4,
-    "priority": "nhanh",
-    "note": "Mắt kính thời trang"
+    "customer_type": "error",
+    "product_type": "nong_san",
+    "weight": 0,
+    "distance": 50,
+    "priority": "invalid",
+    "note": "Lỗi: Trọng tải bằng 0"
   },
   {
     "order_id": "ORD020",
-    "customer_type": "VIP",
-    "product_type": "my_pham",
+    "customer_type": "error",
+    "product_type": "nong_san",
     "weight": 1.0,
-    "distance": 11,
-    "priority": "trung_binh",
-    "note": "Nước hoa"
+    "distance": -10,
+    "priority": "invalid",
+    "note": "Lỗi: Khoảng cách âm"
   }
 ]
