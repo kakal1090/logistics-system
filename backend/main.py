@@ -109,15 +109,21 @@ class OrderProcessingPipeline:
         try:
             features = self.build_knn_features(order)
             predictions, _ = self.knn_classifier.predict(features)
-            label = str(predictions[0])
+           label = str(predictions[0]).strip().lower()
 
-            # nếu model trả dạng số thì map lại
-            numeric_map = {
-                "0": "Nhẹ",
-                "1": "Trung bình",
-                "2": "Nặng"
-            }
-            return numeric_map.get(label, label)
+label_map = {
+    "0": "Nhẹ",
+    "1": "Trung bình",
+    "2": "Nặng",
+    "nhe": "Nhẹ",
+    "nhẹ": "Nhẹ",
+    "trung_binh": "Trung bình",
+    "trung bình": "Trung bình",
+    "trung binh": "Trung bình",
+    "nang": "Nặng",
+    "nặng": "Nặng"
+}
+return label_map.get(label, label)
 
         except Exception as e:
             logger.warning(f"KNN chưa sẵn sàng hoặc predict lỗi, dùng fallback. Chi tiết: {e}")
