@@ -232,21 +232,30 @@
           <h2>Danh sách đơn hàng đã xử lý</h2>
           <p>Dữ liệu được cập nhật tự động từ hệ thống realtime</p>
         </div>
+        <div class="table-actions">
+  <button type="button" class="btn btn-secondary" id="deleteSelectedBtn">
+    Xóa các dòng đã chọn
+  </button>
+  <button type="button" class="btn btn-danger" id="clearAllBtn">
+    Xóa tất cả
+  </button>
+</div>
 
         <div class="table-wrap">
           <table>
             <thead>
-              <tr>
-                <th>Mã đơn</th>
-                <th>Khách hàng</th>
-                <th>Loại hàng</th>
-                <th>Khối lượng</th>
-                <th>Khoảng cách</th>
-                <th>Nhãn KNN</th>
-                <th>Phương tiện</th>
-                <th>Ưu tiên</th>
-                <th>Thời gian</th>
-              </tr>
+             <tr>
+  <th>Chọn</th>
+  <th>Mã đơn</th>
+  <th>Khách hàng</th>
+  <th>Loại hàng</th>
+  <th>Khối lượng</th>
+  <th>Khoảng cách</th>
+  <th>Nhãn KNN</th>
+  <th>Phương tiện</th>
+  <th>Ưu tiên</th>
+  <th>Thời gian</th>
+</tr>
             </thead>
             <tbody id="tableBody">
               <tr>
@@ -277,6 +286,7 @@
       </section>
     </div>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
 <script src="app.js"></script>
   </body>
 </html>
