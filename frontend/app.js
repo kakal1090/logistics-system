@@ -20,6 +20,7 @@ const trackingOrders = document.getElementById("trackingOrders");
 const tableBody = document.getElementById("tableBody");
 const deleteSelectedBtn = document.getElementById("deleteSelectedBtn");
 const clearAllBtn = document.getElementById("clearAllBtn");
+const resetFormBtn = document.getElementById("resetFormBtn");
 
 let orders = [];
 
@@ -168,6 +169,38 @@ function clearDashboard() {
   if (predictedLabel) predictedLabel.textContent = "--";
   if (assignedVehicle) assignedVehicle.textContent = "--";
   if (processedTime) processedTime.textContent = "--";
+}
+function resetFormFields() {
+  if (orderForm) {
+    orderForm.reset();
+  }
+
+  if (fileUpload) {
+    fileUpload.value = "";
+  }
+
+  if (fileName) {
+    fileName.textContent = "Chưa chọn file";
+  }
+
+  if (processStatus) {
+    processStatus.textContent = "Chờ xử lý";
+  }
+
+  if (predictedLabel) {
+    predictedLabel.textContent = "--";
+  }
+
+  if (assignedVehicle) {
+    assignedVehicle.textContent = "--";
+  }
+
+  if (processedTime) {
+    processedTime.textContent = "--";
+  }
+}
+if (resetFormBtn) {
+  resetFormBtn.addEventListener("click", resetFormFields);
 }
 function deleteSelectedRows() {
   const checkedBoxes = document.querySelectorAll(".row-checkbox:checked");
