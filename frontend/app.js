@@ -195,10 +195,10 @@ if (clearAllBtn) {
   clearAllBtn.addEventListener("click", () => {
     const confirmClear = confirm("Bạn có chắc muốn xóa toàn bộ dữ liệu trong bảng?");
     if (!confirmClear) return;
-    clearDashboard();
+
+    socket.emit("clear_history");
   });
 }
-
 // =========================
 // FORM SUBMIT
 // =========================
@@ -292,10 +292,7 @@ if (fileUpload && fileName) {
 // =========================
 // SOCKET EVENTS
 // =========================
-socket.on("connect", () => {
-  console.log("Đã kết nối socket server");
-  socket.emit("get_history", { limit: 20 });
-});
+
 
 socket.on("connection_ack", (data) => {
   console.log("Server ACK:", data);
