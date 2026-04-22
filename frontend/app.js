@@ -21,6 +21,7 @@ const tableBody = document.getElementById("tableBody");
 const deleteSelectedBtn = document.getElementById("deleteSelectedBtn");
 const clearAllBtn = document.getElementById("clearAllBtn");
 const resetFormBtn = document.getElementById("resetFormBtn");
+const mediumOrders = document.getElementById("mediumOrders");
 
 let orders = [];
 
@@ -110,6 +111,7 @@ function renderTableRow(data) {
 
 function updateSummary() {
   if (totalOrders) totalOrders.textContent = orders.length;
+  if (mediumOrders) mediumOrders.textContent = medium;
 
   const light = orders.filter(order => order.label === "Nhẹ").length;
   const medium = orders.filter(order => order.label === "Trung bình").length;
