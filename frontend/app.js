@@ -112,14 +112,28 @@ function updateSummary() {
   if (totalOrders) totalOrders.textContent = orders.length;
 
   const light = orders.filter(order => order.label === "Nhẹ").length;
+  const medium = orders.filter(order => order.label === "Trung bình").length;
   const heavy = orders.filter(order => order.label === "Nặng").length;
 
   if (lightOrders) lightOrders.textContent = light;
   if (heavyOrders) heavyOrders.textContent = heavy;
+
+  // nếu bạn chưa có ô riêng cho "Trung bình"
+  // thì tạm cho trackingOrders = tổng đang theo dõi
   if (trackingOrders) trackingOrders.textContent = orders.length;
+
+  console.log("Summary:", { total: orders.length, light, medium, heavy });
 }
 
-function addOrderToDashboard(data) {
+function normalizeLabel(label) {
+  const raw = String(label || "").trim().toLowerCase();
+
+  if (["nhẹ", "nhe", "light"].includes(raw)) return "Nhẹ";
+  if (["trung bình", "trung_binh", "trung binh", "medium"].includes(raw)) return "Trung bình";
+  if (["nặng", "nang", "heavy"].includes(raw)) return "Nặng";
+
+  return label || "--";
+}
   const normalized = {
     order_id: data.order_id || "--",
     customer_name:
@@ -141,7 +155,7 @@ function addOrderToDashboard(data) {
       data.priority ||
       data.input_features?.priority ||
       "--",
-    label: data.label || "--",
+    label: normalizeLabel(data.label),
     assigned_vehicle:
       data.assigned_vehicle ||
       data.vehicle ||
