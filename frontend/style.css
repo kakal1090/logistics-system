@@ -329,6 +329,22 @@ textarea {
 .table-panel {
   overflow: hidden;
 }
+.table-actions {
+  display: flex;
+  gap: 12px;
+  padding: 0 22px 22px;
+  flex-wrap: wrap;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.row-checkbox {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 .table-wrap {
   padding: 22px;
