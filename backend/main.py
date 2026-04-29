@@ -101,7 +101,8 @@ class OrderProcessingPipeline:
         Nếu chưa có model train sẵn thì fallback đơn giản theo weight.
         """
         return "Nhẹ" if order["weight"] < 200 else "Nặng"
-      def predict_label(self, order: Dict[str, Any]) -> str:
+
+    def predict_label(self, order: Dict[str, Any]) -> str:
         """
         Phân loại nhãn theo tổng khối lượng để khớp với UI và file import.
         Công thức: total_weight = weight × quantity
