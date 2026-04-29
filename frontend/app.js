@@ -234,53 +234,103 @@ if (orderForm) {
 }
 
 // =========================
-// FILE UPLOAD
 // =========================
+// FILE UPLOAD - FIX ĐỌC ĐÚNG CSV/EXCEL
+// =========================
+function normalizeImportKey(key) {
+  return String(key || "")
+    .replace(/^\uFEFF/, "")
+    .trim()
+    .toLowerCase();
+}
+
+function normalizeImportRow(row) {
+  const fixed = {};
+
+  Object.keys(row || {}).forEach((key) => {
+    const cleanKey = normalizeImportKey(key);
+    fixed[cleanKey] = row[key];
+  });
+
+  return fixed;
+}
+
 if (fileUpload && fileName) {
   fileUpload.addEventListener("change", async function () {
-    if (!this.files || !this.files.length) { fileName.textContent = "Chưa chọn file"; return; }
+    if (!this.files || !this.files.length) {
+      fileName.textContent = "Chưa chọn file";
+      return;
+    }
+
     const file = this.files[0];
     fileName.textContent = file.name;
+
     const ext = file.name.split(".").pop().toLowerCase();
+
     try {
       let rows = [];
+
       if (ext === "json") {
         rows = JSON.parse(await file.text());
       } else if (ext === "csv") {
-        const wb = XLSX.read(await file.text(), { type: "string" });
-        rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-      } else if (["xlsx","xls"].includes(ext)) {
-        const wb = XLSX.read(await file.arrayBuffer(), { type: "array" });
-        rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-      } else { alert("Định dạng file chưa hỗ trợ."); return; }
+        const text = await file.text();
+        const wb = XLSX.read(text, { type: "string" });
+        rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {
+          defval: ""
+        });
+      } else if (["xlsx", "xls"].includes(ext)) {
+        const buffer = await file.arrayBuffer();
+        const wb = XLSX.read(buffer, { type: "array" });
+        rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {
+          defval: ""
+        });
+      } else {
+        alert("Định dạng file chưa hỗ trợ.");
+        return;
+      }
 
-      if (!Array.isArray(rows) || !rows.length) { alert("File không có dữ liệu hợp lệ."); return; }
+      if (!Array.isArray(rows) || !rows.length) {
+        alert("File không có dữ liệu hợp lệ.");
+        return;
+      }
 
-      for (const row of rows) {
-        const weight   = Number(row.weight   || 0);
+      console.log("Dòng đầu đọc từ file:", rows[0]);
+
+      for (const rawRow of rows) {
+        const row = normalizeImportRow(rawRow);
+
+        const weight = Number(row.weight || 0);
         const quantity = Number(row.quantity || 1);
-        socket.emit("submit_order", {
-          order_id:      String(row.order_id      || "").trim(),
+
+        const payload = {
+          order_id:      String(row.order_id || "").trim(),
           customer_name: String(row.customer_name || "").trim(),
-          phone:         String(row.phone         || "").trim(),
-          email:         String(row.email         || "").trim(),
-          address:       String(row.address       || "").trim(),
-          product_type:  String(row.product_type  || "").trim().toLowerCase(),
-          weight,
-          quantity,
-          total_weight:  weight * quantity,
-          length:        Number(row.length   || 0),
-          width:         Number(row.width    || 0),
-          height:        Number(row.height   || 0),
+          phone:         String(row.phone || "").trim(),
+          email:         String(row.email || "").trim(),
+          address:       String(row.address || "").trim(),
+          product_type:  String(row.product_type || "").trim().toLowerCase(),
+
+          weight:        weight,
+          quantity:      quantity,
+          total_weight:  Number(row.total_weight || weight * quantity),
+
+          length:        Number(row.length || 0),
+          width:         Number(row.width || 0),
+          height:        Number(row.height || 0),
           distance:      Number(row.distance || 0),
           priority:      String(row.priority || "").trim().toLowerCase(),
-          note:          String(row.note     || "").trim(),
+          note:          String(row.note || "").trim(),
 
-          // Nếu file có sẵn nhãn và phương tiện thì gửi lên backend
+          // QUAN TRỌNG: lấy đúng nhãn và phương tiện từ file import
           label:         String(row.label || "").trim(),
           vehicle_type:  String(row.vehicle_type || "").trim(),
-        });
+        };
+
+        console.log("Payload gửi lên backend:", payload);
+
+        socket.emit("submit_order", payload);
       }
+
       alert(`Đã gửi ${rows.length} đơn hàng từ file lên hệ thống.`);
     } catch (err) {
       console.error(err);
