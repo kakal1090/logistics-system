@@ -162,47 +162,58 @@ def _validate(data: dict) -> str | None:
 
 
 def _handle_order(data: dict) -> dict:
-    order_id     = data.get("order_id", f"ORD{len(processed_orders)+1:04}")
-    weight       = float(data.get("weight", 0))
-    quantity     = int(data.get("quantity", 1))
+    order_id = data.get("order_id", f"ORD{len(processed_orders)+1:04}")
+
+    weight = float(data.get("weight", 0))
+    quantity = int(data.get("quantity", 1))
     total_weight = weight * quantity
-    distance     = float(data.get("distance", 0))
+    distance = float(data.get("distance", 0))
 
     t_start = time.perf_counter()
 
-   if MAIN_AVAILABLE:
-    try:
-        label, vehicle = process_order(data)
-    except Exception as e:
-        label, vehicle = "Lỗi", str(e)
-else:
-    label, vehicle = _mock_classify(
-        weight, quantity, total_weight,
-        float(data.get("length", 0)),
-        float(data.get("width", 0)),
-        float(data.get("height", 0))
-    )
+    # QUAN TRỌNG:
+    # Không lấy label / vehicle_type từ file import nữa.
+    # Luôn để backend tự phân loại lại từ dữ liệu đầu vào.
+    if MAIN_AVAILABLE:
+        try:
+            label, vehicle = process_order(data)
+        except Exception as e:
+            label, vehicle = "Lỗi", str(e)
+    else:
+        label, vehicle = _mock_classify(
+            weight,
+            quantity,
+            total_weight,
+            float(data.get("length", 0)),
+            float(data.get("width", 0)),
+            float(data.get("height", 0))
+        )
+
     elapsed = time.perf_counter() - t_start
 
     result = {
-        "order_id":         order_id,
-        "customer_name":    data.get("customer_name", ""),
-        "product_type":     str(data.get("product_type", "")).strip().lower(),
-        "weight":           weight,
-        "quantity":         quantity,
-        "total_weight":     total_weight,
-        "distance":         distance,
-        "priority":         str(data.get("priority", "")).strip().lower(),
-        "label":            label,
+        "order_id": order_id,
+        "customer_name": data.get("customer_name", ""),
+        "product_type": str(data.get("product_type", "")).strip().lower(),
+
+        "weight": weight,
+        "quantity": quantity,
+        "total_weight": total_weight,
+
+        "distance": distance,
+        "priority": str(data.get("priority", "")).strip().lower(),
+
+        "label": label,
         "assigned_vehicle": vehicle,
-        "process_status":   "done",
-        "processed_at":     _now(),
-        "processing_time":  f"{elapsed:.3f}s",
-        "source": "main.py" if MAIN_AVAILABLE else "mock",
+
+        "process_status": "done",
+        "processed_at": _now(),
+        "processing_time": f"{elapsed:.3f}s",
+
+        "source": "main.py" if MAIN_AVAILABLE else "mock"
     }
 
     processed_orders.append(result)
-    print(f"[✓] {order_id} | qty={quantity} | total={total_weight:.1f}kg | source={result['source']} → {label} / {vehicle} ({result['processing_time']})")
     return result
 
 
