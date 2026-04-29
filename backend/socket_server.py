@@ -188,11 +188,11 @@ def _handle_order(data: dict) -> dict:
         "process_status":   "done",
         "processed_at":     _now(),
         "processing_time":  f"{elapsed:.3f}s",
-        "source":           "main.py" if MAIN_AVAILABLE else "mock",
+        "source":           "file_import" if file_label and file_vehicle else ("main.py" if MAIN_AVAILABLE else "mock"),
     }
 
     processed_orders.append(result)
-    print(f"[✓] {order_id} | qty={quantity} | total={total_weight:.1f}kg → {label} / {vehicle} ({result['processing_time']})")
+    print(f"[✓] {order_id} | qty={quantity} | total={total_weight:.1f}kg | source={result['source']} → {label} / {vehicle} ({result['processing_time']})")
     return result
 
 
