@@ -9,18 +9,23 @@ import pandas as pd
 from knn_classifier import KNNClassifier
 from rule_engine import RuleEngine
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
 logger = logging.getLogger(__name__)
 
 
 class OrderProcessingPipeline:
     """
     Flow chính:
-    Input -> preprocess -> KNN label -> Rule engine assign vehicle -> output
+    raw input -> chuẩn hóa -> tạo feature -> KNN dự đoán label -> RuleEngine gán xe.
     """
 
     def __init__(self):
-        self.knn_classifier = KNNClassifier()
+        self.knn_classifier = KNNClassifier(model_path="models/knn_model.pkl")
         self.rule_engine = RuleEngine()
 
     @staticmethod
@@ -29,13 +34,27 @@ class OrderProcessingPipeline:
             return ""
         return str(value).strip().lower()
 
+    @staticmethod
+    def safe_float(value: Any, default: float = 0.0) -> float:
+        try:
+            if value in (None, ""):
+                return default
+            return float(value)
+        except (ValueError, TypeError):
+            return default
+
+    @staticmethod
+    def safe_int(value: Any, default: int = 1) -> int:
+        try:
+            if value in (None, ""):
+                return default
+            return int(float(value))
+        except (ValueError, TypeError):
+            return default
+
     def preprocess_order(self, raw_order: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Chuẩn hóa input từ frontend/socket về format nội bộ thống nhất.
-        """
         order = raw_order.copy()
 
-        # chuẩn hóa text
         order["order_id"] = str(order.get("order_id", "")).strip()
         order["customer_name"] = str(order.get("customer_name", "")).strip()
         order["phone"] = str(order.get("phone", "")).strip()
@@ -45,25 +64,31 @@ class OrderProcessingPipeline:
         order["priority"] = self.normalize_text(order.get("priority"))
         order["note"] = str(order.get("note", "")).strip()
 
-        # ép kiểu số
-        order["weight"] = float(order.get("weight", 0))
-        order["quantity"] = int(order.get("quantity", 1))
-        order["length"] = float(order.get("length", 0))
-        order["width"] = float(order.get("width", 0))
-        order["height"] = float(order.get("height", 0))
-        order["distance"] = float(order.get("distance", 0))
-        # feature phụ
+        order["weight"] = self.safe_float(order.get("weight"), 0.0)
+        order["quantity"] = self.safe_int(order.get("quantity"), 1)
+        order["length"] = self.safe_float(order.get("length"), 0.0)
+        order["width"] = self.safe_float(order.get("width"), 0.0)
+        order["height"] = self.safe_float(order.get("height"), 0.0)
+        order["distance"] = self.safe_float(order.get("distance"), 0.0)
+
+        if order["quantity"] <= 0:
+            order["quantity"] = 1
+
+        order["total_weight"] = order["weight"] * order["quantity"]
         order["volume"] = order["length"] * order["width"] * order["height"]
 
-        # encode priority
         priority_map = {
             "thuong": 0,
+            "thường": 0,
+            "normal": 0,
             "nhanh": 1,
-            "hoa_toc": 2
+            "fast": 1,
+            "hoa_toc": 2,
+            "hỏa tốc": 2,
+            "hoa toc": 2,
+            "express": 2,
         }
-        order["priority_encoded"] = priority_map.get(order["priority"], 0)
 
-        # encode product_type
         product_type_map = {
             "tieu_chuan": 0,
             "nong_san": 1,
@@ -73,54 +98,78 @@ class OrderProcessingPipeline:
             "de_vo": 5,
             "cong_kenh": 6,
             "nguy_hiem": 7,
-            "hang_tieu_dung": 8
+            "hang_tieu_dung": 8,
+            "do_gia_dung": 8,
         }
+
+        order["priority_encoded"] = priority_map.get(order["priority"], 0)
         order["product_type_encoded"] = product_type_map.get(order["product_type"], 0)
 
         return order
 
     def build_knn_features(self, order: Dict[str, Any]) -> np.ndarray:
         """
-        Tạo vector đặc trưng cho KNN.
-        Feature phải khớp với hướng preprocess của nhóm.
+        Feature phải khớp 100% với train_model.py.
+
+        Thứ tự feature:
+        1. total_weight
+        2. quantity
+        3. length
+        4. width
+        5. height
+        6. distance
+        7. volume
+        8. priority_encoded
+        9. product_type_encoded
         """
+
         features = np.array([[
-            order["weight"],
+            order["total_weight"],
+            order["quantity"],
             order["length"],
             order["width"],
             order["height"],
             order["distance"],
             order["volume"],
             order["priority_encoded"],
-            order["product_type_encoded"]
+            order["product_type_encoded"],
         ]])
-        return features
 
-    def fallback_label(self, order: Dict[str, Any]) -> str:
-        """
-        Nếu chưa có model train sẵn thì fallback đơn giản theo weight.
-        """
-        return "Nhẹ" if order["weight"] < 200 else "Nặng"
+        return features
 
     def predict_label(self, order: Dict[str, Any]) -> str:
         """
-        Phân loại nhãn theo tổng khối lượng để khớp với UI và file import.
-        Công thức: total_weight = weight × quantity
+        Ưu tiên dùng KNN.
+        Nếu model chưa train hoặc lỗi thì fallback sang rule_engine.
         """
-        return self.rule_engine.classify_label(order)
+
+        try:
+            features = self.build_knn_features(order)
+            predictions, probabilities = self.knn_classifier.predict(features)
+
+            label = str(predictions[0]).strip()
+            confidence = float(probabilities[0])
+
+            logger.info(f"KNN label={label}, confidence={confidence:.2f}")
+
+            return label
+
+        except Exception as e:
+            logger.warning(f"KNN lỗi hoặc chưa có model, fallback RuleEngine: {e}")
+            return self.rule_engine.classify_label(order)
 
     def process_single_order(self, raw_order: Dict[str, Any]) -> Dict[str, Any]:
         start_time = time.perf_counter()
 
         order = self.preprocess_order(raw_order)
-        order_id = order["order_id"]
 
-        logger.info(f"Xử lý đơn: {order_id}")
+        logger.info(
+            f"Xử lý đơn {order['order_id']} | "
+            f"weight={order['weight']} | quantity={order['quantity']} | "
+            f"total_weight={order['total_weight']}"
+        )
 
-        # 1. KNN -> label
         label = self.predict_label(order)
-
-        # 2. Rule engine -> vehicle
         vehicle = self.rule_engine.assign_vehicle(order, label)
 
         elapsed = time.perf_counter() - start_time
@@ -129,32 +178,35 @@ class OrderProcessingPipeline:
             "order_id": order["order_id"],
             "customer_name": order["customer_name"],
             "product_type": order["product_type"],
+
             "weight": order["weight"],
-            "quantity": order.get("quantity", 1),
-            "total_weight": order["weight"] * order.get("quantity", 1),
+            "quantity": order["quantity"],
+            "total_weight": order["total_weight"],
+
             "distance": order["distance"],
             "priority": order["priority"],
+
             "label": label,
             "assigned_vehicle": vehicle,
+
             "process_status": "done",
             "processed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "processing_time": f"{elapsed:.3f}s"
+            "processing_time": f"{elapsed:.3f}s",
         }
+
         logger.info(f"Kết quả: {result}")
+
         return result
 
     def batch_process(self, orders: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         return [self.process_single_order(order) for order in orders]
 
 
-# HÀM ĐỂ NGƯỜI 3 IMPORT ĐÚNG
+# Hàm cho socket_server.py import
 def process_order(raw_order: Dict[str, Any]):
-    """
-    Người 3 đang import hàm này từ socket_server.py
-    Chỉ trả ra (label, vehicle) để giữ tương thích với socket_server hiện tại.
-    """
     pipeline = OrderProcessingPipeline()
     result = pipeline.process_single_order(raw_order)
+
     return result["label"], result["assigned_vehicle"]
 
 
@@ -163,35 +215,37 @@ if __name__ == "__main__":
 
     demo_orders = [
         {
-            "order_id": "ORD001",
+            "order_id": "TEST001",
             "customer_name": "Nguyen Van A",
             "phone": "0909123456",
             "email": "a@gmail.com",
             "address": "Quan 1 TP.HCM",
-            "product_type": "de_vo",
-            "weight": 12.5,
+            "product_type": "tieu_chuan",
+            "weight": 1,
+            "quantity": 123,
             "length": 50,
             "width": 40,
             "height": 30,
             "distance": 8,
             "priority": "nhanh",
-            "note": "Hang de vo"
+            "note": "Test nhẹ",
         },
         {
-            "order_id": "ORD002",
+            "order_id": "TEST002",
             "customer_name": "Tran Thi B",
             "phone": "0987654321",
             "email": "b@gmail.com",
             "address": "Quan 7 TP.HCM",
             "product_type": "tieu_chuan",
-            "weight": 320,
-            "length": 30,
-            "width": 20,
-            "height": 25,
+            "weight": 300,
+            "quantity": 8,
+            "length": 120,
+            "width": 100,
+            "height": 90,
             "distance": 150,
             "priority": "thuong",
-            "note": ""
-        }
+            "note": "Test nặng",
+        },
     ]
 
     results = pipeline.batch_process(demo_orders)
@@ -201,4 +255,4 @@ if __name__ == "__main__":
         print(result)
 
     os.makedirs("output", exist_ok=True)
-    pd.DataFrame(results).to_csv("output/processed_orders.csv", index=False)
+    pd.DataFrame(results).to_csv("output/processed_orders.csv", index=False, encoding="utf-8-sig")
