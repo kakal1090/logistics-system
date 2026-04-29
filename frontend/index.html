@@ -30,32 +30,21 @@
             <h2>Tiếp nhận đơn hàng</h2>
             <p>Nhập thông tin đơn hàng để hệ thống xử lý và phân loại</p>
           </div>
+
+          <!-- Import file -->
           <div class="import-box">
             <h3>Import dữ liệu đơn hàng</h3>
             <p class="import-desc">
-              Hỗ trợ tải lên file Excel, CSV hoặc JSON để tiếp nhận nhiều đơn
-              hàng cùng lúc.
+              Hỗ trợ tải lên file Excel, CSV hoặc JSON để tiếp nhận nhiều đơn hàng cùng lúc.
             </p>
-
             <div class="import-actions">
-              <label for="fileUpload" class="upload-btn"
-                >Chọn file dữ liệu</label
-              >
-              <input
-                type="file"
-                id="fileUpload"
-                accept=".xlsx,.xls,.csv,.json"
-                hidden
-              />
+              <label for="fileUpload" class="upload-btn">Chọn file dữ liệu</label>
+              <input type="file" id="fileUpload" accept=".xlsx,.xls,.csv,.json" hidden />
               <span id="fileName" class="file-name">Chưa chọn file</span>
             </div>
-
             <div class="import-note">
               <p>Định dạng hỗ trợ: <strong>.xlsx, .xls, .csv, .json</strong></p>
-              <p>
-                Gợi ý dữ liệu: mã đơn, khách hàng, loại hàng, khối lượng, kích
-                thước, khoảng cách, ưu tiên.
-              </p>
+              <p>Cột cần có: order_id, customer_name, weight, <strong>quantity</strong>, length, width, height, distance, priority, product_type.</p>
             </div>
           </div>
 
@@ -68,11 +57,7 @@
 
               <div class="form-group">
                 <label for="customerName">Họ và tên khách hàng</label>
-                <input
-                  type="text"
-                  id="customerName"
-                  placeholder="Nguyễn Văn A"
-                />
+                <input type="text" id="customerName" placeholder="Nguyễn Văn A" />
               </div>
 
               <div class="form-group">
@@ -82,84 +67,89 @@
 
               <div class="form-group">
                 <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="example@email.com"
-                />
+                <input type="email" id="email" placeholder="example@email.com" />
               </div>
 
               <div class="form-group full-width">
                 <label for="address">Địa chỉ giao hàng</label>
-                <input
-                  type="text"
-                  id="address"
-                  placeholder="Số nhà, đường, quận/huyện, tỉnh/thành"
-                />
+                <input type="text" id="address" placeholder="Số nhà, đường, quận/huyện, tỉnh/thành" />
               </div>
 
               <div class="form-group">
                 <label for="productType">Loại hàng hóa</label>
-               <select id="productType">
-  <option value="">Chọn loại hàng</option>
-  <option value="tieu_chuan">Tiêu chuẩn</option>
-  <option value="de_vo">Dễ vỡ</option>
-  <option value="dong_lanh">Đông lạnh</option>
-  <option value="nguy_hiem">Nguy hiểm</option>
-  <option value="cong_kenh">Cồng kềnh</option>
-</select>
+                <select id="productType">
+                  <option value="">Chọn loại hàng</option>
+                  <option value="tieu_chuan">Tiêu chuẩn</option>
+                  <option value="de_vo">Dễ vỡ</option>
+                  <option value="dong_lanh">Đông lạnh</option>
+                  <option value="nguy_hiem">Nguy hiểm</option>
+                  <option value="cong_kenh">Cồng kềnh</option>
+                  <option value="nong_san">Nông sản</option>
+                  <option value="linh_kien_dien_tu">Linh kiện điện tử</option>
+                  <option value="my_pham">Mỹ phẩm</option>
+                  <option value="hang_tieu_dung">Hàng tiêu dùng</option>
+                </select>
               </div>
 
               <div class="form-group">
                 <label for="priority">Mức độ ưu tiên</label>
-               <select id="priority">
-  <option value="">Chọn mức ưu tiên</option>
-  <option value="thuong">Thường</option>
-  <option value="nhanh">Nhanh</option>
-  <option value="hoa_toc">Hỏa tốc</option>
-</select>
+                <select id="priority">
+                  <option value="">Chọn mức ưu tiên</option>
+                  <option value="thuong">Thường</option>
+                  <option value="nhanh">Nhanh</option>
+                  <option value="hoa_toc">Hỏa tốc</option>
+                </select>
               </div>
 
               <div class="form-group">
-                <label for="weight">Khối lượng (kg)</label>
-                <input type="number" id="weight" placeholder="VD: 120" />
+                <label for="weight">Khối lượng / kiện (kg)</label>
+                <input type="number" id="weight" placeholder="VD: 10" min="0" step="0.01" />
+              </div>
+
+              <div class="form-group">
+                <label for="quantity">Số lượng kiện</label>
+                <input type="number" id="quantity" placeholder="VD: 3" min="1" step="1" value="1" />
+              </div>
+
+              <!-- Preview total_weight -->
+              <div class="form-group full-width">
+                <div class="total-weight-preview">
+                  <span class="tw-label">⚖️ Tổng khối lượng ước tính:</span>
+                  <span id="totalWeightPreview" class="tw-value">0 kg</span>
+                  <span class="tw-hint" id="labelHint"></span>
+                </div>
               </div>
 
               <div class="form-group">
                 <label for="distance">Khoảng cách (km)</label>
-                <input type="number" id="distance" placeholder="VD: 15" />
+                <input type="number" id="distance" placeholder="VD: 15" min="0" />
               </div>
 
               <div class="form-group">
                 <label for="length">Chiều dài (cm)</label>
-                <input type="number" id="length" placeholder="VD: 50" />
+                <input type="number" id="length" placeholder="VD: 50" min="0" />
               </div>
 
               <div class="form-group">
                 <label for="width">Chiều rộng (cm)</label>
-                <input type="number" id="width" placeholder="VD: 40" />
+                <input type="number" id="width" placeholder="VD: 40" min="0" />
               </div>
 
               <div class="form-group">
                 <label for="height">Chiều cao (cm)</label>
-                <input type="number" id="height" placeholder="VD: 30" />
+                <input type="number" id="height" placeholder="VD: 30" min="0" />
               </div>
 
               <div class="form-group full-width">
                 <label for="note">Ghi chú đặc biệt</label>
-                <textarea
-                  id="note"
-                  rows="4"
-                  placeholder="Ví dụ: hàng dễ vỡ, giao ngoài giờ, cần liên hệ trước..."
-                ></textarea>
+                <textarea id="note" rows="3"
+                  placeholder="Ví dụ: hàng dễ vỡ, giao ngoài giờ, cần liên hệ trước..."></textarea>
               </div>
             </div>
 
             <div class="form-actions">
-    <button type="button" class="btn btn-secondary" id="resetFormBtn">Làm mới</button>
-              <button type="submit" class="btn btn-primary">
-                Gửi đơn & phân loại
-              </button>
+              <button type="button" class="btn btn-secondary" id="resetFormBtn">Làm mới</button>
+              <button type="submit" class="btn btn-primary">Gửi đơn &amp; phân loại</button>
             </div>
           </form>
         </section>
@@ -171,23 +161,23 @@
               <h2>Kết quả xử lý</h2>
               <p>Thông tin trả về sau khi hệ thống chạy KNN và Rule-Based</p>
             </div>
-
             <div class="result-box">
               <div class="result-item">
                 <span class="result-label">Trạng thái</span>
                 <strong id="processStatus">Chờ xử lý</strong>
               </div>
-
+              <div class="result-item">
+                <span class="result-label">Tổng khối lượng</span>
+                <strong id="totalWeightBox">--</strong>
+              </div>
               <div class="result-item">
                 <span class="result-label">Nhãn phân loại</span>
                 <strong id="predictedLabel">--</strong>
               </div>
-
               <div class="result-item">
                 <span class="result-label">Phương tiện đề xuất</span>
                 <strong id="assignedVehicle">--</strong>
               </div>
-
               <div class="result-item">
                 <span class="result-label">Thời gian xử lý</span>
                 <strong id="processedTime">--</strong>
@@ -200,27 +190,23 @@
               <h2>Tổng quan vận hành</h2>
               <p>Theo dõi số liệu đơn hàng theo thời gian thực</p>
             </div>
-
             <div class="summary-cards">
               <div class="summary-card">
                 <span class="summary-title">Tổng đơn</span>
                 <strong id="totalOrders">0</strong>
               </div>
-              <div class="summary-card">
-  <span class="summary-title">Đơn trung bình</span>
-  <strong id="mediumOrders">0</strong>
-</div>
-
-              <div class="summary-card">
+              <div class="summary-card card-light">
                 <span class="summary-title">Đơn nhẹ</span>
                 <strong id="lightOrders">0</strong>
               </div>
-
-              <div class="summary-card">
+              <div class="summary-card card-medium">
+                <span class="summary-title">Trung bình</span>
+                <strong id="mediumOrders">0</strong>
+              </div>
+              <div class="summary-card card-heavy">
                 <span class="summary-title">Đơn nặng</span>
                 <strong id="heavyOrders">0</strong>
               </div>
-
               <div class="summary-card">
                 <span class="summary-title">Đang theo dõi</span>
                 <strong id="trackingOrders">0</strong>
@@ -230,44 +216,42 @@
         </section>
       </main>
 
-      <!-- Dashboard dưới -->
+      <!-- Bảng đơn hàng đã xử lý -->
       <section class="panel table-panel">
         <div class="panel-header">
           <h2>Danh sách đơn hàng đã xử lý</h2>
           <p>Dữ liệu được cập nhật tự động từ hệ thống realtime</p>
         </div>
         <div class="table-actions">
-  <button type="button" class="btn btn-secondary" id="deleteSelectedBtn">
-    Xóa các dòng đã chọn
-  </button>
-  <button type="button" class="btn btn-danger" id="clearAllBtn">
-    Xóa tất cả
-  </button>
-</div>
-
+          <button type="button" class="btn btn-secondary" id="deleteSelectedBtn">Xóa các dòng đã chọn</button>
+          <button type="button" class="btn btn-danger"    id="clearAllBtn">Xóa tất cả</button>
+        </div>
         <div class="table-wrap">
           <table>
             <thead>
-             <tr>
-  <th>Chọn</th>
-  <th>Mã đơn</th>
-  <th>Khách hàng</th>
-  <th>Loại hàng</th>
-  <th>Khối lượng</th>
-  <th>Khoảng cách</th>
-  <th>Nhãn KNN</th>
-  <th>Phương tiện</th>
-  <th>Ưu tiên</th>
-  <th>Thời gian</th>
-</tr>
+              <tr>
+                <th>Chọn</th>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>Loại hàng</th>
+                <th>KL/kiện (kg)</th>
+                <th>Số lượng</th>
+                <th>Tổng KL (kg)</th>
+                <th>Khoảng cách</th>
+                <th>Nhãn KNN</th>
+                <th>Phương tiện</th>
+                <th>Ưu tiên</th>
+                <th>Thời gian xử lý</th>
+              </tr>
             </thead>
-          <tbody id="tableBody"></tbody>
+            <tbody id="tableBody"></tbody>
           </table>
         </div>
       </section>
     </div>
+
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
-<script src="app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
