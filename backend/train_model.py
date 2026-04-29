@@ -4,6 +4,7 @@ import os
 
 
 def build_label(total_weight):
+    """Phân loại dựa trên tổng khối lượng (weight × quantity)"""
     if total_weight < 200:
         return "Nhẹ"
     elif total_weight <= 1500:
@@ -11,18 +12,29 @@ def build_label(total_weight):
     return "Nặng"
 
 
-def assign_vehicle(label, total_weight, quantity, distance):
+def assign_vehicle(label, total_weight, quantity, distance, length=0, width=0, height=0):
+    """
+    Rule base:
+    - Xe máy      : kích thước ≤ 80×80×80 cm VÀ tổng KL < 100 kg
+    - Xe tải      : Nhẹ / Trung bình không đủ điều kiện xe máy
+    - Xe < 5 tấn  : Nặng và tổng KL ≤ 5000 kg
+    - Xe đầu kéo  : Nặng và tổng KL > 5000 kg
+    """
+    fits_motorbike = (
+        length <= 80 and width <= 80 and height <= 80 and total_weight < 100
+    )
+
     if label == "Nhẹ":
-        if total_weight < 15 and quantity <= 3 and distance <= 10:
+        if fits_motorbike:
             return "Xe máy"
-        return "Xe tải van"
+        return "Xe tải"
 
     if label == "Trung bình":
-        return "Xe tải 1.5 tấn"
+        return "Xe tải"
 
     if label == "Nặng":
         if total_weight <= 5000:
-            return "Xe tải dưới 5 tấn"
+            return "Xe dưới 5 tấn"
         return "Xe đầu kéo / Container"
 
     return "Chưa xác định"
@@ -35,7 +47,7 @@ def generate_standard_logistics_data():
     data = []
 
     for i in range(1, 501):
-        weight = round(random.uniform(1, 2000), 2)
+        weight = round(random.uniform(1, 500), 2)
         quantity = random.randint(1, 20)
         total_weight = round(weight * quantity, 2)
 
@@ -48,7 +60,10 @@ def generate_standard_logistics_data():
         priority = random.choice(priorities)
 
         label = build_label(total_weight)
-        vehicle_type = assign_vehicle(label, total_weight, quantity, distance)
+        vehicle_type = assign_vehicle(
+            label, total_weight, quantity, distance,
+            length=length, width=width, height=height
+        )
 
         data.append({
             "order_id": f"ORD{i:03d}",
@@ -70,6 +85,8 @@ def generate_standard_logistics_data():
     df.to_csv("data/orders_result_500.csv", index=False, encoding="utf-8-sig")
 
     print("✅ Đã tạo xong 500 dòng data chuẩn có gán nhãn")
+    print(df["label"].value_counts())
+    print(df["vehicle_type"].value_counts())
     print(df.head())
 
 
