@@ -21,7 +21,14 @@ logger = logging.getLogger(__name__)
 class OrderProcessingPipeline:
     """
     Flow chính:
-    raw input -> chuẩn hóa -> tạo feature -> KNN dự đoán label -> RuleEngine gán xe.
+    Input -> preprocess -> KNN tham khảo -> Rule chuẩn chốt label -> RuleEngine gán xe.
+
+    Lưu ý:
+    - Label cuối cùng được chốt theo total_weight để đảm bảo:
+        < 200       -> Nhẹ
+        200 - 1500  -> Trung bình
+        > 1500      -> Nặng
+    - KNN không được phép làm sai rule chuẩn này.
     """
 
     def __init__(self):
@@ -109,18 +116,7 @@ class OrderProcessingPipeline:
 
     def build_knn_features(self, order: Dict[str, Any]) -> np.ndarray:
         """
-        Feature phải khớp 100% với train_model.py.
-
-        Thứ tự feature:
-        1. total_weight
-        2. quantity
-        3. length
-        4. width
-        5. height
-        6. distance
-        7. volume
-        8. priority_encoded
-        9. product_type_encoded
+        Feature dùng cho KNN tham khảo.
         """
 
         features = np.array([[
@@ -139,24 +135,42 @@ class OrderProcessingPipeline:
 
     def predict_label(self, order: Dict[str, Any]) -> str:
         """
-        Ưu tiên dùng KNN.
-        Nếu model chưa train hoặc lỗi thì fallback sang rule_engine.
+        Chốt label cuối cùng theo rule chuẩn.
+
+        Case bạn đang lỗi:
+            weight = 2
+            quantity = 231
+            total_weight = 462
+            -> bắt buộc là Trung bình
         """
 
+        total_weight = float(order.get("total_weight", 0))
+
+        # Label chuẩn, không cho KNN làm sai nhóm Trung bình
+        if total_weight < 200:
+            final_label = "Nhẹ"
+        elif total_weight <= 1500:
+            final_label = "Trung bình"
+        else:
+            final_label = "Nặng"
+
+        # KNN chỉ log tham khảo
         try:
             features = self.build_knn_features(order)
             predictions, probabilities = self.knn_classifier.predict(features)
 
-            label = str(predictions[0]).strip()
+            knn_label = str(predictions[0]).strip()
             confidence = float(probabilities[0])
 
-            logger.info(f"KNN label={label}, confidence={confidence:.2f}")
-
-            return label
+            logger.info(
+                f"KNN dự đoán={knn_label}, confidence={confidence:.2f} | "
+                f"Rule chốt={final_label}, total_weight={total_weight:.2f}"
+            )
 
         except Exception as e:
-            logger.warning(f"KNN lỗi hoặc chưa có model, fallback RuleEngine: {e}")
-            return self.rule_engine.classify_label(order)
+            logger.warning(f"KNN lỗi hoặc chưa có model, dùng rule chuẩn: {e}")
+
+        return final_label
 
     def process_single_order(self, raw_order: Dict[str, Any]) -> Dict[str, Any]:
         start_time = time.perf_counter()
@@ -202,8 +216,12 @@ class OrderProcessingPipeline:
         return [self.process_single_order(order) for order in orders]
 
 
-# Hàm cho socket_server.py import
 def process_order(raw_order: Dict[str, Any]):
+    """
+    Hàm cho socket_server.py import.
+    Trả về tuple: (label, vehicle)
+    """
+
     pipeline = OrderProcessingPipeline()
     result = pipeline.process_single_order(raw_order)
 
@@ -215,11 +233,11 @@ if __name__ == "__main__":
 
     demo_orders = [
         {
-            "order_id": "TEST001",
+            "order_id": "TEST_LIGHT",
             "customer_name": "Nguyen Van A",
             "phone": "0909123456",
             "email": "a@gmail.com",
-            "address": "Quan 1 TP.HCM",
+            "address": "TP.HCM",
             "product_type": "tieu_chuan",
             "weight": 1,
             "quantity": 123,
@@ -231,14 +249,30 @@ if __name__ == "__main__":
             "note": "Test nhẹ",
         },
         {
-            "order_id": "TEST002",
-            "customer_name": "Tran Thi B",
-            "phone": "0987654321",
+            "order_id": "TEST_MEDIUM",
+            "customer_name": "Nguyen Van B",
+            "phone": "0966112419",
             "email": "b@gmail.com",
-            "address": "Quan 7 TP.HCM",
+            "address": "TP.HCM",
+            "product_type": "linh_kien_dien_tu",
+            "weight": 2,
+            "quantity": 231,
+            "length": 22,
+            "width": 44,
+            "height": 33,
+            "distance": 33,
+            "priority": "thuong",
+            "note": "Test trung bình",
+        },
+        {
+            "order_id": "TEST_HEAVY",
+            "customer_name": "Tran Thi C",
+            "phone": "0987654321",
+            "email": "c@gmail.com",
+            "address": "TP.HCM",
             "product_type": "tieu_chuan",
-            "weight": 300,
-            "quantity": 8,
+            "weight": 200,
+            "quantity": 10,
             "length": 120,
             "width": 100,
             "height": 90,
@@ -255,4 +289,8 @@ if __name__ == "__main__":
         print(result)
 
     os.makedirs("output", exist_ok=True)
-    pd.DataFrame(results).to_csv("output/processed_orders.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(results).to_csv(
+        "output/processed_orders.csv",
+        index=False,
+        encoding="utf-8-sig",
+    )
