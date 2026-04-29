@@ -266,7 +266,8 @@ if (fileUpload && fileName) {
           email:         String(row.email         || "").trim(),
           address:       String(row.address       || "").trim(),
           product_type:  String(row.product_type  || "").trim().toLowerCase(),
-          weight, quantity,
+          weight,
+          quantity,
           total_weight:  weight * quantity,
           length:        Number(row.length   || 0),
           width:         Number(row.width    || 0),
@@ -274,6 +275,10 @@ if (fileUpload && fileName) {
           distance:      Number(row.distance || 0),
           priority:      String(row.priority || "").trim().toLowerCase(),
           note:          String(row.note     || "").trim(),
+
+          // Nếu file có sẵn nhãn và phương tiện thì gửi lên backend
+          label:         String(row.label || "").trim(),
+          vehicle_type:  String(row.vehicle_type || "").trim(),
         });
       }
       alert(`Đã gửi ${rows.length} đơn hàng từ file lên hệ thống.`);
