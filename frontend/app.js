@@ -4,24 +4,27 @@ socket.on("connect", () => {
   socket.emit("get_history", { limit: 20 });
 });
 
-const orderForm = document.getElementById("orderForm");
-const fileUpload = document.getElementById("fileUpload");
-const fileName = document.getElementById("fileName");
+// ── DOM refs ──────────────────────────────────────────────────
+const orderForm       = document.getElementById("orderForm");
+const fileUpload      = document.getElementById("fileUpload");
+const fileName        = document.getElementById("fileName");
 
-const processStatus = document.getElementById("processStatus");
-const predictedLabel = document.getElementById("predictedLabel");
+const processStatus   = document.getElementById("processStatus");
+const predictedLabel  = document.getElementById("predictedLabel");
 const assignedVehicle = document.getElementById("assignedVehicle");
-const processedTime = document.getElementById("processedTime");
+const processedTime   = document.getElementById("processedTime");
+const totalWeightBox  = document.getElementById("totalWeightBox");
 
-const totalOrders = document.getElementById("totalOrders");
-const lightOrders = document.getElementById("lightOrders");
-const heavyOrders = document.getElementById("heavyOrders");
-const trackingOrders = document.getElementById("trackingOrders");
-const tableBody = document.getElementById("tableBody");
+const totalOrders     = document.getElementById("totalOrders");
+const lightOrders     = document.getElementById("lightOrders");
+const mediumOrders    = document.getElementById("mediumOrders");
+const heavyOrders     = document.getElementById("heavyOrders");
+const trackingOrders  = document.getElementById("trackingOrders");
+
+const tableBody        = document.getElementById("tableBody");
 const deleteSelectedBtn = document.getElementById("deleteSelectedBtn");
-const clearAllBtn = document.getElementById("clearAllBtn");
-const resetFormBtn = document.getElementById("resetFormBtn");
-const mediumOrders = document.getElementById("mediumOrders");
+const clearAllBtn      = document.getElementById("clearAllBtn");
+const resetFormBtn     = document.getElementById("resetFormBtn");
 
 let orders = [];
 
@@ -38,68 +41,89 @@ function toNumber(value) {
   return Number.isNaN(n) ? 0 : n;
 }
 
+function toInt(value) {
+  const n = parseInt(value, 10);
+  return Number.isNaN(n) ? 1 : n;
+}
+
 function buildPayloadFromForm() {
+  const weight   = toNumber(safeValue("weight"));
+  const quantity = toInt(safeValue("quantity"));
   return {
-    order_id: safeValue("orderId"),
+    order_id:      safeValue("orderId"),
     customer_name: safeValue("customerName"),
-    phone: safeValue("phone"),
-    email: safeValue("email"),
-    address: safeValue("address"),
-    product_type: safeValue("productType"),
-    weight: toNumber(safeValue("weight")),
-    length: toNumber(safeValue("length")),
-    width: toNumber(safeValue("width")),
-    height: toNumber(safeValue("height")),
-    distance: toNumber(safeValue("distance")),
-    priority: safeValue("priority"),
-    note: safeValue("note")
+    phone:         safeValue("phone"),
+    email:         safeValue("email"),
+    address:       safeValue("address"),
+    product_type:  safeValue("productType"),
+    weight,
+    quantity,
+    total_weight:  weight * quantity,
+    length:        toNumber(safeValue("length")),
+    width:         toNumber(safeValue("width")),
+    height:        toNumber(safeValue("height")),
+    distance:      toNumber(safeValue("distance")),
+    priority:      safeValue("priority"),
+    note:          safeValue("note"),
   };
 }
 
+// Live preview total_weight khi nhập weight / quantity
+["weight", "quantity"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener("input", () => {
+      const w = toNumber(safeValue("weight"));
+      const q = toInt(safeValue("quantity")) || 1;
+      const preview = document.getElementById("totalWeightPreview");
+      if (preview) preview.textContent = (w * q).toFixed(2) + " kg";
+    });
+  }
+});
+
 function updateResultBox(data) {
-  if (processStatus) {
-    processStatus.textContent =
-      data.process_status || "Đã xử lý";
-  }
+  if (processStatus)   processStatus.textContent  = data.process_status || "Đã xử lý";
+  if (predictedLabel)  predictedLabel.textContent  = data.label || "--";
+  if (assignedVehicle) assignedVehicle.textContent = data.assigned_vehicle || data.vehicle || "--";
+  if (processedTime)   processedTime.textContent   = data.processing_time || data.processed_at || "--";
+  if (totalWeightBox)  totalWeightBox.textContent  = data.total_weight != null
+    ? data.total_weight.toFixed(2) + " kg" : "--";
+}
 
-  if (predictedLabel) {
-    predictedLabel.textContent =
-      data.label || "--";
-  }
+function normalizeLabel(label) {
+  const raw = String(label || "").trim().toLowerCase();
+  if (["nhẹ", "nhe", "light"].includes(raw))                                      return "Nhẹ";
+  if (["trung bình", "trung_binh", "trung binh", "medium"].includes(raw))         return "Trung bình";
+  if (["nặng", "nang", "heavy"].includes(raw))                                    return "Nặng";
+  return label || "--";
+}
 
-  if (assignedVehicle) {
-    assignedVehicle.textContent =
-      data.assigned_vehicle || data.vehicle || "--";
-  }
-
-  if (processedTime) {
-    processedTime.textContent =
-      data.processing_time || data.processed_at || "--";
-  }
+function getBadgeClass(label) {
+  if (label === "Nhẹ")       return "badge badge-light";
+  if (label === "Trung bình") return "badge badge-medium";
+  if (label === "Nặng")      return "badge badge-heavy";
+  return "badge";
 }
 
 function renderTableRow(data) {
   if (!tableBody) return;
 
+  const label      = data.label || "--";
+  const badgeClass = getBadgeClass(label);
+  const tw         = data.total_weight != null ? data.total_weight.toFixed(2) + " kg" : "--";
+
   const tr = document.createElement("tr");
-
-  const label = data.label || "--";
-  const badgeClass =
-    label === "Nhẹ" ? "badge badge-light" :
-    label === "Nặng" ? "badge badge-heavy" :
-    "badge";
-
   tr.dataset.orderId = data.order_id || "";
 
   tr.innerHTML = `
-    <td>
-      <input type="checkbox" class="row-checkbox" data-order-id="${data.order_id || ""}">
-    </td>
+    <td><input type="checkbox" class="row-checkbox" data-order-id="${data.order_id || ""}"></td>
     <td>${data.order_id || "--"}</td>
     <td>${data.customer_name || "--"}</td>
     <td>${data.product_type || "--"}</td>
-    <td>${data.weight ?? "--"}${data.weight !== undefined ? " kg" : ""}</td>
-    <td>${data.distance ?? "--"}${data.distance !== undefined ? " km" : ""}</td>
+    <td>${data.weight != null ? data.weight + " kg" : "--"}</td>
+    <td>${data.quantity != null ? data.quantity : "--"}</td>
+    <td>${tw}</td>
+    <td>${data.distance != null ? data.distance + " km" : "--"}</td>
     <td><span class="${badgeClass}">${label}</span></td>
     <td>${data.assigned_vehicle || data.vehicle || "--"}</td>
     <td>${data.priority || "--"}</td>
@@ -110,64 +134,36 @@ function renderTableRow(data) {
 }
 
 function updateSummary() {
-  if (totalOrders) totalOrders.textContent = orders.length;
-  if (mediumOrders) mediumOrders.textContent = medium;
+  const light  = orders.filter(o => o.label === "Nhẹ").length;
+  const medium = orders.filter(o => o.label === "Trung bình").length;
+  const heavy  = orders.filter(o => o.label === "Nặng").length;
 
-  const light = orders.filter(order => order.label === "Nhẹ").length;
-  const medium = orders.filter(order => order.label === "Trung bình").length;
-  const heavy = orders.filter(order => order.label === "Nặng").length;
-
-  if (lightOrders) lightOrders.textContent = light;
-  if (heavyOrders) heavyOrders.textContent = heavy;
-
-  // nếu bạn chưa có ô riêng cho "Trung bình"
-  // thì tạm cho trackingOrders = tổng đang theo dõi
+  if (totalOrders)   totalOrders.textContent   = orders.length;
+  if (lightOrders)   lightOrders.textContent   = light;
+  if (mediumOrders)  mediumOrders.textContent  = medium;
+  if (heavyOrders)   heavyOrders.textContent   = heavy;
   if (trackingOrders) trackingOrders.textContent = orders.length;
-
-  console.log("Summary:", { total: orders.length, light, medium, heavy });
 }
 
-function normalizeLabel(label) {
-  const raw = String(label || "").trim().toLowerCase();
+function addOrderToDashboard(data) {
+  if (!data || typeof data !== "object") return;
 
-  if (["nhẹ", "nhe", "light"].includes(raw)) return "Nhẹ";
-  if (["trung bình", "trung_binh", "trung binh", "medium"].includes(raw)) return "Trung bình";
-  if (["nặng", "nang", "heavy"].includes(raw)) return "Nặng";
-
-  return label || "--";
-}
   const normalized = {
-    order_id: data.order_id || "--",
-    customer_name:
-      data.customer_name ||
-      data.input_features?.customer_name ||
-      "--",
-    product_type:
-      data.product_type ||
-      data.input_features?.product_type ||
-      data.input_features?.type ||
-      "--",
-    weight:
-      data.weight ??
-      data.input_features?.weight,
-    distance:
-      data.distance ??
-      data.input_features?.distance,
-    priority:
-      data.priority ||
-      data.input_features?.priority ||
-      "--",
-    label: normalizeLabel(data.label),
-    assigned_vehicle:
-      data.assigned_vehicle ||
-      data.vehicle ||
-      "--",
-    processing_time:
-      data.processing_time || "--",
-    processed_at:
-      data.processed_at || "--",
-    process_status:
-      data.process_status || "Đã xử lý"
+    order_id:        data.order_id || "--",
+    customer_name:   data.customer_name || data.input_features?.customer_name || "--",
+    product_type:    data.product_type  || data.input_features?.product_type  || "--",
+    weight:          data.weight  ?? data.input_features?.weight,
+    quantity:        data.quantity ?? 1,
+    total_weight:    data.total_weight != null
+      ? data.total_weight
+      : ((data.weight ?? 0) * (data.quantity ?? 1)),
+    distance:        data.distance ?? data.input_features?.distance,
+    priority:        data.priority || data.input_features?.priority || "--",
+    label:           normalizeLabel(data.label),
+    assigned_vehicle: data.assigned_vehicle || data.vehicle || "--",
+    processing_time: data.processing_time || "--",
+    processed_at:    data.processed_at    || "--",
+    process_status:  data.process_status  || "Đã xử lý",
   };
 
   orders.unshift(normalized);
@@ -181,73 +177,55 @@ function clearDashboard() {
   if (tableBody) tableBody.innerHTML = "";
   updateSummary();
 
-  if (processStatus) processStatus.textContent = "Chờ xử lý";
-  if (predictedLabel) predictedLabel.textContent = "--";
-  if (assignedVehicle) assignedVehicle.textContent = "--";
-  if (processedTime) processedTime.textContent = "--";
+  if (processStatus)   processStatus.textContent   = "Chờ xử lý";
+  if (predictedLabel)  predictedLabel.textContent   = "--";
+  if (assignedVehicle) assignedVehicle.textContent  = "--";
+  if (processedTime)   processedTime.textContent    = "--";
+  if (totalWeightBox)  totalWeightBox.textContent   = "--";
 }
+
 function resetFormFields() {
-  if (orderForm) {
-    orderForm.reset();
-  }
+  if (orderForm)    orderForm.reset();
+  if (fileUpload)   fileUpload.value = "";
+  if (fileName)     fileName.textContent = "Chưa chọn file";
 
-  if (fileUpload) {
-    fileUpload.value = "";
-  }
+  const preview = document.getElementById("totalWeightPreview");
+  if (preview) preview.textContent = "0 kg";
 
-  if (fileName) {
-    fileName.textContent = "Chưa chọn file";
-  }
-
-  if (processStatus) {
-    processStatus.textContent = "Chờ xử lý";
-  }
-
-  if (predictedLabel) {
-    predictedLabel.textContent = "--";
-  }
-
-  if (assignedVehicle) {
-    assignedVehicle.textContent = "--";
-  }
-
-  if (processedTime) {
-    processedTime.textContent = "--";
-  }
+  if (processStatus)   processStatus.textContent   = "Chờ xử lý";
+  if (predictedLabel)  predictedLabel.textContent   = "--";
+  if (assignedVehicle) assignedVehicle.textContent  = "--";
+  if (processedTime)   processedTime.textContent    = "--";
+  if (totalWeightBox)  totalWeightBox.textContent   = "--";
 }
-if (resetFormBtn) {
-  resetFormBtn.addEventListener("click", resetFormFields);
-}
+
 function deleteSelectedRows() {
   const checkedBoxes = document.querySelectorAll(".row-checkbox:checked");
   if (checkedBoxes.length === 0) {
     alert("Chưa chọn dòng nào để xóa.");
     return;
   }
-
   const selectedIds = Array.from(checkedBoxes).map(cb => cb.dataset.orderId);
-
-  orders = orders.filter(order => !selectedIds.includes(order.order_id));
-
+  orders = orders.filter(o => !selectedIds.includes(o.order_id));
   selectedIds.forEach(id => {
     const row = tableBody.querySelector(`tr[data-order-id="${id}"]`);
     if (row) row.remove();
   });
-
   updateSummary();
 }
-if (deleteSelectedBtn) {
-  deleteSelectedBtn.addEventListener("click", deleteSelectedRows);
-}
+
+// ── Event listeners ───────────────────────────────────────────
+if (resetFormBtn)     resetFormBtn.addEventListener("click", resetFormFields);
+if (deleteSelectedBtn) deleteSelectedBtn.addEventListener("click", deleteSelectedRows);
 
 if (clearAllBtn) {
   clearAllBtn.addEventListener("click", () => {
-    const confirmClear = confirm("Bạn có chắc muốn xóa toàn bộ dữ liệu trong bảng?");
-    if (!confirmClear) return;
-
-    socket.emit("clear_history");
+    if (confirm("Bạn có chắc muốn xóa toàn bộ dữ liệu trong bảng?")) {
+      socket.emit("clear_history");
+    }
   });
 }
+
 // =========================
 // FORM SUBMIT
 // =========================
@@ -262,16 +240,13 @@ if (orderForm) {
       return;
     }
 
-    if (processStatus) {
-      processStatus.textContent = "Đang xử lý...";
-    }
-
+    if (processStatus) processStatus.textContent = "Đang xử lý...";
     socket.emit("submit_order", payload);
   });
 }
 
 // =========================
-// FILE UPLOAD UI
+// FILE UPLOAD
 // =========================
 if (fileUpload && fileName) {
   fileUpload.addEventListener("change", async function () {
@@ -282,25 +257,19 @@ if (fileUpload && fileName) {
 
     const file = this.files[0];
     fileName.textContent = file.name;
-
     const ext = file.name.split(".").pop().toLowerCase();
 
     try {
       let rows = [];
 
       if (ext === "json") {
-        const text = await file.text();
-        rows = JSON.parse(text);
+        rows = JSON.parse(await file.text());
       } else if (ext === "csv") {
-        const text = await file.text();
-        const workbook = XLSX.read(text, { type: "string" });
-        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-        rows = XLSX.utils.sheet_to_json(firstSheet);
+        const wb = XLSX.read(await file.text(), { type: "string" });
+        rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
       } else if (ext === "xlsx" || ext === "xls") {
-        const data = await file.arrayBuffer();
-        const workbook = XLSX.read(data, { type: "array" });
-        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-        rows = XLSX.utils.sheet_to_json(firstSheet);
+        const wb = XLSX.read(await file.arrayBuffer(), { type: "array" });
+        rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
       } else {
         alert("Định dạng file chưa hỗ trợ.");
         return;
@@ -312,22 +281,25 @@ if (fileUpload && fileName) {
       }
 
       for (const row of rows) {
+        const weight   = Number(row.weight   || 0);
+        const quantity = Number(row.quantity  || 1);
         const payload = {
-          order_id: String(row.order_id || "").trim(),
+          order_id:      String(row.order_id      || "").trim(),
           customer_name: String(row.customer_name || "").trim(),
-          phone: String(row.phone || "").trim(),
-          email: String(row.email || "").trim(),
-          address: String(row.address || "").trim(),
-          product_type: String(row.product_type || "").trim().toLowerCase(),
-          weight: Number(row.weight || 0),
-          length: Number(row.length || 0),
-          width: Number(row.width || 0),
-          height: Number(row.height || 0),
-          distance: Number(row.distance || 0),
-          priority: String(row.priority || "").trim().toLowerCase(),
-          note: String(row.note || "").trim()
+          phone:         String(row.phone         || "").trim(),
+          email:         String(row.email         || "").trim(),
+          address:       String(row.address       || "").trim(),
+          product_type:  String(row.product_type  || "").trim().toLowerCase(),
+          weight,
+          quantity,
+          total_weight:  weight * quantity,
+          length:        Number(row.length   || 0),
+          width:         Number(row.width    || 0),
+          height:        Number(row.height   || 0),
+          distance:      Number(row.distance || 0),
+          priority:      String(row.priority || "").trim().toLowerCase(),
+          note:          String(row.note     || "").trim(),
         };
-
         socket.emit("submit_order", payload);
       }
 
@@ -338,14 +310,12 @@ if (fileUpload && fileName) {
     }
   });
 }
+
 // =========================
 // SOCKET EVENTS
 // =========================
-
-
 socket.on("connection_ack", (data) => {
   console.log("Server ACK:", data);
-
   if (Array.isArray(data.history)) {
     clearDashboard();
     data.history.forEach(item => addOrderToDashboard(item));
@@ -354,9 +324,7 @@ socket.on("connection_ack", (data) => {
 
 socket.on("order_received", (data) => {
   console.log("Đã nhận đơn:", data);
-  if (processStatus) {
-    processStatus.textContent = "Đã nhận đơn, đang xử lý...";
-  }
+  if (processStatus) processStatus.textContent = "Đã nhận đơn, đang xử lý...";
 });
 
 socket.on("prediction_result", (data) => {
@@ -366,41 +334,31 @@ socket.on("prediction_result", (data) => {
 
 socket.on("dashboard_update", (data) => {
   console.log("Cập nhật dashboard:", data);
-
   if (data?.action === "clear_history" || data?.type === "clear") {
     clearDashboard();
     return;
   }
-
   addOrderToDashboard(data);
 });
 
 socket.on("history_response", (data) => {
-  console.log("Lịch sử:", data);
-
   if (Array.isArray(data.orders)) {
     clearDashboard();
     data.orders.forEach(item => addOrderToDashboard(item));
   }
 });
 
-socket.on("history_cleared", (data) => {
-  console.log(data?.message || "Đã xóa lịch sử");
+socket.on("history_cleared", () => {
   clearDashboard();
+});
+
+socket.on("order_error", (data) => {
+  console.error("Lỗi gửi đơn:", data);
+  if (processStatus) processStatus.textContent = data.error || "Lỗi dữ liệu";
+  alert(data.error || "Dữ liệu không hợp lệ");
 });
 
 socket.on("disconnect", () => {
   console.log("Mất kết nối socket server");
-  if (processStatus) {
-    processStatus.textContent = "Mất kết nối server";
-  }
-});
-socket.on("order_error", (data) => {
-  console.error("Lỗi gửi đơn:", data);
-
-  if (processStatus) {
-    processStatus.textContent = data.error || "Lỗi dữ liệu";
-  }
-
-  alert(data.error || "Dữ liệu không hợp lệ");
+  if (processStatus) processStatus.textContent = "Mất kết nối server";
 });
