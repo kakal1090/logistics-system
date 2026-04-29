@@ -6,6 +6,7 @@ import time
 import sys
 import os
 
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 try:
@@ -29,6 +30,7 @@ VALID_PRODUCT_TYPES = {
     "linh_kien_dien_tu",
     "my_pham",
     "hang_tieu_dung",
+    "do_gia_dung",
 }
 
 
@@ -47,10 +49,6 @@ socketio = SocketIO(
 
 processed_orders: list[dict] = []
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ROUTES
-# ══════════════════════════════════════════════════════════════════════════════
 
 @app.route("/health", methods=["GET"])
 def health_check():
@@ -80,10 +78,6 @@ def api_receive_order():
 
     return jsonify(result), 200
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# SOCKET EVENTS
-# ══════════════════════════════════════════════════════════════════════════════
 
 @socketio.on("connect")
 def on_connect():
@@ -148,10 +142,6 @@ def on_clear_history():
         "action": "clear_history",
     })
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# INTERNAL HELPERS
-# ══════════════════════════════════════════════════════════════════════════════
 
 def _validate(data: dict) -> str | None:
     if not isinstance(data, dict):
@@ -218,13 +208,12 @@ def _handle_order(data: dict) -> dict:
 
     t_start = time.perf_counter()
 
-    # QUAN TRỌNG:
-    # Dù nhập tay hay import file, backend đều tự chạy lại main.py/KNN.
-    # Tuyệt đối không lấy label hoặc vehicle_type có sẵn trong file import.
+    # Không đọc label/vehicle_type từ file import nữa.
+    # Mọi đơn đều chạy lại qua main.py để đảm bảo Trung bình không bị sai.
     if MAIN_AVAILABLE:
         try:
             label, vehicle = process_order(data)
-            source = "main.py/KNN"
+            source = "main.py"
         except Exception as e:
             print(f"[ERROR] main.py xử lý lỗi: {e}")
             label, vehicle = _mock_classify(
@@ -288,6 +277,7 @@ def _mock_classify(
     width: float,
     height: float,
 ) -> tuple[str, str]:
+
     if total_weight < 200:
         label = "Nhẹ"
         if length <= 80 and width <= 80 and height <= 80 and total_weight < 100:
