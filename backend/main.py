@@ -47,11 +47,11 @@ class OrderProcessingPipeline:
 
         # ép kiểu số
         order["weight"] = float(order.get("weight", 0))
+        order["quantity"] = int(order.get("quantity", 1))
         order["length"] = float(order.get("length", 0))
         order["width"] = float(order.get("width", 0))
         order["height"] = float(order.get("height", 0))
         order["distance"] = float(order.get("distance", 0))
-
         # feature phụ
         order["volume"] = order["length"] * order["width"] * order["height"]
 
@@ -101,33 +101,12 @@ class OrderProcessingPipeline:
         Nếu chưa có model train sẵn thì fallback đơn giản theo weight.
         """
         return "Nhẹ" if order["weight"] < 200 else "Nặng"
-    def predict_label(self, order: Dict[str, Any]) -> str:
+      def predict_label(self, order: Dict[str, Any]) -> str:
         """
-        Gọi KNN nếu model đã sẵn sàng, ngược lại fallback.
+        Phân loại nhãn theo tổng khối lượng để khớp với UI và file import.
+        Công thức: total_weight = weight × quantity
         """
-        try:
-            features = self.build_knn_features(order)
-            predictions, _ = self.knn_classifier.predict(features)
-            label = str(predictions[0]).strip().lower()
-
-            label_map = {
-                "0": "Nhẹ",
-                "1": "Trung bình",
-                "2": "Nặng",
-                "nhe": "Nhẹ",
-                "nhẹ": "Nhẹ",
-                "trung_binh": "Trung bình",
-                "trung bình": "Trung bình",
-                "trung binh": "Trung bình",
-                "nang": "Nặng",
-                "nặng": "Nặng"
-            }
-
-            return label_map.get(label, label)
-
-        except Exception as e:
-            logger.warning(f"KNN chưa sẵn sàng hoặc predict lỗi, dùng fallback. Chi tiết: {e}")
-            return self.fallback_label(order)
+        return self.rule_engine.classify_label(order)
 
     def process_single_order(self, raw_order: Dict[str, Any]) -> Dict[str, Any]:
         start_time = time.perf_counter()
