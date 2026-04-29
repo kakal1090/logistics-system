@@ -101,40 +101,33 @@ class OrderProcessingPipeline:
         Nếu chưa có model train sẵn thì fallback đơn giản theo weight.
         """
         return "Nhẹ" if order["weight"] < 200 else "Nặng"
-
     def predict_label(self, order: Dict[str, Any]) -> str:
         """
         Gọi KNN nếu model đã sẵn sàng, ngược lại fallback.
         """
         try:
             features = self.build_knn_features(order)
-           def predict_label(self, order: Dict[str, Any]) -> str:
-    """
-    Gọi KNN nếu model đã sẵn sàng, ngược lại fallback.
-    """
-    try:
-        features = self.build_knn_features(order)
-        predictions, _ = self.knn_classifier.predict(features)
-        label = str(predictions[0]).strip().lower()
+            predictions, _ = self.knn_classifier.predict(features)
+            label = str(predictions[0]).strip().lower()
 
-        label_map = {
-            "0": "Nhẹ",
-            "1": "Trung bình",
-            "2": "Nặng",
-            "nhe": "Nhẹ",
-            "nhẹ": "Nhẹ",
-            "trung_binh": "Trung bình",
-            "trung bình": "Trung bình",
-            "trung binh": "Trung bình",
-            "nang": "Nặng",
-            "nặng": "Nặng"
-        }
+            label_map = {
+                "0": "Nhẹ",
+                "1": "Trung bình",
+                "2": "Nặng",
+                "nhe": "Nhẹ",
+                "nhẹ": "Nhẹ",
+                "trung_binh": "Trung bình",
+                "trung bình": "Trung bình",
+                "trung binh": "Trung bình",
+                "nang": "Nặng",
+                "nặng": "Nặng"
+            }
 
-        return label_map.get(label, label)
+            return label_map.get(label, label)
 
-    except Exception as e:
-        logger.warning(f"KNN chưa sẵn sàng hoặc predict lỗi, dùng fallback. Chi tiết: {e}")
-        return self.fallback_label(order)
+        except Exception as e:
+            logger.warning(f"KNN chưa sẵn sàng hoặc predict lỗi, dùng fallback. Chi tiết: {e}")
+            return self.fallback_label(order)
 
     def process_single_order(self, raw_order: Dict[str, Any]) -> Dict[str, Any]:
         start_time = time.perf_counter()
