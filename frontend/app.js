@@ -302,43 +302,28 @@ if (fileUpload && fileName) {
         const weight = Number(row.weight || 0);
         const quantity = Number(row.quantity || 1);
 
-        const payload = {
-          order_id:      String(row.order_id || "").trim(),
-          customer_name: String(row.customer_name || "").trim(),
-          phone:         String(row.phone || "").trim(),
-          email:         String(row.email || "").trim(),
-          address:       String(row.address || "").trim(),
-          product_type:  String(row.product_type || "").trim().toLowerCase(),
+const payload = {
+  order_id:      String(row.order_id || "").trim(),
+  customer_name: String(row.customer_name || "").trim(),
+  phone:         String(row.phone || "").trim(),
+  email:         String(row.email || "").trim(),
+  address:       String(row.address || "").trim(),
+  product_type:  String(row.product_type || "").trim().toLowerCase(),
 
-          weight:        weight,
-          quantity:      quantity,
-          total_weight:  Number(row.total_weight || weight * quantity),
+  weight:        weight,
+  quantity:      quantity,
 
-          length:        Number(row.length || 0),
-          width:         Number(row.width || 0),
-          height:        Number(row.height || 0),
-          distance:      Number(row.distance || 0),
-          priority:      String(row.priority || "").trim().toLowerCase(),
-          note:          String(row.note || "").trim(),
+  // QUAN TRỌNG:
+  // Không lấy total_weight từ file nữa, luôn tự tính lại từ weight × quantity
+  total_weight:  weight * quantity,
 
-          // QUAN TRỌNG: lấy đúng nhãn và phương tiện từ file import
-          label:         String(row.label || "").trim(),
-          vehicle_type:  String(row.vehicle_type || "").trim(),
-        };
-
-        console.log("Payload gửi lên backend:", payload);
-
-        socket.emit("submit_order", payload);
-      }
-
-      alert(`Đã gửi ${rows.length} đơn hàng từ file lên hệ thống.`);
-    } catch (err) {
-      console.error(err);
-      alert("Không đọc được file hoặc file sai cấu trúc.");
-    }
-  });
-}
-
+  length:        Number(row.length || 0),
+  width:         Number(row.width || 0),
+  height:        Number(row.height || 0),
+  distance:      Number(row.distance || 0),
+  priority:      String(row.priority || "").trim().toLowerCase(),
+  note:          String(row.note || "").trim(),
+};
 // =========================
 // SOCKET EVENTS
 // =========================
