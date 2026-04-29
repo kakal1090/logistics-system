@@ -1,414 +1,251 @@
-
-Claude finished the response
-You said: chỉnh theo yêu câu này và chỉnh phần rule base cho nó phân loại theo khôi lượng và diện tích đơn hàng 80x80x80 nặng dưới 100kg thì đi xe máy, xe tải với xe dướ…
-1777379411880_image.png
-
-data_loader.py
-46 lines
-
-py
-
-
-knn_classifier.py
-65 lines
-
-py
-
-
-main.py
-224 lines
-
-py
-
-
-preprocessor.py
-232 lines
-
-py
-
-
-rule_engine.py
-72 lines
-
-py
-
-
-socket_server.py
-273 lines
-
-py
-
-
-test_logic_20_cases.py
-86 lines
-
-py
-
-
-train_model.py
-78 lines
-
-py
-
-
-app.js
-407 lines
-
-js
-
-
-index.html
-274 lines
-
-html
-
-
-style.css
-438 lines
-
-css
-
-chỉnh theo yêu câu này và chỉnh phần rule base cho nó phân loại theo khôi lượng và diện tích đơn hàng 80x80x80 nặng dưới 100kg thì đi xe máy, xe tải với xe dưới 5 tấn bạn giúp tôi chỉnh lại và gắn nhãn cho các đơn hàng và lại lại test case cho đúng yêu cầu và xuất cho tôi file chỉnh sửa
-
-9:39 AM
-Claude responded: Để hiểu rõ yêu cầu trước khi chỉnh sửa, cho tôi hỏi nhanh: Bạn chọn:
-Để hiểu rõ yêu cầu trước khi chỉnh sửa, cho tôi hỏi nhanh:
-
-Bạn chọn:
-
-weight × quantity (tổng khối lượng)
-< 200kg = Nhẹ, 200–1500kg = Trung bình, >1500kg = Nặng
-Cả 3 chiều ≤ 80cm VÀ weight < 100kg → Xe máy
-Tôi sẽ chỉnh sửa toàn bộ ngay!
-
-
-Ran 7 commands, created a file
-Ran 7 commands, created a file
-ORD017 fail vì total=199kg nhưng kích thước 50×50×50 → fits_motorbike đúng nhưng total=199 ≥ 100. Tôi fix expected cho đúng thực tế:
-
-
-Debug ORD017
-Debug ORD017
-Expected ORD017 phải là Nhẹ → Xe tải (total=199 ≥ 100, không đủ điều kiện xe máy). Fix lại:
-
-
-Ran 2 commands
-Ran 2 commands
-20/20 PASS. Copy tất cả ra output:
-
-
-Ran a command, read a file
-Ran a command, read a file
-20/20 test cases PASS ✅. Tóm tắt những gì đã chỉnh:
-
-Rule base mới (rule_engine.py):
-
-Điều kiện	Phương tiện
-Nhẹ + tất cả 3 chiều ≤ 80cm + total_weight < 100kg	Xe máy
-Nhẹ (không đủ điều kiện trên)	Xe tải
-Trung bình	Xe tải
-Nặng + total_weight ≤ 5000kg	Xe dưới 5 tấn
-Nặng + total_weight > 5000kg	Xe đầu kéo / Container
-Label dựa trên total_weight = weight × quantity:
-
-< 200kg → Nhẹ | 200–1500kg → Trung bình | > 1500kg → Nặng
-Các file đã cập nhật: rule_engine.py, main.py, preprocessor.py (dùng total_weight + quantity làm feature KNN), train_model.py (sinh data có quantity, 3 loại phương tiện mới), test_logic_20_cases.py (20 case đầy đủ với nhóm biên + lỗi).
-
-
-Test logic 20 cases
-PY 
-
-Rule engine
-PY 
-
-Main
-PY 
-
-Preprocessor
-PY 
-
-Train model
-PY 
-You said: ở chỉnh sửa các file trên sao cho nó khớp với file vừa chỉnh
-1777431067021_image.png
-ở chỉnh sửa các file trên sao cho nó khớp với file vừa chỉnh
-
-9:51 AM
-Claude responded: Bạn cần tôi cập nhật các file frontend (app.
-Bạn cần tôi cập nhật các file frontend (app.js, index.html, style.css) và mock_data 20 case.js để khớp với logic mới (có quantity, total_weight, 3 nhãn Nhẹ/Trung bình/Nặng, 3 loại xe mới)?
-
-
-Ran 4 commands
-Ran 4 commands
-Tôi thấy rõ tất cả vấn đề. Bắt đầu sửa 4 file:
-
-
-Ran 6 commands, read a file
-Ran 6 commands, read a file
-Đây là tóm tắt tất cả thay đổi trong 4 file:
-
-index.html
-
-Thêm trường Số lượng kiện (quantity) vào form
-Thêm ô preview tổng khối lượng cập nhật live khi nhập weight/quantity
-Thêm ô kết quả Tổng khối lượng (totalWeightBox) trong result panel
-Bảng dashboard thêm 2 cột: Số lượng và Tổng KL
-Summary cards: đủ 5 ô (Tổng / Nhẹ / Trung bình / Nặng / Đang theo dõi)
-Dropdown productType đủ 9 loại hàng
-app.js
-
-buildPayloadFromForm() gửi thêm quantity và total_weight
-Live preview tổng KL khi người dùng nhập
-normalizeLabel() xử lý đủ 3 nhãn Nhẹ / Trung bình / Nặng
-getBadgeClass() trả về badge-medium cho nhãn Trung bình
-renderTableRow() hiển thị thêm cột quantity, total_weight
-updateSummary() đếm đúng 3 nhãn, sửa lỗi medium dùng trước khi khai báo
-addOrderToDashboard() tính total_weight fallback nếu server không trả về
-File upload gửi kèm quantity và total_weight
-style.css
-
-Thêm .badge-medium (màu vàng)
-Summary card viền màu theo loại (xanh / vàng / đỏ)
-Style .total-weight-preview hiển thị ước tính trong form
-Summary grid 5 cột responsive
-mock_data_20_cases.js
-
-20 đơn đúng logic mới (quantity, total_weight, 3 nhãn, 3 loại xe)
-Hàm sendMockOrders(socket) để test nhanh qua socket
-
-App
-JS 
-
-Index
-Code · HTML 
-
-Style
-Code · CSS 
-
-Mock data 20 cases
-JS 
-
-You are out of free messages until 2:30 PM
-Keep working
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-Mock data 20 cases · JS
-Copy
-
-/**
- * mock_data_20_cases.js
- * Dữ liệu mock 20 đơn hàng khớp với logic phân loại mới:
- *
- *  Label  (dựa trên total_weight = weight × quantity):
- *      < 200 kg        → Nhẹ
- *      200 – 1500 kg   → Trung bình
- *      > 1500 kg       → Nặng
- *
- *  Phương tiện:
- *      Xe máy          : tất cả 3 chiều ≤ 80 cm VÀ total_weight < 100 kg
- *      Xe tải          : Nhẹ / Trung bình không đủ điều kiện xe máy
- *      Xe dưới 5 tấn   : Nặng, total_weight ≤ 5000 kg
- *      Xe đầu kéo      : Nặng, total_weight > 5000 kg
- */
- 
-const MOCK_ORDERS = [
-  // ── Nhóm 1: Xe máy ──────────────────────────────────────────
-  {
-    order_id: "ORD001", customer_name: "Nguyễn Văn A",
-    phone: "0909111111", email: "a@mail.com", address: "Quận 1, TP.HCM",
-    product_type: "my_pham", weight: 10, quantity: 2,
-    total_weight: 20, length: 50, width: 40, height: 30,
-    distance: 8, priority: "nhanh", note: "",
-    expected_label: "Nhẹ", expected_vehicle: "Xe máy",
-  },
-  {
-    order_id: "ORD002", customer_name: "Trần Thị B",
-    phone: "0909222222", email: "b@mail.com", address: "Quận 3, TP.HCM",
-    product_type: "hang_tieu_dung", weight: 5, quantity: 5,
-    total_weight: 25, length: 80, width: 80, height: 80,
-    distance: 15, priority: "thuong", note: "Đúng biên 80cm",
-    expected_label: "Nhẹ", expected_vehicle: "Xe máy",
-  },
-  {
-    order_id: "ORD003", customer_name: "Lê Minh C",
-    phone: "0909333333", email: "c@mail.com", address: "Thủ Đức, TP.HCM",
-    product_type: "linh_kien_dien_tu", weight: 30, quantity: 3,
-    total_weight: 90, length: 70, width: 60, height: 50,
-    distance: 5, priority: "hoa_toc", note: "total=90 < 100",
-    expected_label: "Nhẹ", expected_vehicle: "Xe máy",
-  },
- 
-  // ── Nhóm 2: Nhẹ → Xe tải ────────────────────────────────────
-  {
-    order_id: "ORD004", customer_name: "Phạm Văn D",
-    phone: "0909444444", email: "d@mail.com", address: "Bình Dương",
-    product_type: "tieu_chuan", weight: 20, quantity: 3,
-    total_weight: 60, length: 100, width: 40, height: 30,
-    distance: 20, priority: "nhanh", note: "length > 80 → xe tải",
-    expected_label: "Nhẹ", expected_vehicle: "Xe tải",
-  },
-  {
-    order_id: "ORD005", customer_name: "Hoàng Thị E",
-    phone: "0909555555", email: "e@mail.com", address: "Đồng Nai",
-    product_type: "de_vo", weight: 50, quantity: 3,
-    total_weight: 150, length: 70, width: 60, height: 50,
-    distance: 30, priority: "thuong", note: "total=150 >= 100 → xe tải",
-    expected_label: "Nhẹ", expected_vehicle: "Xe tải",
-  },
-  {
-    order_id: "ORD006", customer_name: "Vũ Quốc F",
-    phone: "0909666666", email: "f@mail.com", address: "Long An",
-    product_type: "nong_san", weight: 15, quantity: 8,
-    total_weight: 120, length: 60, width: 50, height: 90,
-    distance: 25, priority: "hoa_toc", note: "height > 80 → xe tải",
-    expected_label: "Nhẹ", expected_vehicle: "Xe tải",
-  },
-  {
-    order_id: "ORD007", customer_name: "Đặng Ngọc G",
-    phone: "0909777777", email: "g@mail.com", address: "Tây Ninh",
-    product_type: "hang_tieu_dung", weight: 10, quantity: 10,
-    total_weight: 100, length: 50, width: 50, height: 50,
-    distance: 50, priority: "nhanh", note: "total=100 không < 100 → xe tải",
-    expected_label: "Nhẹ", expected_vehicle: "Xe tải",
-  },
- 
-  // ── Nhóm 3: Trung bình → Xe tải ─────────────────────────────
-  {
-    order_id: "ORD008", customer_name: "Ngô Thị H",
-    phone: "0909888888", email: "h@mail.com", address: "Vũng Tàu",
-    product_type: "tieu_chuan", weight: 50, quantity: 5,
-    total_weight: 250, length: 60, width: 60, height: 60,
-    distance: 100, priority: "thuong", note: "total=250 → Trung bình",
-    expected_label: "Trung bình", expected_vehicle: "Xe tải",
-  },
-  {
-    order_id: "ORD009", customer_name: "Bùi Văn I",
-    phone: "0901111119", email: "i@mail.com", address: "Bình Thuận",
-    product_type: "cong_kenh", weight: 100, quantity: 8,
-    total_weight: 800, length: 80, width: 80, height: 70,
-    distance: 200, priority: "nhanh", note: "total=800 → Trung bình",
-    expected_label: "Trung bình", expected_vehicle: "Xe tải",
-  },
-  {
-    order_id: "ORD010", customer_name: "Trịnh Thị J",
-    phone: "0901111110", email: "j@mail.com", address: "Ninh Thuận",
-    product_type: "dong_lanh", weight: 200, quantity: 7,
-    total_weight: 1400, length: 100, width: 90, height: 80,
-    distance: 350, priority: "thuong", note: "total=1400 ≤ 1500 → Trung bình",
-    expected_label: "Trung bình", expected_vehicle: "Xe tải",
-  },
- 
-  // ── Nhóm 4: Nặng → Xe dưới 5 tấn ───────────────────────────
-  {
-    order_id: "ORD011", customer_name: "Lý Văn K",
-    phone: "0901111101", email: "k@mail.com", address: "Khánh Hòa",
-    product_type: "nong_san", weight: 200, quantity: 10,
-    total_weight: 2000, length: 120, width: 100, height: 90,
-    distance: 300, priority: "thuong", note: "total=2000 → Nặng ≤ 5000",
-    expected_label: "Nặng", expected_vehicle: "Xe dưới 5 tấn",
-  },
-  {
-    order_id: "ORD012", customer_name: "Dương Thị L",
-    phone: "0901111102", email: "l@mail.com", address: "Đà Lạt",
-    product_type: "tieu_chuan", weight: 300, quantity: 8,
-    total_weight: 2400, length: 150, width: 120, height: 100,
-    distance: 400, priority: "nhanh", note: "total=2400 → Nặng ≤ 5000",
-    expected_label: "Nặng", expected_vehicle: "Xe dưới 5 tấn",
-  },
-  {
-    order_id: "ORD013", customer_name: "Hồ Văn M",
-    phone: "0901111103", email: "m@mail.com", address: "Đắk Lắk",
-    product_type: "cong_kenh", weight: 500, quantity: 9,
-    total_weight: 4500, length: 180, width: 150, height: 120,
-    distance: 500, priority: "thuong", note: "total=4500 ≤ 5000 → Nặng",
-    expected_label: "Nặng", expected_vehicle: "Xe dưới 5 tấn",
-  },
- 
-  // ── Nhóm 5: Nặng → Xe đầu kéo ───────────────────────────────
-  {
-    order_id: "ORD014", customer_name: "Tô Thị N",
-    phone: "0901111104", email: "n@mail.com", address: "Gia Lai",
-    product_type: "tieu_chuan", weight: 400, quantity: 15,
-    total_weight: 6000, length: 200, width: 150, height: 150,
-    distance: 700, priority: "thuong", note: "total=6000 → Xe đầu kéo",
-    expected_label: "Nặng", expected_vehicle: "Xe đầu kéo / Container",
-  },
-  {
-    order_id: "ORD015", customer_name: "Cao Văn O",
-    phone: "0901111105", email: "o@mail.com", address: "Quảng Ngãi",
-    product_type: "nong_san", weight: 600, quantity: 12,
-    total_weight: 7200, length: 200, width: 180, height: 160,
-    distance: 1000, priority: "thuong", note: "total=7200 → Xe đầu kéo",
-    expected_label: "Nặng", expected_vehicle: "Xe đầu kéo / Container",
-  },
-  {
-    order_id: "ORD016", customer_name: "Mai Thị P",
-    phone: "0901111106", email: "p@mail.com", address: "Đà Nẵng",
-    product_type: "tieu_chuan", weight: 1000, quantity: 20,
-    total_weight: 20000, length: 200, width: 200, height: 200,
-    distance: 1500, priority: "thuong", note: "total=20000 → Xe đầu kéo",
-    expected_label: "Nặng", expected_vehicle: "Xe đầu kéo / Container",
-  },
- 
-  // ── Nhóm 6: Biên giới nhãn ──────────────────────────────────
-  {
-    order_id: "ORD017", customer_name: "Phan Văn Q",
-    phone: "0901111107", email: "q@mail.com", address: "Huế",
-    product_type: "hang_tieu_dung", weight: 199, quantity: 1,
-    total_weight: 199, length: 50, width: 50, height: 50,
-    distance: 10, priority: "nhanh",
-    note: "total=199 nhưng ≥ 100 → xe tải dù kích thước OK",
-    expected_label: "Nhẹ", expected_vehicle: "Xe tải",
-  },
-  {
-    order_id: "ORD018", customer_name: "Lưu Thị R",
-    phone: "0901111108", email: "r@mail.com", address: "Quảng Bình",
-    product_type: "tieu_chuan", weight: 200, quantity: 1,
-    total_weight: 200, length: 50, width: 50, height: 50,
-    distance: 10, priority: "nhanh", note: "total=200 biên Trung bình",
-    expected_label: "Trung bình", expected_vehicle: "Xe tải",
-  },
- 
-  // ── Nhóm 7: Lỗi (demo — backend sẽ từ chối) ─────────────────
-  {
-    order_id: "ORD019", customer_name: "Test Lỗi S",
-    phone: "0000000000", email: "", address: "N/A",
-    product_type: "nong_san", weight: -5, quantity: 1,
-    total_weight: -5, length: 50, width: 40, height: 30,
-    distance: 100, priority: "thuong", note: "Trọng tải âm – backend từ chối",
-    expected_label: "LỖI", expected_vehicle: "N/A",
-  },
-  {
-    order_id: "ORD020", customer_name: "Test Lỗi T",
-    phone: "0000000001", email: "", address: "N/A",
-    product_type: "nong_san", weight: 0, quantity: 1,
-    total_weight: 0, length: 50, width: 40, height: 30,
-    distance: 50, priority: "thuong", note: "Trọng tải bằng 0 – backend từ chối",
-    expected_label: "LỖI", expected_vehicle: "N/A",
-  },
-];
- 
-/**
- * Gửi toàn bộ 20 đơn lên server qua socket.
- * Gọi hàm này sau khi socket đã kết nối.
- */
-function sendMockOrders(socket, delayMs = 300) {
-  console.log(`[Mock] Gửi ${MOCK_ORDERS.length} đơn hàng mẫu...`);
-  MOCK_ORDERS.forEach((order, i) => {
-    setTimeout(() => {
-      const payload = { ...order };
-      delete payload.expected_label;
-      delete payload.expected_vehicle;
-      socket.emit("submit_order", payload);
-      console.log(`[Mock] Gửi ${order.order_id}`);
-    }, i * delayMs);
-  });
-}
- 
-// Nếu dùng trong môi trường Node (test script)
-if (typeof module !== "undefined") {
-  module.exports = { MOCK_ORDERS, sendMockOrders };
-}
- 
+"""
+Test 20 cases cho hệ thống phân loại đơn hàng vận tải.
+
+Tiêu chí phân loại:
+    Label dựa trên total_weight = weight × quantity:
+        < 200 kg       → Nhẹ
+        200 – 1500 kg  → Trung bình
+        > 1500 kg      → Nặng
+
+    Rule gán phương tiện:
+        Xe máy          : tất cả 3 chiều ≤ 80 cm VÀ total_weight < 100 kg
+        Xe tải          : Nhẹ / Trung bình không đủ điều kiện xe máy
+        Xe dưới 5 tấn   : Nặng, total_weight ≤ 5000 kg
+        Xe đầu kéo      : Nặng, total_weight > 5000 kg
+"""
+
+
+class RuleEngine:
+    # ---------- helpers ----------
+    @staticmethod
+    def _build_label(total_weight: float) -> str:
+        if total_weight < 200:
+            return "Nhẹ"
+        elif total_weight <= 1500:
+            return "Trung bình"
+        return "Nặng"
+
+    @staticmethod
+    def _fits_motorbike(length, width, height, total_weight) -> bool:
+        return length <= 80 and width <= 80 and height <= 80 and total_weight < 100
+
+    # ---------- classify ----------
+    def classify(self, order: dict):
+        # --- validate ---
+        if order["weight"] < 0:
+            return "LỖI: Trọng tải âm (-)"
+        if order["weight"] == 0:
+            return "LỖI: Trọng tải bằng 0"
+        if order["distance"] < 0:
+            return "LỖI: Khoảng cách âm (-)"
+        if order.get("quantity", 1) <= 0:
+            return "LỖI: Số lượng không hợp lệ"
+
+        quantity     = order.get("quantity", 1)
+        total_weight = order["weight"] * quantity
+        label        = self._build_label(total_weight)
+
+        length = order.get("length", 0)
+        width  = order.get("width",  0)
+        height = order.get("height", 0)
+
+        if label == "Nhẹ":
+            if self._fits_motorbike(length, width, height, total_weight):
+                vehicle = "Xe máy"
+            else:
+                vehicle = "Xe tải"
+
+        elif label == "Trung bình":
+            vehicle = "Xe tải"
+
+        else:  # Nặng
+            if total_weight <= 5000:
+                vehicle = "Xe dưới 5 tấn"
+            else:
+                vehicle = "Xe đầu kéo / Container"
+
+        return f"{label} → {vehicle}"
+
+
+# ──────────────────────────────────────────────
+# 20 TEST CASES
+# ──────────────────────────────────────────────
+def run_test():
+    engine = RuleEngine()
+
+    # Mỗi case: order_id, weight, quantity, length, width, height, distance, priority, note, expected
+    test_data = [
+        # ── Nhóm 1: Xe máy (kích thước ≤ 80×80×80, total_weight < 100 kg) ──
+        {
+            "order_id": "ORD001", "weight": 10, "quantity": 2,
+            "length": 50, "width": 40, "height": 30, "distance": 8,
+            "priority": "nhanh", "note": "Đơn nhỏ đủ điều kiện xe máy",
+            "expected": "Nhẹ → Xe máy",
+        },
+        {
+            "order_id": "ORD002", "weight": 5, "quantity": 5,
+            "length": 80, "width": 80, "height": 80, "distance": 15,
+            "priority": "thuong", "note": "Đúng biên 80cm, total=25kg",
+            "expected": "Nhẹ → Xe máy",
+        },
+        {
+            "order_id": "ORD003", "weight": 30, "quantity": 3,
+            "length": 70, "width": 60, "height": 50, "distance": 5,
+            "priority": "nhanh", "note": "total=90kg < 100, kích thước OK",
+            "expected": "Nhẹ → Xe máy",
+        },
+
+        # ── Nhóm 2: Nhẹ nhưng KHÔNG đủ điều kiện xe máy → Xe tải ──
+        {
+            "order_id": "ORD004", "weight": 20, "quantity": 3,
+            "length": 100, "width": 40, "height": 30, "distance": 20,
+            "priority": "nhanh", "note": "length > 80 → xe tải",
+            "expected": "Nhẹ → Xe tải",
+        },
+        {
+            "order_id": "ORD005", "weight": 50, "quantity": 3,
+            "length": 70, "width": 60, "height": 50, "distance": 30,
+            "priority": "thuong", "note": "total=150kg >= 100 → xe tải",
+            "expected": "Nhẹ → Xe tải",
+        },
+        {
+            "order_id": "ORD006", "weight": 15, "quantity": 8,
+            "length": 60, "width": 50, "height": 90, "distance": 25,
+            "priority": "hoa_toc", "note": "height > 80 → xe tải dù nhẹ",
+            "expected": "Nhẹ → Xe tải",
+        },
+        {
+            "order_id": "ORD007", "weight": 10, "quantity": 10,
+            "length": 50, "width": 50, "height": 50, "distance": 50,
+            "priority": "nhanh", "note": "total=100kg, không < 100 → xe tải",
+            "expected": "Nhẹ → Xe tải",
+        },
+
+        # ── Nhóm 3: Trung bình → Xe tải ──
+        {
+            "order_id": "ORD008", "weight": 50, "quantity": 5,
+            "length": 60, "width": 60, "height": 60, "distance": 100,
+            "priority": "thuong", "note": "total=250kg → Trung bình",
+            "expected": "Trung bình → Xe tải",
+        },
+        {
+            "order_id": "ORD009", "weight": 100, "quantity": 8,
+            "length": 80, "width": 80, "height": 70, "distance": 200,
+            "priority": "nhanh", "note": "total=800kg → Trung bình",
+            "expected": "Trung bình → Xe tải",
+        },
+        {
+            "order_id": "ORD010", "weight": 200, "quantity": 7,
+            "length": 100, "width": 90, "height": 80, "distance": 350,
+            "priority": "thuong", "note": "total=1400kg ≤ 1500 → Trung bình",
+            "expected": "Trung bình → Xe tải",
+        },
+
+        # ── Nhóm 4: Nặng, total ≤ 5000 → Xe dưới 5 tấn ──
+        {
+            "order_id": "ORD011", "weight": 200, "quantity": 10,
+            "length": 120, "width": 100, "height": 90, "distance": 300,
+            "priority": "thuong", "note": "total=2000kg → Nặng",
+            "expected": "Nặng → Xe dưới 5 tấn",
+        },
+        {
+            "order_id": "ORD012", "weight": 300, "quantity": 8,
+            "length": 150, "width": 120, "height": 100, "distance": 400,
+            "priority": "nhanh", "note": "total=2400kg → Nặng",
+            "expected": "Nặng → Xe dưới 5 tấn",
+        },
+        {
+            "order_id": "ORD013", "weight": 500, "quantity": 9,
+            "length": 180, "width": 150, "height": 120, "distance": 500,
+            "priority": "thuong", "note": "total=4500kg ≤ 5000 → Nặng",
+            "expected": "Nặng → Xe dưới 5 tấn",
+        },
+
+        # ── Nhóm 5: Nặng, total > 5000 → Xe đầu kéo ──
+        {
+            "order_id": "ORD014", "weight": 400, "quantity": 15,
+            "length": 200, "width": 150, "height": 150, "distance": 700,
+            "priority": "thuong", "note": "total=6000kg → Xe đầu kéo",
+            "expected": "Nặng → Xe đầu kéo / Container",
+        },
+        {
+            "order_id": "ORD015", "weight": 600, "quantity": 12,
+            "length": 200, "width": 180, "height": 160, "distance": 1000,
+            "priority": "thuong", "note": "total=7200kg → Xe đầu kéo",
+            "expected": "Nặng → Xe đầu kéo / Container",
+        },
+        {
+            "order_id": "ORD016", "weight": 1000, "quantity": 20,
+            "length": 200, "width": 200, "height": 200, "distance": 1500,
+            "priority": "thuong", "note": "total=20000kg → Xe đầu kéo",
+            "expected": "Nặng → Xe đầu kéo / Container",
+        },
+
+        # ── Nhóm 6: Biên giới giữa các nhãn ──
+        {
+            "order_id": "ORD017", "weight": 199, "quantity": 1,
+            "length": 50, "width": 50, "height": 50, "distance": 10,
+            "priority": "nhanh", "note": "total=199kg nhưng ≥ 100 → xe tải dù kích thước OK",
+            "expected": "Nhẹ → Xe tải",
+        },
+        {
+            "order_id": "ORD018", "weight": 200, "quantity": 1,
+            "length": 50, "width": 50, "height": 50, "distance": 10,
+            "priority": "nhanh", "note": "total=200kg biên Trung bình",
+            "expected": "Trung bình → Xe tải",
+        },
+        # ── Nhóm 7: Lỗi dữ liệu ──
+        {
+            "order_id": "ORD019", "weight": -5, "quantity": 1,
+            "length": 50, "width": 40, "height": 30, "distance": 100,
+            "priority": "invalid", "note": "Trọng tải âm",
+            "expected": "LỖI: Trọng tải âm (-)",
+        },
+        {
+            "order_id": "ORD020", "weight": 0, "quantity": 1,
+            "length": 50, "width": 40, "height": 30, "distance": 50,
+            "priority": "invalid", "note": "Trọng tải bằng 0",
+            "expected": "LỖI: Trọng tải bằng 0",
+        },
+    ]
+
+    # ── Header ──
+    w = [8, 8, 4, 6, 6, 6, 6, 8, 8, 35, 30]
+    header = (
+        f"{'Order ID':<{w[0]}} | {'Total KL':>{w[1]}} | {'SL':>{w[2]}} | "
+        f"{'L':>{w[3]}} | {'W':>{w[4]}} | {'H':>{w[5]}} | {'Dist':>{w[6]}} | "
+        f"{'Ưu tiên':<{w[7]}} | {'Kết quả':<{w[8]}} | {'Expected':<{w[9]}} | {'Status'}"
+    )
+    print("=" * len(header))
+    print(header)
+    print("=" * len(header))
+
+    passed = 0
+    failed = 0
+
+    for d in test_data:
+        qty   = d.get("quantity", 1)
+        tw    = d["weight"] * qty if d["weight"] >= 0 else d["weight"]  # giữ âm để lỗi
+        result = engine.classify(d)
+
+        status = "✅ PASS" if result == d["expected"] else "❌ FAIL"
+        if result == d["expected"]:
+            passed += 1
+        else:
+            failed += 1
+
+        tw_display = f"{tw:.0f}kg" if d["weight"] > 0 else f"{tw}"
+
+        print(
+            f"{d['order_id']:<{w[0]}} | {tw_display:>{w[1]}} | {qty:>{w[2]}} | "
+            f"{d.get('length',0):>{w[3]}} | {d.get('width',0):>{w[4]}} | "
+            f"{d.get('height',0):>{w[5]}} | {d['distance']:>{w[6]}} | "
+            f"{d['priority']:<{w[7]}} | {result:<{w[8]}} | {d['expected']:<{w[9]}} | {status}"
+        )
+
+    print("=" * len(header))
+    print(f"Tổng: {len(test_data)} | ✅ PASS: {passed} | ❌ FAIL: {failed}")
+
+
+if __name__ == "__main__":
+    run_test()
