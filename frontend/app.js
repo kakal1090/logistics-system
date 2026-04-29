@@ -15,16 +15,16 @@ const assignedVehicle = document.getElementById("assignedVehicle");
 const processedTime   = document.getElementById("processedTime");
 const totalWeightBox  = document.getElementById("totalWeightBox");
 
-const totalOrders     = document.getElementById("totalOrders");
-const lightOrders     = document.getElementById("lightOrders");
-const mediumOrders    = document.getElementById("mediumOrders");
-const heavyOrders     = document.getElementById("heavyOrders");
-const trackingOrders  = document.getElementById("trackingOrders");
+const totalOrders    = document.getElementById("totalOrders");
+const lightOrders    = document.getElementById("lightOrders");
+const mediumOrders   = document.getElementById("mediumOrders");
+const heavyOrders    = document.getElementById("heavyOrders");
+const trackingOrders = document.getElementById("trackingOrders");
 
-const tableBody        = document.getElementById("tableBody");
+const tableBody         = document.getElementById("tableBody");
 const deleteSelectedBtn = document.getElementById("deleteSelectedBtn");
-const clearAllBtn      = document.getElementById("clearAllBtn");
-const resetFormBtn     = document.getElementById("resetFormBtn");
+const clearAllBtn       = document.getElementById("clearAllBtn");
+const resetFormBtn      = document.getElementById("resetFormBtn");
 
 let orders = [];
 
@@ -35,16 +35,8 @@ function safeValue(id) {
   const el = document.getElementById(id);
   return el ? el.value.trim() : "";
 }
-
-function toNumber(value) {
-  const n = parseFloat(value);
-  return Number.isNaN(n) ? 0 : n;
-}
-
-function toInt(value) {
-  const n = parseInt(value, 10);
-  return Number.isNaN(n) ? 1 : n;
-}
+function toNumber(v) { const n = parseFloat(v); return isNaN(n) ? 0 : n; }
+function toInt(v)    { const n = parseInt(v, 10); return isNaN(n) ? 1 : n; }
 
 function buildPayloadFromForm() {
   const weight   = toNumber(safeValue("weight"));
@@ -68,68 +60,75 @@ function buildPayloadFromForm() {
   };
 }
 
-// Live preview total_weight khi nhập weight / quantity
+// ── Live preview tổng KL + gợi ý nhãn ────────────────────────
+function getLabelHint(tw) {
+  if (tw <= 0)    return "";
+  if (tw < 200)   return "→ Dự kiến: Nhẹ";
+  if (tw <= 1500) return "→ Dự kiến: Trung bình";
+  return "→ Dự kiến: Nặng";
+}
+
 ["weight", "quantity"].forEach(id => {
   const el = document.getElementById(id);
-  if (el) {
-    el.addEventListener("input", () => {
-      const w = toNumber(safeValue("weight"));
-      const q = toInt(safeValue("quantity")) || 1;
-      const preview = document.getElementById("totalWeightPreview");
-      if (preview) preview.textContent = (w * q).toFixed(2) + " kg";
-    });
-  }
+  if (!el) return;
+  el.addEventListener("input", () => {
+    const w  = toNumber(safeValue("weight"));
+    const q  = toInt(safeValue("quantity")) || 1;
+    const tw = w * q;
+    const preview = document.getElementById("totalWeightPreview");
+    const hint    = document.getElementById("labelHint");
+    if (preview) preview.textContent = tw.toFixed(2) + " kg";
+    if (hint)    hint.textContent    = getLabelHint(tw);
+  });
 });
 
+// ── Kết quả ──────────────────────────────────────────────────
 function updateResultBox(data) {
   if (processStatus)   processStatus.textContent  = data.process_status || "Đã xử lý";
   if (predictedLabel)  predictedLabel.textContent  = data.label || "--";
-  if (assignedVehicle) assignedVehicle.textContent = data.assigned_vehicle || data.vehicle || "--";
+  if (assignedVehicle) assignedVehicle.textContent = data.assigned_vehicle || "--";
   if (processedTime)   processedTime.textContent   = data.processing_time || data.processed_at || "--";
-  if (totalWeightBox)  totalWeightBox.textContent  = data.total_weight != null
-    ? data.total_weight.toFixed(2) + " kg" : "--";
+  if (totalWeightBox)  totalWeightBox.textContent  =
+    data.total_weight != null ? (+data.total_weight).toFixed(2) + " kg" : "--";
 }
 
 function normalizeLabel(label) {
-  const raw = String(label || "").trim().toLowerCase();
-  if (["nhẹ", "nhe", "light"].includes(raw))                                      return "Nhẹ";
-  if (["trung bình", "trung_binh", "trung binh", "medium"].includes(raw))         return "Trung bình";
-  if (["nặng", "nang", "heavy"].includes(raw))                                    return "Nặng";
+  const r = String(label || "").trim().toLowerCase();
+  if (["nhẹ","nhe","light"].includes(r))                                  return "Nhẹ";
+  if (["trung bình","trung_binh","trung binh","medium"].includes(r))      return "Trung bình";
+  if (["nặng","nang","heavy"].includes(r))                                return "Nặng";
   return label || "--";
 }
 
 function getBadgeClass(label) {
-  if (label === "Nhẹ")       return "badge badge-light";
+  if (label === "Nhẹ")        return "badge badge-light";
   if (label === "Trung bình") return "badge badge-medium";
-  if (label === "Nặng")      return "badge badge-heavy";
+  if (label === "Nặng")       return "badge badge-heavy";
   return "badge";
 }
 
 function renderTableRow(data) {
   if (!tableBody) return;
-
   const label      = data.label || "--";
   const badgeClass = getBadgeClass(label);
-  const tw         = data.total_weight != null ? data.total_weight.toFixed(2) + " kg" : "--";
+  const tw         = data.total_weight != null ? (+data.total_weight).toFixed(2) : "--";
 
   const tr = document.createElement("tr");
   tr.dataset.orderId = data.order_id || "";
-
   tr.innerHTML = `
     <td><input type="checkbox" class="row-checkbox" data-order-id="${data.order_id || ""}"></td>
     <td>${data.order_id || "--"}</td>
     <td>${data.customer_name || "--"}</td>
     <td>${data.product_type || "--"}</td>
-    <td>${data.weight != null ? data.weight + " kg" : "--"}</td>
+    <td>${data.weight != null ? data.weight : "--"}</td>
     <td>${data.quantity != null ? data.quantity : "--"}</td>
     <td>${tw}</td>
     <td>${data.distance != null ? data.distance + " km" : "--"}</td>
     <td><span class="${badgeClass}">${label}</span></td>
-    <td>${data.assigned_vehicle || data.vehicle || "--"}</td>
+    <td>${data.assigned_vehicle || "--"}</td>
     <td>${data.priority || "--"}</td>
     <td>${data.processing_time || data.processed_at || "--"}</td>
   `;
-
   tableBody.prepend(tr);
 }
 
@@ -137,35 +136,32 @@ function updateSummary() {
   const light  = orders.filter(o => o.label === "Nhẹ").length;
   const medium = orders.filter(o => o.label === "Trung bình").length;
   const heavy  = orders.filter(o => o.label === "Nặng").length;
-
-  if (totalOrders)   totalOrders.textContent   = orders.length;
-  if (lightOrders)   lightOrders.textContent   = light;
-  if (mediumOrders)  mediumOrders.textContent  = medium;
-  if (heavyOrders)   heavyOrders.textContent   = heavy;
+  if (totalOrders)    totalOrders.textContent    = orders.length;
+  if (lightOrders)    lightOrders.textContent    = light;
+  if (mediumOrders)   mediumOrders.textContent   = medium;
+  if (heavyOrders)    heavyOrders.textContent    = heavy;
   if (trackingOrders) trackingOrders.textContent = orders.length;
 }
 
 function addOrderToDashboard(data) {
   if (!data || typeof data !== "object") return;
-
+  const w = data.weight   ?? 0;
+  const q = data.quantity ?? 1;
   const normalized = {
-    order_id:        data.order_id || "--",
-    customer_name:   data.customer_name || data.input_features?.customer_name || "--",
-    product_type:    data.product_type  || data.input_features?.product_type  || "--",
-    weight:          data.weight  ?? data.input_features?.weight,
-    quantity:        data.quantity ?? 1,
-    total_weight:    data.total_weight != null
-      ? data.total_weight
-      : ((data.weight ?? 0) * (data.quantity ?? 1)),
-    distance:        data.distance ?? data.input_features?.distance,
-    priority:        data.priority || data.input_features?.priority || "--",
-    label:           normalizeLabel(data.label),
+    order_id:         data.order_id || "--",
+    customer_name:    data.customer_name || "--",
+    product_type:     data.product_type  || "--",
+    weight:           w,
+    quantity:         q,
+    total_weight:     data.total_weight != null ? data.total_weight : w * q,
+    distance:         data.distance ?? "--",
+    priority:         data.priority  || "--",
+    label:            normalizeLabel(data.label),
     assigned_vehicle: data.assigned_vehicle || data.vehicle || "--",
-    processing_time: data.processing_time || "--",
-    processed_at:    data.processed_at    || "--",
-    process_status:  data.process_status  || "Đã xử lý",
+    processing_time:  data.processing_time || "--",
+    processed_at:     data.processed_at    || "--",
+    process_status:   data.process_status  || "Đã xử lý",
   };
-
   orders.unshift(normalized);
   updateResultBox(normalized);
   renderTableRow(normalized);
@@ -174,40 +170,36 @@ function addOrderToDashboard(data) {
 
 function clearDashboard() {
   orders = [];
-  if (tableBody) tableBody.innerHTML = "";
-  updateSummary();
-
-  if (processStatus)   processStatus.textContent   = "Chờ xử lý";
+  if (tableBody)       tableBody.innerHTML          = "";
+  if (processStatus)   processStatus.textContent    = "Chờ xử lý";
   if (predictedLabel)  predictedLabel.textContent   = "--";
   if (assignedVehicle) assignedVehicle.textContent  = "--";
   if (processedTime)   processedTime.textContent    = "--";
   if (totalWeightBox)  totalWeightBox.textContent   = "--";
+  updateSummary();
 }
 
 function resetFormFields() {
-  if (orderForm)    orderForm.reset();
-  if (fileUpload)   fileUpload.value = "";
-  if (fileName)     fileName.textContent = "Chưa chọn file";
-
+  if (orderForm)  orderForm.reset();
+  if (fileUpload) fileUpload.value = "";
+  if (fileName)   fileName.textContent = "Chưa chọn file";
   const preview = document.getElementById("totalWeightPreview");
+  const hint    = document.getElementById("labelHint");
   if (preview) preview.textContent = "0 kg";
-
+  if (hint)    hint.textContent    = "";
   if (processStatus)   processStatus.textContent   = "Chờ xử lý";
-  if (predictedLabel)  predictedLabel.textContent   = "--";
-  if (assignedVehicle) assignedVehicle.textContent  = "--";
-  if (processedTime)   processedTime.textContent    = "--";
-  if (totalWeightBox)  totalWeightBox.textContent   = "--";
+  if (predictedLabel)  predictedLabel.textContent  = "--";
+  if (assignedVehicle) assignedVehicle.textContent = "--";
+  if (processedTime)   processedTime.textContent   = "--";
+  if (totalWeightBox)  totalWeightBox.textContent  = "--";
 }
 
 function deleteSelectedRows() {
-  const checkedBoxes = document.querySelectorAll(".row-checkbox:checked");
-  if (checkedBoxes.length === 0) {
-    alert("Chưa chọn dòng nào để xóa.");
-    return;
-  }
-  const selectedIds = Array.from(checkedBoxes).map(cb => cb.dataset.orderId);
-  orders = orders.filter(o => !selectedIds.includes(o.order_id));
-  selectedIds.forEach(id => {
+  const checked = document.querySelectorAll(".row-checkbox:checked");
+  if (!checked.length) { alert("Chưa chọn dòng nào."); return; }
+  const ids = Array.from(checked).map(cb => cb.dataset.orderId);
+  orders = orders.filter(o => !ids.includes(o.order_id));
+  ids.forEach(id => {
     const row = tableBody.querySelector(`tr[data-order-id="${id}"]`);
     if (row) row.remove();
   });
@@ -215,12 +207,11 @@ function deleteSelectedRows() {
 }
 
 // ── Event listeners ───────────────────────────────────────────
-if (resetFormBtn)     resetFormBtn.addEventListener("click", resetFormFields);
+if (resetFormBtn)      resetFormBtn.addEventListener("click", resetFormFields);
 if (deleteSelectedBtn) deleteSelectedBtn.addEventListener("click", deleteSelectedRows);
-
 if (clearAllBtn) {
   clearAllBtn.addEventListener("click", () => {
-    if (confirm("Bạn có chắc muốn xóa toàn bộ dữ liệu trong bảng?")) {
+    if (confirm("Bạn có chắc muốn xóa toàn bộ dữ liệu?")) {
       socket.emit("clear_history");
     }
   });
@@ -232,14 +223,11 @@ if (clearAllBtn) {
 if (orderForm) {
   orderForm.addEventListener("submit", function (e) {
     e.preventDefault();
-
     const payload = buildPayloadFromForm();
-
     if (!payload.order_id || !payload.customer_name) {
       alert("Vui lòng nhập ít nhất mã đơn và tên khách hàng.");
       return;
     }
-
     if (processStatus) processStatus.textContent = "Đang xử lý...";
     socket.emit("submit_order", payload);
   });
@@ -250,48 +238,35 @@ if (orderForm) {
 // =========================
 if (fileUpload && fileName) {
   fileUpload.addEventListener("change", async function () {
-    if (!this.files || this.files.length === 0) {
-      fileName.textContent = "Chưa chọn file";
-      return;
-    }
-
+    if (!this.files || !this.files.length) { fileName.textContent = "Chưa chọn file"; return; }
     const file = this.files[0];
     fileName.textContent = file.name;
     const ext = file.name.split(".").pop().toLowerCase();
-
     try {
       let rows = [];
-
       if (ext === "json") {
         rows = JSON.parse(await file.text());
       } else if (ext === "csv") {
         const wb = XLSX.read(await file.text(), { type: "string" });
         rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-      } else if (ext === "xlsx" || ext === "xls") {
+      } else if (["xlsx","xls"].includes(ext)) {
         const wb = XLSX.read(await file.arrayBuffer(), { type: "array" });
         rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-      } else {
-        alert("Định dạng file chưa hỗ trợ.");
-        return;
-      }
+      } else { alert("Định dạng file chưa hỗ trợ."); return; }
 
-      if (!Array.isArray(rows) || rows.length === 0) {
-        alert("File không có dữ liệu hợp lệ.");
-        return;
-      }
+      if (!Array.isArray(rows) || !rows.length) { alert("File không có dữ liệu hợp lệ."); return; }
 
       for (const row of rows) {
         const weight   = Number(row.weight   || 0);
-        const quantity = Number(row.quantity  || 1);
-        const payload = {
+        const quantity = Number(row.quantity || 1);
+        socket.emit("submit_order", {
           order_id:      String(row.order_id      || "").trim(),
           customer_name: String(row.customer_name || "").trim(),
           phone:         String(row.phone         || "").trim(),
           email:         String(row.email         || "").trim(),
           address:       String(row.address       || "").trim(),
           product_type:  String(row.product_type  || "").trim().toLowerCase(),
-          weight,
-          quantity,
+          weight, quantity,
           total_weight:  weight * quantity,
           length:        Number(row.length   || 0),
           width:         Number(row.width    || 0),
@@ -299,13 +274,11 @@ if (fileUpload && fileName) {
           distance:      Number(row.distance || 0),
           priority:      String(row.priority || "").trim().toLowerCase(),
           note:          String(row.note     || "").trim(),
-        };
-        socket.emit("submit_order", payload);
+        });
       }
-
       alert(`Đã gửi ${rows.length} đơn hàng từ file lên hệ thống.`);
-    } catch (error) {
-      console.error("Lỗi import file:", error);
+    } catch (err) {
+      console.error(err);
       alert("Không đọc được file hoặc file sai cấu trúc.");
     }
   });
@@ -315,50 +288,30 @@ if (fileUpload && fileName) {
 // SOCKET EVENTS
 // =========================
 socket.on("connection_ack", (data) => {
-  console.log("Server ACK:", data);
   if (Array.isArray(data.history)) {
     clearDashboard();
     data.history.forEach(item => addOrderToDashboard(item));
   }
 });
-
-socket.on("order_received", (data) => {
-  console.log("Đã nhận đơn:", data);
+socket.on("order_received", () => {
   if (processStatus) processStatus.textContent = "Đã nhận đơn, đang xử lý...";
 });
-
-socket.on("prediction_result", (data) => {
-  console.log("Kết quả xử lý:", data);
+socket.on("prediction_result", (data) => { addOrderToDashboard(data); });
+socket.on("dashboard_update",  (data) => {
+  if (data?.action === "clear_history") { clearDashboard(); return; }
   addOrderToDashboard(data);
 });
-
-socket.on("dashboard_update", (data) => {
-  console.log("Cập nhật dashboard:", data);
-  if (data?.action === "clear_history" || data?.type === "clear") {
-    clearDashboard();
-    return;
-  }
-  addOrderToDashboard(data);
-});
-
 socket.on("history_response", (data) => {
   if (Array.isArray(data.orders)) {
     clearDashboard();
     data.orders.forEach(item => addOrderToDashboard(item));
   }
 });
-
-socket.on("history_cleared", () => {
-  clearDashboard();
-});
-
-socket.on("order_error", (data) => {
-  console.error("Lỗi gửi đơn:", data);
+socket.on("history_cleared", ()     => { clearDashboard(); });
+socket.on("order_error",     (data) => {
   if (processStatus) processStatus.textContent = data.error || "Lỗi dữ liệu";
   alert(data.error || "Dữ liệu không hợp lệ");
 });
-
 socket.on("disconnect", () => {
-  console.log("Mất kết nối socket server");
   if (processStatus) processStatus.textContent = "Mất kết nối server";
 });
