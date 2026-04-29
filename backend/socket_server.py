@@ -119,28 +119,44 @@ def on_clear_history():
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _validate(data: dict) -> str | None:
-    required = ["order_id", "customer_name", "phone", "address",
-                "product_type", "weight", "length", "width",
-                "height", "distance", "priority"]
+    required = [
+        "order_id", "customer_name", "phone", "address",
+        "product_type", "weight", "quantity", "length", "width",
+        "height", "distance", "priority"
+    ]
+
     for field in required:
         if field not in data or data[field] in (None, ""):
             return f"Thiếu hoặc rỗng field bắt buộc: '{field}'"
 
     pt = str(data["product_type"]).strip().lower()
     if pt not in VALID_PRODUCT_TYPES:
-        return (f"product_type '{pt}' không hợp lệ. "
-                f"Chỉ chấp nhận: {sorted(VALID_PRODUCT_TYPES)}")
+        return (
+            f"product_type '{pt}' không hợp lệ. "
+            f"Chỉ chấp nhận: {sorted(VALID_PRODUCT_TYPES)}"
+        )
 
     pr = str(data["priority"]).strip().lower()
     if pr not in VALID_PRIORITIES:
-        return (f"priority '{pr}' không hợp lệ. "
-                f"Chỉ chấp nhận: {sorted(VALID_PRIORITIES)}")
+        return (
+            f"priority '{pr}' không hợp lệ. "
+            f"Chỉ chấp nhận: {sorted(VALID_PRIORITIES)}"
+        )
 
+    # Validate các field số thực
     for num_field in ["weight", "length", "width", "height", "distance"]:
         try:
             float(data[num_field])
         except (ValueError, TypeError):
             return f"Field '{num_field}' phải là số."
+
+    # Validate riêng quantity vì quantity phải là số nguyên > 0
+    try:
+        quantity = int(data.get("quantity", 1))
+        if quantity <= 0:
+            return "Field 'quantity' phải lớn hơn 0."
+    except (ValueError, TypeError):
+        return "Field 'quantity' phải là số nguyên."
 
     return None
 
