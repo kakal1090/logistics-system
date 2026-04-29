@@ -154,16 +154,23 @@ def _handle_order(data: dict) -> dict:
 
     t_start = time.perf_counter()
 
-    if MAIN_AVAILABLE:
+    file_label = str(data.get("label", "")).strip()
+    file_vehicle = str(data.get("vehicle_type", "")).strip()
+
+    if file_label and file_vehicle:
+        label, vehicle = file_label, file_vehicle
+    elif MAIN_AVAILABLE:
         try:
             label, vehicle = process_order(data)
         except Exception as e:
             label, vehicle = "Lỗi", str(e)
     else:
-        label, vehicle = _mock_classify(weight, quantity, total_weight,
-                                        float(data.get("length", 0)),
-                                        float(data.get("width", 0)),
-                                        float(data.get("height", 0)))
+        label, vehicle = _mock_classify(
+            weight, quantity, total_weight,
+            float(data.get("length", 0)),
+            float(data.get("width", 0)),
+            float(data.get("height", 0))
+        )
 
     elapsed = time.perf_counter() - t_start
 
