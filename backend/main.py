@@ -129,6 +129,8 @@ class OrderProcessingPipeline:
             "customer_name": order["customer_name"],
             "product_type": order["product_type"],
             "weight": order["weight"],
+            "quantity": order.get("quantity", 1),
+            "total_weight": order["weight"] * order.get("quantity", 1),
             "distance": order["distance"],
             "priority": order["priority"],
             "label": label,
@@ -137,7 +139,6 @@ class OrderProcessingPipeline:
             "processed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
             "processing_time": f"{elapsed:.3f}s"
         }
-
         logger.info(f"Kết quả: {result}")
         return result
 
