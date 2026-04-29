@@ -435,3 +435,55 @@ tbody tr:hover {
     width: 100%;
   }
 }
+
+/* ── Bổ sung cho phiên bản mới ─────────────────────────────── */
+
+/* Badge trung bình */
+.badge-medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+}
+
+/* Summary card màu theo nhãn */
+.summary-card.card-light  { border-left: 3px solid var(--success); }
+.summary-card.card-medium { border-left: 3px solid var(--warning); }
+.summary-card.card-heavy  { border-left: 3px solid var(--danger);  }
+
+/* Preview tổng khối lượng trong form */
+.total-weight-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.tw-label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tw-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #93c5fd;
+}
+
+/* summary-cards: 5 cột trên desktop */
+.summary-cards {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+@media (max-width: 1100px) {
+  .summary-cards {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
